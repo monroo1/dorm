@@ -2,6 +2,7 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     root: true,
     extends: [
@@ -42,6 +43,7 @@ module.exports = {
         quotes: ["error", "double"],
         "no-underscore-dangle": "off",
         "i18next/no-literal-string": ["error", { markupOnly: true }],
+        "max-len": "off",
     },
     globals: {
         __IS_DEV__: true,
