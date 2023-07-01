@@ -8,15 +8,6 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         use: ["@svgr/webpack"],
     };
 
-    const fileLoader = {
-        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        use: [
-            {
-                loader: "file-loader",
-            },
-        ],
-    };
-
     const babelLoader = {
         test: /\.(js|jsx|ts|tsx)$/,
         exclude: /node_modules/,
@@ -27,7 +18,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
                 plugins: [
                     [
                         "i18next-extract",
-                        { locales: ["ru", "en"], keyAsDefaultValue: true },
+                        {
+                            locales: ["ru", "en"],
+                            keyAsDefaultValue: true,
+                        },
                     ],
                 ],
             },
@@ -59,5 +53,20 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
-    return [svgLoader, fileLoader, babelLoader, typescriptLoader, cssLoader];
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: "file-loader",
+            },
+        ],
+    };
+
+    return [
+        fileLoader,
+        svgLoader,
+        babelLoader,
+        typescriptLoader,
+        cssLoader,
+    ];
 }
