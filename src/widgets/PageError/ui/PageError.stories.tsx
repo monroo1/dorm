@@ -13,7 +13,7 @@ const meta: Meta<typeof PageError> = {
 export default meta;
 type Story = StoryObj<typeof PageError>;
 
-export const Light: Story = {
+export const Normal: Story = {
 };
 
 export const Dark: Story = {

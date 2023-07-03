@@ -13,7 +13,7 @@ const meta: Meta<typeof Navbar> = {
 export default meta;
 type Story = StoryObj<typeof Navbar>;
 
-export const Light: Story = {
+export const Normal: Story = {
 };
 
 export const Dark: Story = {
