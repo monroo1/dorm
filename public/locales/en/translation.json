@@ -8,5 +8,7 @@
   "Произошла непредвиденная ошибка": "An unexpected error has occurred",
   "Обновить страницу": "Reload page",
   "кнопка ошибки": "Button error",
-  "войти": "Signin"
+  "войти": "Signin",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }
