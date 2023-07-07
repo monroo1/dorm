@@ -5,9 +5,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import { Navbar } from "./Navbar";
 
 const meta: Meta<typeof Navbar> = {
-    title: "widget/Navbar",
-    component: Navbar,
-    tags: ["autodocs"],
+	title: "widget/Navbar",
+	component: Navbar,
+	tags: ["autodocs"],
 };
 
 export default meta;
@@ -17,7 +17,7 @@ export const Normal: Story = {
 };
 
 export const Dark: Story = {
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+	decorators: [
+		ThemeDecorator(Theme.DARK),
+	],
 };

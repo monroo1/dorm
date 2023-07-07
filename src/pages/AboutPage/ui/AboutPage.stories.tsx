@@ -5,9 +5,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import AboutPage from "./AboutPage";
 
 const meta: Meta<typeof AboutPage> = {
-    title: "pages/AboutPage",
-    component: AboutPage,
-    tags: ["autodocs"],
+	title: "pages/AboutPage",
+	component: AboutPage,
+	tags: ["autodocs"],
 };
 
 export default meta;
@@ -17,7 +17,7 @@ export const Normal: Story = {
 };
 
 export const Dark: Story = {
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+	decorators: [
+		ThemeDecorator(Theme.DARK),
+	],
 };

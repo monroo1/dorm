@@ -5,19 +5,16 @@ import { Theme } from "app/providers/ThemeProvider";
 import { PageLoader } from "./PageLoader";
 
 const meta: Meta<typeof PageLoader> = {
-    title: "widget/PageLoader",
-    component: PageLoader,
-    tags: ["autodocs"],
+	title: "widget/PageLoader",
+	component: PageLoader,
+	tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof PageLoader>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const Dark: Story = {
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+	decorators: [ThemeDecorator(Theme.DARK)],
 };

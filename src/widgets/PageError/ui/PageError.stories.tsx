@@ -5,9 +5,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import { PageError } from "./PageError";
 
 const meta: Meta<typeof PageError> = {
-    title: "widget/PageError",
-    component: PageError,
-    tags: ["autodocs"],
+	title: "widget/PageError",
+	component: PageError,
+	tags: ["autodocs"],
 };
 
 export default meta;
@@ -17,7 +17,7 @@ export const Normal: Story = {
 };
 
 export const Dark: Story = {
-    decorators: [
-        ThemeDecorator(Theme.DARK),
-    ],
+	decorators: [
+		ThemeDecorator(Theme.DARK),
+	],
 };
