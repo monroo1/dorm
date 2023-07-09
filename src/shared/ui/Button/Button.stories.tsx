@@ -124,3 +124,11 @@ export const OutlineDark: Story = {
 		ThemeDecorator(Theme.DARK),
 	],
 };
+
+export const Disabled: Story = {
+	args: {
+		children: "Button",
+		theme: ButtonTheme.OUTLINE,
+		disabled: true,
+	},
+};
