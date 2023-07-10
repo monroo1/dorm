@@ -10,7 +10,7 @@ export function createReducerManager(
 
 	let combinedReducer = combineReducers(reducers);
 
-	let keysToRemove: StateSchemaKey[] = [];
+	let keysToRemove: Array<StateSchemaKey> = [];
 
 	return {
 		getReducerMap: () => reducers,
@@ -29,6 +29,7 @@ export function createReducerManager(
 				return;
 			}
 			reducers[key] = reducer;
+
 			combinedReducer = combineReducers(reducers);
 		},
 		remove: (key: StateSchemaKey) => {
@@ -37,6 +38,7 @@ export function createReducerManager(
 			}
 			delete reducers[key];
 			keysToRemove.push(key);
+
 			combinedReducer = combineReducers(reducers);
 		},
 	};
