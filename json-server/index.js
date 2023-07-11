@@ -21,6 +21,7 @@ server.use(async (req, res, next) => {
 // endpoint login
 server.post("/login", (req, res) => {
 	try {
+		console.log("da1");
 		const { username, password } = req.body;
 		const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, "db.json"), "utf-8"));
 		const { users = [] } = db;
@@ -35,6 +36,19 @@ server.post("/login", (req, res) => {
 		return res.status(403).json({ message: "User not found" });
 	} catch (e) {
 		console.log(e);
+		return res.status(500).json({ message: e.message });
+	}
+});
+
+server.get("/profile", (req, res) => {
+	try {
+		const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, "db.json"), "utf-8"));
+		const { profile } = db;
+
+		console.log("da2");
+
+		return res.json(profile);
+	} catch (e) {
 		return res.status(500).json({ message: e.message });
 	}
 });
