@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>;
+export type Mods = Record<string, boolean | string | undefined>;
 
 // const obj: Mods = {
 //     "hovered": true,
