@@ -40,19 +40,6 @@ server.post("/login", (req, res) => {
 	}
 });
 
-server.get("/profile", (req, res) => {
-	try {
-		const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, "db.json"), "utf-8"));
-		const { profile } = db;
-
-		console.log("da2");
-
-		return res.json(profile);
-	} catch (e) {
-		return res.status(500).json({ message: e.message });
-	}
-});
-
 // auth middleware
 // eslint-disable-next-line consistent-return
 server.use((req, res, next) => {

@@ -1,23 +1,53 @@
 {
-	"posts": [
-		{ "id": "1", "title": "json-server", "author": "typicode" },
-		{ "id": "2", "title": "json-server 1", "author": "typicode" },
-		{ "id": "3", "title": "json-server 2", "author": "typicode" },
-		{ "id": "4", "title": "json-server 3", "author": "typicode" }
-	],
-	"users": [
-		{ "id": "1", "username": "Andrey", "password": "1234" },
-		{ "id": "2", "username": "Tolik", "password": "5678" }
-	],
-	"comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
-	"profile": { 
-		"first": "Андрей",
-		"lastname": "Монро",
-		"age": 19,
-		"currency": "RUB",
-		"county": "Russia",
-		"city": "Moscow",
-		"username": "Andrey",
-		"avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
-	}
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": "2",
+      "title": "json-server 1",
+      "author": "typicode"
+    },
+    {
+      "id": "3",
+      "title": "json-server 2",
+      "author": "typicode"
+    },
+    {
+      "id": "4",
+      "title": "json-server 3",
+      "author": "typicode"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "Andrey",
+      "password": "1234"
+    },
+    {
+      "id": "2",
+      "username": "Tolik",
+      "password": "5678"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
+  ],
+  "profile": {
+    "first": "Андрей",
+    "lastname": "Монро",
+    "age": 19,
+    "currency": "USD",
+    "country": "Russia",
+    "city": "Moscow",
+    "username": "Andrey",
+    "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
+  }
 }

@@ -40,6 +40,13 @@ export const Outline: Story = {
 	},
 };
 
+export const OutlineRed: Story = {
+	args: {
+		children: "Button",
+		theme: ButtonTheme.OUTLINE_RED,
+	},
+};
+
 export const OutlineSizeL: Story = {
 	args: {
 		children: "Button",
@@ -119,6 +126,16 @@ export const OutlineDark: Story = {
 	args: {
 		children: "Button",
 		theme: ButtonTheme.OUTLINE,
+	},
+	decorators: [
+		ThemeDecorator(Theme.DARK),
+	],
+};
+
+export const OutlineRedDark: Story = {
+	args: {
+		children: "Button",
+		theme: ButtonTheme.OUTLINE_RED,
 	},
 	decorators: [
 		ThemeDecorator(Theme.DARK),
