@@ -11,6 +11,10 @@
 	"ваш город": "Your city",
 	"ваше имя пользователя": "Your username",
 	"ваша аватарка": "Your link on avatar",
-	"произошла ошибка при загрузке профиля": "Happened error with loading profile",
-	"попробуйте обновить страницу": "Try reload page"
+	"попробуйте обновить страницу": "Try reload page",
+	"нет данных": "Values not filled",
+	"ошибка сервера": "Error sending request",
+	"ошибка юзер даты": "Wrong first or last name format",
+	"ошибка возраста": "Wrong age format",
+	"ошибка страны": "No country selected"
 }

@@ -1,4 +1,4 @@
-import { classNames } from "shared/lib/classNames/classNames";
+import { Mods, classNames } from "shared/lib/classNames/classNames";
 import { ChangeEvent, memo, useMemo } from "react";
 import cls from "./Select.module.scss";
 
@@ -40,8 +40,12 @@ export const Select = memo((props: SelectProps) => {
 		</option>
 	)), [options]);
 
+	const mods: Mods = {
+		[cls.readonly]: readonly,
+	};
+
 	return (
-		<div className={classNames(cls.Wrapper, {}, [className])}>
+		<div className={classNames(cls.Wrapper, mods, [className])}>
 			{label && (
 				<span className={cls.label}>
 					{`${label}>`}
