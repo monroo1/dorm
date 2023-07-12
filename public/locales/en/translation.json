@@ -16,5 +16,8 @@
 	"введите пароль": "Password",
 	"форма авторизации": "Login form",
 	"Вы ввели неверный логин или пароль": "Incorrect username or password",
-	"выйти": "Exit"
+	"Ошибка при получении данных профиля": "Error getting profile data",
+	"выйти": "Exit",
+	"укажите страну": "Choose country",
+	"укажите валюту": "Choose currency"
 }

@@ -21,6 +21,7 @@ server.use(async (req, res, next) => {
 // endpoint login
 server.post("/login", (req, res) => {
 	try {
+		console.log("da1");
 		const { username, password } = req.body;
 		const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, "db.json"), "utf-8"));
 		const { users = [] } = db;

@@ -1,4 +1,4 @@
-type Mods = Record<string, boolean | string>
+export type Mods = Record<string, boolean | string | undefined>;
 
 // const obj: Mods = {
 //     "hovered": true,
@@ -8,7 +8,7 @@ type Mods = Record<string, boolean | string>
 export function classNames(
 	cls: string,
 	mods: Mods = {},
-	additional: string[] = [],
+	additional: Array<string | undefined> = [],
 ): string {
 	return [
 		cls,
