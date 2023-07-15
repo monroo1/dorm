@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import {
 	DynamicModuleLoader, ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { memo, useCallback, useEffect } from "react";
+import { memo, useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { useSelector } from "react-redux";
 import { Text, TextAlign, TextSize } from "shared/ui/Text/Text";
@@ -12,6 +12,7 @@ import { Avatar } from "shared/ui/Avatar/Avatar";
 import CalendarIcon from "shared/assets/icons/calendar-20-20.svg";
 import EyeIcon from "shared/assets/icons/eye-20-20.svg";
 import { Icon } from "shared/ui/Icon/Icon";
+import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import {
 	getArticleDetailsData,
 	getArticleDetailsError,
@@ -75,11 +76,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 		}
 	}, []);
 
-	useEffect(() => {
-		if (__PROJECT__ !== "storybook") {
-			dispatch(fetchArticleById(id));
-		}
-	}, [dispatch, id]);
+	useInitialEffect(() => {
+		dispatch(fetchArticleById(id));
+	});
 
 	let content;
 

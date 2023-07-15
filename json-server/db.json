@@ -4,13 +4,15 @@
       "id": "1",
       "username": "Andrey",
       "password": "1234",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
     },
     {
       "id": "2",
       "username": "Tolik",
       "password": "5678",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://mintspace-media.fra1.digitaloceanspaces.com/wp-content/uploads/2021/11/26174812/pixil-frame-0-1-18.png"
     }
   ],
   "profile": {

@@ -20,5 +20,6 @@
 	"Ошибка при получении данных профиля": "Error getting profile data",
 	"выйти": "Exit",
 	"укажите страну": "Choose country",
-	"укажите валюту": "Choose currency"
+	"укажите валюту": "Choose currency",
+	"комментарии отсутствуют": "No comments"
 }

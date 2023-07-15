@@ -7,7 +7,6 @@ import {
 import {
 	ProfileCard,
 	fetchProfileData,
-	getProfileData,
 	getProfileIsLoading,
 	getProfileError,
 	profileReducer,
