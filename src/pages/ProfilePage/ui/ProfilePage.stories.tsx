@@ -19,6 +19,7 @@ export default meta;
 type Story = StoryObj<typeof ProfilePage>;
 
 const data = {
+	id: "1",
 	username: "admin",
 	age: 22,
 	country: Country.Armenia,
@@ -46,6 +47,12 @@ export const Editing: Story = {
 			profile: {
 				readonly: false,
 				form: data,
+				data,
+			},
+			user: {
+				authData: {
+					id: "1",
+				},
 			},
 		}),
 	],
@@ -58,6 +65,12 @@ export const Error: Story = {
 				readonly: false,
 				form: data,
 				validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
+				data,
+			},
+			user: {
+				authData: {
+					id: "1",
+				},
 			},
 		}),
 	],
@@ -81,6 +94,12 @@ export const EditingDark: Story = {
 			profile: {
 				readonly: false,
 				form: data,
+				data,
+			},
+			user: {
+				authData: {
+					id: "1",
+				},
 			},
 		}),
 		ThemeDecorator(Theme.DARK)],
@@ -93,6 +112,12 @@ export const ErrorDark: Story = {
 				readonly: false,
 				form: data,
 				validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
+				data,
+			},
+			user: {
+				authData: {
+					id: "1",
+				},
 			},
 		}),
 		ThemeDecorator(Theme.DARK),

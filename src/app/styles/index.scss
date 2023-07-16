@@ -23,6 +23,7 @@
 .page-wrapper {
 	overflow-y: auto;
 	flex-grow: 1;
+	flex-shrink: 100;
 
 	width: 100%;
 	height: calc(100vh - var(--navbar-height));

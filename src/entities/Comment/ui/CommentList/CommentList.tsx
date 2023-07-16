@@ -1,4 +1,3 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from "shared/lib/classNames/classNames";
 import { memo } from "react";
 import { Text } from "shared/ui/Text/Text";
@@ -21,6 +20,16 @@ export const CommentList = memo((props: CommentListProps) => {
 	} = props;
 	const { t } = useTranslation();
 
+	if (isLoading) {
+		return (
+			<div className={classNames(cls.CommentList, {}, [className])}>
+				<CommentCard className={cls.comment} isLoading />
+				<CommentCard className={cls.comment} isLoading />
+				<CommentCard className={cls.comment} isLoading />
+			</div>
+		);
+	}
+
 	return (
 		<div className={classNames(cls.CommentList, {}, [className])}>
 			{comments?.length
@@ -29,6 +38,7 @@ export const CommentList = memo((props: CommentListProps) => {
 						isLoading={isLoading}
 						className={cls.comment}
 						comment={comment}
+						key={comment.id}
 					/>
 				))
 				: <Text text={t("комментарии отсутствуют")} />}

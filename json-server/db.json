@@ -3,28 +3,42 @@
     {
       "id": "1",
       "username": "Andrey",
-      "password": "1234",
+      "password": "123",
       "role": "ADMIN",
       "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
     },
     {
       "id": "2",
       "username": "Tolik",
-      "password": "5678",
+      "password": "123",
       "role": "USER",
       "avatar": "https://mintspace-media.fra1.digitaloceanspaces.com/wp-content/uploads/2021/11/26174812/pixil-frame-0-1-18.png"
     }
   ],
-  "profile": {
-    "first": "Андрей",
-    "lastname": "Monroo",
-    "age": 19,
-    "currency": "RUB",
-    "country": "Russia",
-    "city": "Moscow",
-    "username": "Andrey",
-    "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
-  },
+  "profile": [
+    {
+      "id": "1",
+      "first": "Андрей",
+      "lastname": "Monroo",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Russia",
+      "city": "Moscow",
+      "username": "Andrey",
+      "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
+    },
+    {
+      "id": "2",
+      "first": "Tolik",
+      "lastname": "Monroo",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "dA",
+      "username": "Tolik",
+      "avatar": "https://mintspace-media.fra1.digitaloceanspaces.com/wp-content/uploads/2021/11/26174812/pixil-frame-0-1-18.png"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -33,7 +47,9 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
       "views": 972,
       "createdAt": "14.07.2023",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -91,6 +107,36 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hi",
+      "id": "L2x4OHo"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "еще один коммент",
+      "id": "2fboZTP"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "now",
+      "id": "tNLjn7c"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "ntvf",
+      "id": "6gFy_G7"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "tot",
+      "id": "gbIeSKW"
     }
   ]
 }
