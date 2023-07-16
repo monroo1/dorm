@@ -5,6 +5,7 @@
 	"главная": "Main",
 	"о нас": "About US",
 	"профиль": "Profile",
+	"статьи": "Articles",
 	"страница не найдена": "Page not found",
 	"Произошла непредвиденная ошибка": "An unexpected error has occurred",
 	"Обновить страницу": "Reload page",
@@ -19,5 +20,8 @@
 	"Ошибка при получении данных профиля": "Error getting profile data",
 	"выйти": "Exit",
 	"укажите страну": "Choose country",
-	"укажите валюту": "Choose currency"
+	"укажите валюту": "Choose currency",
+	"комментарии отсутствуют": "No comments",
+	"введите текст комментария": "Enter comment text",
+	"отправить": "Send"
 }

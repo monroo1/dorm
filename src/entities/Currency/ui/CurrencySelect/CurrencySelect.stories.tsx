@@ -5,7 +5,7 @@ import { Theme } from "app/providers/ThemeProvider";
 import { CurrencySelect } from "./CurrencySelect";
 
 const meta: Meta<typeof CurrencySelect> = {
-	title: "etities/CurrencySelect",
+	title: "entities/CurrencySelect",
 	component: CurrencySelect,
 	tags: ["autodocs"],
 };

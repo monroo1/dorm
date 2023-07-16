@@ -7,6 +7,7 @@ export { updateProfileData } from "./model/services/updateProfileData/updateProf
 
 export { ProfileCard } from "./ui/ProfileCard/ProfileCard";
 
+export { getCanEditProfile } from "./model/selectors/getCanEditProfile/getCanEditProfile";
 export { getProfileData } from "./model/selectors/getProfileData/getProfileData";
 export { getProfileForm } from "./model/selectors/getProfileForm/getProfileForm";
 export { getProfileError } from "./model/selectors/getProfileError/getProfileError";
