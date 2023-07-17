@@ -88,6 +88,104 @@
           "code": "const jsonServer = require(\"json-server\");\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, \"db.json\"));"
         }
       ]
+    },
+    {
+      "id": "2",
+      "title": "Javascript news",
+      "subtitle": "Что нового в react за 2023 год?",
+      "img": "https://media.tproger.ru/uploads/2016/10/reactmini.png",
+      "views": 972,
+      "createdAt": "14.07.2023",
+      "userId": "2",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://hsto.org/getpro/habr/post_images/465/185/884/465185884cda3070549c035a37a7a3e8.png",
+          "title": "Рисунок 1 - скриншот сайта"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const jsonServer = require(\"json-server\");\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, \"db.json\"));"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Javascript news",
+      "subtitle": "Макаки",
+      "img": "https://rg.ru/uploads/images/202/54/72/long-tailed-macaque-4501437_1920.jpg",
+      "views": 972,
+      "createdAt": "14.07.2023",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "JavaScript — это язык, программы на котором можно выполнять в разных средах. В нашем случае речь идёт о браузерах и о серверной платформе Node.js.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "<!DOCTYPE html>\n<html>\n  <body>\n    <p id=\"hello\"></p>\n\n    <script>\n      document.getElementById(\"hello\").innerHTML = \"Hello, world!\";\n    </script>\n  </body>\n</html>"
+        },
+        {
+          "id": "5",
+          "type": "TEXT",
+          "title": "Заголовок этого блока",
+          "paragraphs": [
+            "Программа, которую по традиции называют «Hello, world!», очень проста. Она выводит куда-либо фразу «Hello, world!», или другую подобную, средствами некоего языка.",
+            "Существуют и другие способы запуска JS-кода в браузере. Так, если говорить об обычном использовании программ на JavaScript, они загружаются в браузер для обеспечения работы веб-страниц."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://hsto.org/getpro/habr/post_images/465/185/884/465185884cda3070549c035a37a7a3e8.png",
+          "title": "Рисунок 1 - скриншот сайта"
+        },
+        {
+          "id": "3",
+          "type": "CODE",
+          "code": "const jsonServer = require(\"json-server\");\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, \"db.json\"));"
+        }
+      ]
     }
   ],
   "comments": [
@@ -138,6 +236,24 @@
       "userId": "1",
       "text": "tot",
       "id": "gbIeSKW"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "реакт",
+      "id": "IdA3u-1"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "text": "макаки",
+      "id": "kRfVQq7"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "и тут",
+      "id": "9LmDEit"
     }
   ]
 }
