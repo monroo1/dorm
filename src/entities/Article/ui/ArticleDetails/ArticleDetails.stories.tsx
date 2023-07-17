@@ -2,11 +2,12 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import AvatarIcon from "shared/assets/test/avatar.jpg";
 import { ArticleDetails } from "./ArticleDetails";
 import { Article, ArticleBlockType, ArticleType } from "../../model/types/article";
 
 const meta: Meta<typeof ArticleDetails> = {
-	title: "entities/ArticleDetails",
+	title: "entities/Article/ArticleDetails",
 	component: ArticleDetails,
 	tags: ["autodocs"],
 };
@@ -22,6 +23,11 @@ const article: Article = {
     + "/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
 	views: 972,
 	createdAt: "14.07.2023",
+	user: {
+		id: "1",
+		username: "user",
+		avatar: AvatarIcon,
+	},
 	type: [ArticleType.IT],
 	blocks: [
 		{

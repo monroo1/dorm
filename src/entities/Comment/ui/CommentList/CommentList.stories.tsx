@@ -6,7 +6,7 @@ import Avatar from "shared/assets/test/avatar.jpg";
 import { CommentList } from "./CommentList";
 
 const meta: Meta<typeof CommentList> = {
-	title: "entities/CommentList",
+	title: "entities/Comment/CommentList",
 	component: CommentList,
 	tags: ["autodocs"],
 };

@@ -14,15 +14,33 @@ export default meta;
 type Story = StoryObj<typeof ArticlesPage>;
 
 export const Normal: Story = {
+	// todo
 };
 
 export const Dark: Story = {
+	// todo
 	decorators: [
 		ThemeDecorator(Theme.DARK),
 	],
 };
 
 export const Orange: Story = {
+	// todo
+	decorators: [
+		ThemeDecorator(Theme.ORANGE),
+	],
+};
+
+export const NormalLoading: Story = {
+};
+
+export const DarkLoading: Story = {
+	decorators: [
+		ThemeDecorator(Theme.DARK),
+	],
+};
+
+export const OrangeLoading: Story = {
 	decorators: [
 		ThemeDecorator(Theme.ORANGE),
 	],

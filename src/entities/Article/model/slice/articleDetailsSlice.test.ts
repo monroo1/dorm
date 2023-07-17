@@ -11,6 +11,11 @@ const article: Article = {
     + "/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
 	views: 972,
 	createdAt: "14.07.2023",
+	user: {
+		id: "1",
+		username: "user",
+		avatar: "avatar",
+	},
 	type: [ArticleType.IT],
 	blocks: [
 		{
