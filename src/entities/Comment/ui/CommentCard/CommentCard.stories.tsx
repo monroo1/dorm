@@ -6,7 +6,7 @@ import Avatar from "shared/assets/test/avatar.jpg";
 import { CommentCard } from "./CommentCard";
 
 const meta: Meta<typeof CommentCard> = {
-	title: "entities/CommentCard",
+	title: "entities/Comment/CommentCard",
 	component: CommentCard,
 	tags: ["autodocs"],
 };
