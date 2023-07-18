@@ -207,11 +207,8 @@ export const SmallLoadingNormal: Story = {
 		StoreDecorator({
 			articlesPage: {
 				entities: {
-					1: article,
-					2: { ...article, id: "2" },
-					3: { ...article, id: "3" },
 				},
-				ids: ["1", "2", "3"],
+				ids: [],
 				isLoading: true,
 				error: undefined,
 				view: ArticleView.SMALL,
@@ -225,11 +222,8 @@ export const SmallLoadingDark: Story = {
 		StoreDecorator({
 			articlesPage: {
 				entities: {
-					1: article,
-					2: { ...article, id: "2" },
-					3: { ...article, id: "3" },
 				},
-				ids: ["1", "2", "3"],
+				ids: [],
 				isLoading: true,
 				error: undefined,
 				view: ArticleView.SMALL,
@@ -243,12 +237,8 @@ export const SmallLoadingOrange: Story = {
 	decorators: [
 		StoreDecorator({
 			articlesPage: {
-				entities: {
-					1: article,
-					2: { ...article, id: "2" },
-					3: { ...article, id: "3" },
-				},
-				ids: ["1", "2", "3"],
+				entities: {},
+				ids: [],
 				isLoading: true,
 				error: undefined,
 				view: ArticleView.SMALL,
@@ -262,12 +252,8 @@ export const BigLoadingNormal: Story = {
 	decorators: [
 		StoreDecorator({
 			articlesPage: {
-				entities: {
-					1: article,
-					2: { ...article, id: "2" },
-					3: { ...article, id: "3" },
-				},
-				ids: ["1", "2", "3"],
+				entities: {},
+				ids: [],
 				isLoading: true,
 				error: undefined,
 				view: ArticleView.BIG,
@@ -280,12 +266,8 @@ export const BigLoadingDark: Story = {
 	decorators: [
 		StoreDecorator({
 			articlesPage: {
-				entities: {
-					1: article,
-					2: { ...article, id: "2" },
-					3: { ...article, id: "3" },
-				},
-				ids: ["1", "2", "3"],
+				entities: {},
+				ids: [],
 				isLoading: true,
 				error: undefined,
 				view: ArticleView.BIG,
@@ -299,12 +281,8 @@ export const BigLoadingOrange: Story = {
 	decorators: [
 		StoreDecorator({
 			articlesPage: {
-				entities: {
-					1: article,
-					2: { ...article, id: "2" },
-					3: { ...article, id: "3" },
-				},
-				ids: ["1", "2", "3"],
+				entities: {},
+				ids: [],
 				isLoading: true,
 				error: undefined,
 				view: ArticleView.BIG,

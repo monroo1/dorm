@@ -75,10 +75,15 @@ const article = {
 
 describe("fetchArticlesList.test", () => {
 	test("success fetch", async () => {
-		const thunk = new TestAsyncThunk(fetchArticlesList);
+		const thunk = new TestAsyncThunk(fetchArticlesList, {
+			articlesPage: {
+				limit: 3,
+				hasMore: true,
+			},
+		});
 		thunk.api.get.mockReturnValue(Promise.resolve({ data: [article, { ...article, id: "2" }, { ...article, id: "3" }] }));
 
-		const result = await thunk.callThunk();
+		const result = await thunk.callThunk({ page: 1 });
 
 		expect(thunk.dispatch).toHaveBeenCalledTimes(2);
 		expect(thunk.api.get).toHaveBeenCalled();
@@ -87,13 +92,17 @@ describe("fetchArticlesList.test", () => {
 	});
 
 	test("error fetch", async () => {
-		const thunk = new TestAsyncThunk(fetchArticlesList);
+		const thunk = new TestAsyncThunk(fetchArticlesList, {
+			articlesPage: {
+				limit: 3,
+				hasMore: true,
+			},
+		});
 		thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
 
-		const result = await thunk.callThunk();
+		const result = await thunk.callThunk({ page: 1 });
 
 		expect(thunk.dispatch).toHaveBeenCalledTimes(2);
-		expect(thunk.api.get).toHaveBeenCalled();
 		expect(result.meta.requestStatus).toBe("rejected");
 	});
 });

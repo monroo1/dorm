@@ -179,29 +179,15 @@ export const BigOrange: Story = {
 
 export const SmallNormalLoading: Story = {
 	args: {
+		articles: [],
 		isLoading: true,
-		articles: new Array(16)
-			.fill(0)
-			.map((item, index) => (
-				{
-					...article,
-					id: String(index),
-				}
-			)),
 	},
 };
 
 export const SmallDarkLoading: Story = {
 	args: {
+		articles: [],
 		isLoading: true,
-		articles: new Array(16)
-			.fill(0)
-			.map((item, index) => (
-				{
-					...article,
-					id: String(index),
-				}
-			)),
 	},
 	decorators: [
 		ThemeDecorator(Theme.DARK)],
@@ -209,15 +195,8 @@ export const SmallDarkLoading: Story = {
 
 export const SmallOrangeLoading: Story = {
 	args: {
+		articles: [],
 		isLoading: true,
-		articles: new Array(16)
-			.fill(0)
-			.map((item, index) => (
-				{
-					...article,
-					id: String(index),
-				}
-			)),
 	},
 	decorators: [
 		ThemeDecorator(Theme.ORANGE)],
@@ -225,31 +204,17 @@ export const SmallOrangeLoading: Story = {
 
 export const BigNormalLoading: Story = {
 	args: {
+		articles: [],
 		isLoading: true,
 		view: ArticleView.BIG,
-		articles: new Array(16)
-			.fill(0)
-			.map((item, index) => (
-				{
-					...article,
-					id: String(index),
-				}
-			)),
 	},
 };
 
 export const BigDarkLoading: Story = {
 	args: {
+		articles: [],
 		isLoading: true,
 		view: ArticleView.BIG,
-		articles: new Array(16)
-			.fill(0)
-			.map((item, index) => (
-				{
-					...article,
-					id: String(index),
-				}
-			)),
 	},
 	decorators: [
 		ThemeDecorator(Theme.DARK)],
@@ -257,16 +222,9 @@ export const BigDarkLoading: Story = {
 
 export const BigOrangeLoading: Story = {
 	args: {
+		articles: [],
 		isLoading: true,
 		view: ArticleView.BIG,
-		articles: new Array(16)
-			.fill(0)
-			.map((item, index) => (
-				{
-					...article,
-					id: String(index),
-				}
-			)),
 	},
 	decorators: [
 		ThemeDecorator(Theme.ORANGE)],

@@ -107,13 +107,56 @@ describe("articlesPageSlice.test", () => {
 		const state: DeepPartial<ArticlesPageSchema> = {
 			isLoading: true,
 			error: undefined,
+			limit: 3,
+			hasMore: true,
+			entities: {},
+			ids: [],
 		};
 		expect(articlesPageReducer(
 			state as ArticlesPageSchema,
-			fetchArticlesList.fulfilled([article, { ...article, id: "2" }, { ...article, id: "3" }], ""),
+			fetchArticlesList.fulfilled([article, { ...article, id: "2" }, { ...article, id: "3" }], "", { page: 3 }),
 		)).toEqual({
 			isLoading: false,
 			error: undefined,
+			hasMore: true,
+			limit: 3,
+			entities: {
+				1: article,
+				2: { ...article, id: "2" },
+				3: { ...article, id: "3" },
+			},
+			ids: [
+				"1",
+				"2",
+				"3",
+			],
+		});
+	});
+	test("test fetch comments by article id service fulfilled with empty array response", () => {
+		const state: DeepPartial<ArticlesPageSchema> = {
+			isLoading: true,
+			error: undefined,
+			limit: 3,
+			hasMore: true,
+			entities: {
+				1: article,
+				2: { ...article, id: "2" },
+				3: { ...article, id: "3" },
+			},
+			ids: [
+				"1",
+				"2",
+				"3",
+			],
+		};
+		expect(articlesPageReducer(
+			state as ArticlesPageSchema,
+			fetchArticlesList.fulfilled([], "", { page: 3 }),
+		)).toEqual({
+			isLoading: false,
+			error: undefined,
+			hasMore: false,
+			limit: 3,
 			entities: {
 				1: article,
 				2: { ...article, id: "2" },

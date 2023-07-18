@@ -20,7 +20,7 @@ describe("addCommentFormSelectors.test", () => {
 	});
 	test("should return text with empty state", () => {
 		const state: DeepPartial<StateSchema> = {};
-		expect(getAddCommentFormText(state as StateSchema)).toEqual(undefined);
+		expect(getAddCommentFormText(state as StateSchema)).toEqual("");
 	});
 	test("should return error with empty state", () => {
 		const state: DeepPartial<StateSchema> = {};
