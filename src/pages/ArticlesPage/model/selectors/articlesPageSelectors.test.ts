@@ -1,7 +1,7 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { ArticleView } from "entities/Article";
 import {
-	getArticlesPageError, getArticlesPageHasMore, getArticlesPageIsLoading, getArticlesPageLimit, getArticlesPageNum, getArticlesPageView,
+	getArticlesPageError, getArticlesPageHasMore, getArticlesPageInited, getArticlesPageIsLoading, getArticlesPageLimit, getArticlesPageNum, getArticlesPageView,
 } from "./articlesPageSelectors";
 
 describe("articlesPageSelectors.test", () => {
@@ -61,6 +61,14 @@ describe("articlesPageSelectors.test", () => {
 		};
 		expect(getArticlesPageHasMore(state as StateSchema)).toEqual(true);
 	});
+	test("should return _inited", () => {
+		const state: DeepPartial<StateSchema> = {
+			articlesPage: {
+				_inited: true,
+			},
+		};
+		expect(getArticlesPageInited(state as StateSchema)).toEqual(true);
+	});
 	test("should return isLoading with empty state", () => {
 		const state: DeepPartial<StateSchema> = {};
 		expect(getArticlesPageIsLoading(state as StateSchema)).toEqual(false);
@@ -84,5 +92,9 @@ describe("articlesPageSelectors.test", () => {
 	test("should return hasMore with empty state", () => {
 		const state: DeepPartial<StateSchema> = {};
 		expect(getArticlesPageHasMore(state as StateSchema)).toEqual(undefined);
+	});
+	test("should return _inited with empty state", () => {
+		const state: DeepPartial<StateSchema> = {};
+		expect(getArticlesPageInited(state as StateSchema)).toEqual(undefined);
 	});
 });

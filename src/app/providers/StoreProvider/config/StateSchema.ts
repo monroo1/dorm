@@ -7,7 +7,6 @@ import { UserSchema } from "entities/User";
 import { LoginSchema } from "features/AuthByUsername";
 import { ProfileSchema } from "entities/Profile";
 import { AxiosInstance } from "axios";
-import { NavigateOptions, To } from "react-router";
 import { ArticleDetailsSchema } from "entities/Article";
 import { ArticleDetailsCommentsSchema } from "pages/ArticleDetailsPage";
 import { AddCommentFormSchema } from "features/addCommentForm";
@@ -27,7 +26,6 @@ export interface StateSchema {
 }
 
 export type StateSchemaKey = keyof StateSchema;
-
 export interface ReducerManager {
 	getReducerMap: () => ReducersMapObject<StateSchema>;
 	reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
@@ -41,7 +39,6 @@ export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
 
 export interface ThunkExtraArg {
 	api: AxiosInstance;
-	navigate?: (to: To, options?: NavigateOptions) => void;
 }
 
 export interface ThunkConfig<T> {
