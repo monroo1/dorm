@@ -229,3 +229,28 @@ export const BigOrangeLoading: Story = {
 	decorators: [
 		ThemeDecorator(Theme.ORANGE)],
 };
+
+export const NormalNotFound: Story = {
+	args: {
+		articles: [],
+		isLoading: false,
+	},
+};
+
+export const DarkNotFound: Story = {
+	args: {
+		articles: [],
+		isLoading: false,
+	},
+	decorators: [
+		ThemeDecorator(Theme.DARK)],
+};
+
+export const OrangeNotFound: Story = {
+	args: {
+		articles: [],
+		isLoading: false,
+	},
+	decorators: [
+		ThemeDecorator(Theme.ORANGE)],
+};

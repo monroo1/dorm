@@ -3,5 +3,18 @@
 	"страница статьей": "Articles page",
 	"cтатья не найдена": "Article not found",
 	"ошибка при загрузке статьи": "Error with loading article",
-	"комментарии": "Comments"
+	"комментарии": "Comments",
+	"сортировать ПО": "Sort BY",
+	"ПО": "BY",
+	"поиск": "Find",
+	"возрастанию": "Ascending",
+	"убыванию": "Descending",
+	"дате создания": "Creation date",
+	"названию": "Name",
+	"просмотрам": "Views",
+	"айти": "IT",
+	"экономика": "Economics",
+	"наука": "Science",
+	"все": "All",
+	"статьи не найдены": "Articles not found"
 }

@@ -90,14 +90,14 @@ describe("articlesPageSlice.test", () => {
 			view: ArticleView.SMALL,
 		});
 	});
-	test("test fetch articles list service pending", () => {
+	test("test fetch articles list service pending replace false", () => {
 		const state: DeepPartial<ArticlesPageSchema> = {
 			isLoading: false,
 			error: "undefined",
 		};
 		expect(articlesPageReducer(
 			state as ArticlesPageSchema,
-			fetchArticlesList.pending,
+			fetchArticlesList.pending("", { replace: false }),
 		)).toEqual({
 			isLoading: true,
 			error: undefined,
@@ -114,7 +114,7 @@ describe("articlesPageSlice.test", () => {
 		};
 		expect(articlesPageReducer(
 			state as ArticlesPageSchema,
-			fetchArticlesList.fulfilled([article, { ...article, id: "2" }, { ...article, id: "3" }], "", { page: 3 }),
+			fetchArticlesList.fulfilled([article, { ...article, id: "2" }, { ...article, id: "3" }], "", {}),
 		)).toEqual({
 			isLoading: false,
 			error: undefined,
@@ -151,11 +151,48 @@ describe("articlesPageSlice.test", () => {
 		};
 		expect(articlesPageReducer(
 			state as ArticlesPageSchema,
-			fetchArticlesList.fulfilled([], "", { page: 3 }),
+			fetchArticlesList.fulfilled([], "", { }),
 		)).toEqual({
 			isLoading: false,
 			error: undefined,
 			hasMore: false,
+			limit: 3,
+			entities: {
+				1: article,
+				2: { ...article, id: "2" },
+				3: { ...article, id: "3" },
+			},
+			ids: [
+				"1",
+				"2",
+				"3",
+			],
+		});
+	});
+	test("test fetch comments by article id service fulfilled with empty array response", () => {
+		const state: DeepPartial<ArticlesPageSchema> = {
+			isLoading: true,
+			error: undefined,
+			limit: 3,
+			hasMore: false,
+			entities: {
+				4: { ...article, id: "4" },
+				5: { ...article, id: "5" },
+				6: { ...article, id: "6" },
+			},
+			ids: [
+				"4",
+				"5",
+				"6",
+			],
+		};
+		expect(articlesPageReducer(
+			state as ArticlesPageSchema,
+			fetchArticlesList.fulfilled([article, { ...article, id: "2" }, { ...article, id: "3" }], "", { replace: true }),
+		)).toEqual({
+			isLoading: false,
+			error: undefined,
+			hasMore: true,
 			limit: 3,
 			entities: {
 				1: article,
