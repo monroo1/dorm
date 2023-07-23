@@ -4,6 +4,7 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 import { Article, ArticleBlockType, ArticleType } from "entities/Article/model/types/article";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
+import { MemoryRouter, Route } from "react-router-dom";
 import ArticleDetailsPage from "./ArticleDetailsPage";
 
 const meta: Meta<typeof ArticleDetailsPage> = {
@@ -90,6 +91,7 @@ const article: Article = {
 export const Normal: Story = {
 	decorators: [
 		StoreDecorator({
+			// articleDetailsPage: {}
 			articleDetails: {
 				data: article,
 			},
@@ -104,5 +106,6 @@ export const Dark: Story = {
 				data: article,
 			},
 		}),
-		ThemeDecorator(Theme.DARK)],
+		ThemeDecorator(Theme.DARK),
+	],
 };
