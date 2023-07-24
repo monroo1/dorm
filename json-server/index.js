@@ -1,6 +1,5 @@
 const fs = require("fs");
 const jsonServer = require("json-server");
-// const jwt = require("jsonwebtoken");
 const path = require("path");
 
 const server = jsonServer.create();
@@ -10,18 +9,9 @@ const router = jsonServer.router(path.resolve(__dirname, "db.json"));
 server.use(jsonServer.defaults());
 server.use(jsonServer.bodyParser);
 
-// Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
-server.use(async (req, res, next) => {
-	await new Promise((res) => {
-		setTimeout(res, 800);
-	});
-	next();
-});
-
 // endpoint login
 server.post("/login", (req, res) => {
 	try {
-		console.log("da1");
 		const { username, password } = req.body;
 		const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, "db.json"), "utf-8"));
 		const { users = [] } = db;
