@@ -1,12 +1,11 @@
 import { memo, useCallback } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import { Page } from "widgets/Page";
 import { AddCommentForm } from "features/addCommentForm";
 import { ArticleDetails, ArticleList } from "entities/Article";
 import { CommentList } from "entities/Comment";
-import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { classNames } from "shared/lib/classNames/classNames";
 import {
 	DynamicModuleLoader,
@@ -14,7 +13,6 @@ import {
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Button } from "shared/ui/Button/Button";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { articleDetailsPageReducer } from "../../model/slices";
 import {
@@ -39,6 +37,7 @@ import {
 	getArticleRecommendationsIsLoading,
 } from "../../model/selectors/recommendations/recommendations";
 import cls from "./ArticleDetailsPage.module.scss";
+import { ArticleDetailsPageHeader } from "../ArticleDetailsPageHeader/ArticleDetailsPageHeader";
 
 interface ArticleDetailsPageProps {
 	className?: string;
@@ -57,11 +56,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 	const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 	const recommendations = useSelector(getArticleRecommendations.selectAll);
 	const recommendationsIsLoading = useSelector(getArticleRecommendationsIsLoading);
-	const navigate = useNavigate();
-
-	const onBackToList = useCallback(() => {
-		navigate(RoutePath.articles);
-	}, [navigate]);
 
 	const onSendComment = useCallback((text: string) => {
 		dispatch(addCommentForArticle(text));
@@ -83,9 +77,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 	return (
 		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
 			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-				<Button onClick={onBackToList}>
-					{t("назад к списку")}
-				</Button>
+				<ArticleDetailsPageHeader />
 				<ArticleDetails id={id} />
 				<Text
 					size={TextSize.L}

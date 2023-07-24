@@ -54,6 +54,28 @@ export const OnlyTextDark: Story = {
 	decorators: [ThemeDecorator(Theme.DARK)],
 };
 
+export const Inverted: Story = {
+	args: {
+		title: "Title lorem ipsum",
+		text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+		theme: TextTheme.INVERTED,
+	},
+};
+
+export const InvertedTitle: Story = {
+	args: {
+		title: "Title lorem ipsum",
+		theme: TextTheme.INVERTED,
+	},
+};
+
+export const InvertedText: Story = {
+	args: {
+		text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+		theme: TextTheme.INVERTED,
+	},
+};
+
 export const Error: Story = {
 	args: {
 		title: "Title lorem ipsum",

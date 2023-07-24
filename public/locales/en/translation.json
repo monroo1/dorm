@@ -25,5 +25,8 @@
 	"введите текст комментария": "Enter comment text",
 	"отправить": "Send",
 	"читать далее": "Read more...",
-	"назад к списку": "Back to list"
+	"редактирование статьи": "Edit article with ID = ",
+	"создание статьи": "Create article",
+	"monroo app": "Monroo App",
+	"создать статью": "Create article"
 }
