@@ -2,6 +2,8 @@ import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "shared/lib/classNames/classNames";
 import { Text, TextSize } from "shared/ui/Text/Text";
+import { PAGE_ID } from "widgets/Page";
+import { VirtuosoGrid } from "react-virtuoso";
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
@@ -31,11 +33,11 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	} = props;
 	const { t } = useTranslation("article");
 
-	const renderArticle = (article: Article) => (
+	const renderArticle = (index: number, article: Article) => (
 		<ArticleListItem
 			article={article}
 			view={view}
-			key={article.id}
+			key={index}
 			target={target}
 		/>
 	);
@@ -49,11 +51,21 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	}
 
 	return (
-		<div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-			{articles.length > 0
-				? articles.map(renderArticle)
-				: null}
-			{isLoading && getSkeletons(view)}
-		</div>
+		<>
+			<VirtuosoGrid
+				useWindowScroll
+				customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
+				data={articles}
+				listClassName={classNames(cls.ArticleList, {}, [className, cls[view]])}
+				itemContent={renderArticle}
+			/>
+			{isLoading && 	(
+				<div className={classNames(cls.ArticleList, {
+				}, [className, cls[view], cls.skeleton])}
+				>
+					{isLoading && getSkeletons(view)}
+				</div>
+			)}
+		</>
 	);
 });
