@@ -6,8 +6,8 @@ import { getArticleDetailsData } from "entities/Article";
 import { classNames } from "shared/lib/classNames/classNames";
 import { RoutePath } from "shared/config/routeConfig/routeConfig";
 import { Button } from "shared/ui/Button/Button";
+import { HStack } from "shared/ui/Stack";
 import { getCanEditArticle } from "../../model/selectors/canEditArticle/canEditArticle";
-import cls from "./ArticleDetailsPageHeader.module.scss";
 
 interface ArticleDetailsPageHeaderProps {
 	className?: string;
@@ -31,7 +31,7 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
 	}, [navigate, article?.id]);
 
 	return (
-		<div className={classNames(cls.ArticleDetailsPageHeader, {}, [className])}>
+		<HStack max justify="between" className={classNames("", {}, [className])}>
 			<Button onClick={onBackToList}>
 				{t("назад к списку")}
 			</Button>
@@ -40,6 +40,6 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
 					{t("редактировать")}
 				</Button>
 			)}
-		</div>
+		</HStack>
 	);
 });

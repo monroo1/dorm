@@ -11,7 +11,7 @@ import {
 } from "entities/Profile";
 import { useCallback } from "react";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import cls from "./ProfilePageHeader.module.scss";
+import { HStack } from "shared/ui/Stack";
 
 interface ProfilePageHeaderProps {
 	className?: string;
@@ -41,35 +41,31 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 	}, [dispatch]);
 
 	return (
-		<div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+		<HStack justify="between" max className={classNames("", {}, [className])}>
 			<Text title={t("профиль")} />
 			{canEdit && (readonly ? (
 				<Button
 					theme={ButtonTheme.OUTLINE}
-					className={cls.editBtn}
 					onClick={onEdit}
 				>
 					{t("редактировать")}
 				</Button>
 			) : (
-				<>
+				<HStack gap="8">
 					<Button
 						theme={ButtonTheme.OUTLINE_RED}
-						className={cls.editBtn}
 						onClick={onCancelEdit}
 					>
 						{t("отменить")}
 					</Button>
 					<Button
 						theme={ButtonTheme.OUTLINE}
-						className={cls.saveBtn}
 						onClick={onSave}
 					>
 						{t("сохранить")}
 					</Button>
-				</>
+				</HStack>
 			))}
-
-		</div>
+		</HStack>
 	);
 };
