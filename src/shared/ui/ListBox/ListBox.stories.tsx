@@ -5,12 +5,16 @@ import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from "app/providers/ThemeProvider";
 import { Country } from "entities/Country";
 import { ListBox } from "./ListBox";
-import { VStack } from "../Stack";
 
 const meta: Meta<typeof ListBox> = {
 	title: "shared/ListBox",
 	component: ListBox,
 	tags: ["autodocs"],
+	decorators: [
+		(Story) => (
+			<div style={{ padding: `${250}px` }}>{Story()}</div>
+		),
+	],
 };
 
 const options = [
@@ -38,20 +42,37 @@ export const NoValue: Story = {
 	},
 };
 
-export const OptionsTop: Story = {
+export const OptionsTopLeft: Story = {
 	args: {
 		items: options,
 		value: Country.Armenia,
-		direction: "top",
+		direction: "top left",
 	},
-	decorators: [
-		(Story) => (
-			<VStack gap="32">
-				<div style={{ marginBottom: `${150}px` }}>sdf</div>
-				{Story()}
-			</VStack>
-		),
-	],
+};
+
+export const OptionsTopRight: Story = {
+	args: {
+		items: options,
+		value: Country.Armenia,
+		direction: "top right",
+	},
+};
+
+export const OptionsBottomLeft: Story = {
+	args: {
+		items: options,
+		value: Country.Armenia,
+		direction: "bottom left",
+	},
+
+};
+
+export const OptionsBottomRight: Story = {
+	args: {
+		items: options,
+		value: Country.Armenia,
+		direction: "bottom right",
+	},
 };
 
 export const Label: Story = {

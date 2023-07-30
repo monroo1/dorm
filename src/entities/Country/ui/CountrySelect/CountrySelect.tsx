@@ -36,7 +36,7 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
 			label={t("укажите страну")}
 			items={options}
 			readonly={readonly}
-			direction="top"
+			direction="top right"
 			onChange={onChangeHandler}
 			className={classNames("", {}, [className])}
 		/>
