@@ -21,8 +21,8 @@
       "first": "Андрей",
       "lastname": "Monroo",
       "age": 21,
-      "currency": "EUR",
-      "country": "Belarus",
+      "currency": "RUB",
+      "country": "Russia",
       "city": "Moscow",
       "username": "Andrey",
       "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
@@ -1031,6 +1031,12 @@
       "userId": "1",
       "text": "1111",
       "id": "1hYx3Es"
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "dsa",
+      "id": "I3go-mL"
     }
   ]
 }

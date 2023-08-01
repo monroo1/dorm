@@ -1,23 +1,21 @@
-import { classNames } from "shared/lib/classNames/classNames";
-import { useTranslation } from "react-i18next";
-import { Text } from "shared/ui/Text/Text";
-import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
-import {
-	getCanEditProfile,
-	getProfileReadonly,
-	profileActions,
-	updateProfileData,
-} from "entities/Profile";
-import { useCallback } from "react";
+import { useTranslation } from "react-i18next";
+import { classNames } from "shared/lib/classNames/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
 import { HStack } from "shared/ui/Stack";
+import { Button, ButtonTheme } from "shared/ui/Button/Button";
+import { Text } from "shared/ui/Text/Text";
+import { getCanEditProfile } from "../../model/selectors/getCanEditProfile/getCanEditProfile";
+import { getProfileReadonly } from "../../model/selectors/getProfileReadonly/getProfileReadonly";
+import { updateProfileData } from "../../model/services/updateProfileData/updateProfileData";
+import { profileActions } from "../../model/slice/profileSlice";
 
-interface ProfilePageHeaderProps {
+interface EditableProfileCardHeaderProps {
 	className?: string;
 }
 
-export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
+export const EditableProfileCardHeader = memo((props: EditableProfileCardHeaderProps) => {
 	const {
 		className,
 	} = props;
@@ -68,4 +66,4 @@ export const ProfilePageHeader = (props: ProfilePageHeaderProps) => {
 			))}
 		</HStack>
 	);
-};
+});

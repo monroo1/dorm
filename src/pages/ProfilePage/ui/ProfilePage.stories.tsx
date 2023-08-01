@@ -6,7 +6,7 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
 import Avatar from "shared/assets/test/avatar.jpg";
-import { ValidateProfileError } from "entities/Profile";
+import { ValidateProfileError } from "features/editableProfileCard/model/types/editableProfileCardSchema";
 import ProfilePage from "./ProfilePage";
 
 const meta: Meta<typeof ProfilePage> = {

@@ -10,13 +10,17 @@ import { LoginSchema } from "features/AuthByUsername";
 import { AddCommentFormSchema } from "features/addCommentForm";
 import { CounterSchema } from "entities/Counter";
 import { UserSchema } from "entities/User";
-import { ProfileSchema } from "entities/Profile";
 import { ArticleDetailsSchema } from "entities/Article";
+import { rtkApi } from "shared/api/rtkApi";
+import { ProfileSchema } from "features/editableProfileCard";
 
 export interface StateSchema {
 	counter: CounterSchema;
 	user: UserSchema;
 	scrollRestoration: ScrollRestorationSchema;
+
+	// rtk query
+	[rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
 	// Асинхронные редюсеры
 	loginForm?: LoginSchema;

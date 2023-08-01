@@ -56,7 +56,7 @@ export const Text = memo((props: TextProps) => {
 	};
 
 	return (
-		<div className={classNames(cls.Text, mods, [className])}>
+		<div className={classNames("", mods, [className])}>
 			{title && <HeaderTag className={cls.title}>{title}</HeaderTag>}
 			{text && <p className={cls.text}>{text}</p>}
 		</div>
