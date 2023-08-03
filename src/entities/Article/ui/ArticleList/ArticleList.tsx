@@ -4,6 +4,7 @@ import { classNames } from "shared/lib/classNames/classNames";
 import { Text, TextSize } from "shared/ui/Text/Text";
 import { PAGE_ID } from "widgets/Page";
 import { VirtuosoGrid } from "react-virtuoso";
+import { HStack } from "shared/ui/Stack";
 import { Article, ArticleView } from "../../model/types/article";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
@@ -15,6 +16,7 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView;
 	target?: HTMLAttributeAnchorTarget;
+	virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 9 : 3)
@@ -30,6 +32,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 		isLoading,
 		view = ArticleView.SMALL,
 		target,
+		virtualized = true,
 	} = props;
 	const { t } = useTranslation("article");
 
@@ -51,14 +54,30 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	}
 
 	return (
-		<div className={cls.container}>
-			<VirtuosoGrid
-				useWindowScroll
-				customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
-				data={articles}
-				listClassName={classNames(cls.ArticleList, {}, [className, cls[view]])}
-				itemContent={renderArticle}
-			/>
+		<>
+			{virtualized
+				? (
+					<VirtuosoGrid
+						useWindowScroll
+						customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
+						data={articles}
+						listClassName={classNames(cls.ArticleList, {}, [className, cls[view]])}
+						itemContent={renderArticle}
+					/>
+				)
+				: (
+					<HStack
+						max
+						className={classNames(
+							cls.ArticleList,
+							{},
+							[className, cls[view]],
+						)}
+					>
+						{articles.map((article, index) => renderArticle(index, article))}
+					</HStack>
+				)}
+
 			{isLoading && (
 				<div className={classNames(cls.ArticleList, {
 				}, [className, cls[view], cls.skeleton])}
@@ -66,6 +85,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
 					{isLoading && getSkeletons(view)}
 				</div>
 			)}
-		</div>
+		</>
 	);
 });

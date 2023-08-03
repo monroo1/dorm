@@ -9,7 +9,7 @@ export default {
 	globals: {
 		__IS_DEV__: true,
 		__API__: "",
-		__PROJECT: "jest",
+		__PROJECT__: "jest",
 	},
 	clearMocks: true,
 	testEnvironment: "jsdom",
@@ -29,7 +29,7 @@ export default {
 		["jest-html-reporters", {
 			publicPath: "<rootDir>/reports/unit",
 			filename: "report.html",
-			openReport: true,
+			openReport: false,
 			inlineSource: true,
 		}],
 	],
