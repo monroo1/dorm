@@ -51,16 +51,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	}
 
 	return (
-		<>
-			<div style={{ width: `${100}%`, marginBottom: `${20}px` }}>
-				<VirtuosoGrid
-					useWindowScroll
-					customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
-					data={articles}
-					listClassName={classNames(cls.ArticleList, {}, [className, cls[view]])}
-					itemContent={renderArticle}
-				/>
-			</div>
+		<div className={cls.container}>
+			<VirtuosoGrid
+				useWindowScroll
+				customScrollParent={document.getElementById(PAGE_ID) as HTMLElement}
+				data={articles}
+				listClassName={classNames(cls.ArticleList, {}, [className, cls[view]])}
+				itemContent={renderArticle}
+			/>
 			{isLoading && (
 				<div className={classNames(cls.ArticleList, {
 				}, [className, cls[view], cls.skeleton])}
@@ -68,6 +66,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
 					{isLoading && getSkeletons(view)}
 				</div>
 			)}
-		</>
+		</div>
 	);
 });
