@@ -2,7 +2,7 @@
 	pointer-events: none;
 
 	position: fixed;
-	z-index: -1;
+	z-index: var(--z-modal);
 	inset: 0;
 
 	color: var(--primary-color);
@@ -35,7 +35,7 @@
 
 .opened {
 	pointer-events: auto;
-	z-index: var(--modal-z-index);
+	z-index: var(--z-modal-opened);
 	opacity: 1;   
 
 	.content {

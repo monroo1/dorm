@@ -28,5 +28,7 @@
 	"редактирование статьи": "Edit article with ID = ",
 	"создание статьи": "Create article",
 	"monroo app": "Monroo App",
-	"создать статью": "Create article"
+	"создать статью": "Create article",
+	"админка": "Admin",
+	"нет доступа к странице": "You do not have access to this page"
 }

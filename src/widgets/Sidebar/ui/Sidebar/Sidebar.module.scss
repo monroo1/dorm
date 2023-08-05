@@ -25,6 +25,7 @@
 
 .collapseBtn {
 	position: absolute;
+	z-index: var(--z-sidebar);
 	right: -32px;
 	bottom: 32px;
 }
