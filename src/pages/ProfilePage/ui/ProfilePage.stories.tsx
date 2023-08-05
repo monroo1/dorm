@@ -13,6 +13,30 @@ const meta: Meta<typeof ProfilePage> = {
 	title: "pages/ProfilePage",
 	component: ProfilePage,
 	tags: ["autodocs"],
+	// parameters: {
+	// 	fetchMock: {
+	// 		mocks: [
+	// 			{
+	// 				matcher: {
+	// 					name: "ProfilePage",
+	// 					url: `${__API__}/profile`,
+	// 					query: {
+	// 						_limit: 4,
+	// 					},
+	// 				},
+	// 				response: {
+	// 					status: 200,
+	// 					body: [
+	// 						article,
+	// 						{ ...article, id: "2" },
+	// 						{ ...article, id: "3" },
+	// 						{ ...article, id: "4" },
+	// 					],
+	// 				},
+	// 			},
+	// 		],
+	// 	},
+	// },
 };
 
 export default meta;

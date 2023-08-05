@@ -1,7 +1,7 @@
-import { memo, useCallback } from "react";
+import { Suspense, memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
-import { AddCommentForm } from "features/addCommentForm";
+import { AddCommentForm, AddCommentFormSkeleton } from "features/addCommentForm";
 import { CommentList } from "entities/Comment";
 import { classNames } from "shared/lib/classNames/classNames";
 import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -19,7 +19,7 @@ import {
 
 interface ArticleDetailsCommentsProps {
 	className?: string;
-	id: string;
+	id?: string;
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
@@ -45,7 +45,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 				size={TextSize.L}
 				title={t("комментарии")}
 			/>
-			<AddCommentForm onSendComment={onSendComment} />
+			<Suspense fallback={<AddCommentFormSkeleton />}>
+				<AddCommentForm onSendComment={onSendComment} />
+			</Suspense>
 			<CommentList
 				isLoading={commentsIsLoading}
 				comments={comments}

@@ -6,15 +6,6 @@ import { Article, ArticleBlockType, ArticleType } from "entities/Article/model/t
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import ArticleDetailsPage from "./ArticleDetailsPage";
 
-const meta: Meta<typeof ArticleDetailsPage> = {
-	title: "pages/ArticleDetailsPage/ArticleDetailsPage",
-	component: ArticleDetailsPage,
-	tags: ["autodocs"],
-};
-
-export default meta;
-type Story = StoryObj<typeof ArticleDetailsPage>;
-
 const article: Article = {
 	id: "1",
 	title: "Javascript news",
@@ -86,6 +77,39 @@ const article: Article = {
 		},
 	],
 };
+
+const meta: Meta<typeof ArticleDetailsPage> = {
+	title: "pages/ArticleDetailsPage/ArticleDetailsPage",
+	component: ArticleDetailsPage,
+	tags: ["autodocs"],
+	parameters: {
+		fetchMock: {
+			mocks: [
+				{
+					matcher: {
+						name: "ArticleDetailsPage",
+						url: `${__API__}/articles`,
+						query: {
+							_limit: 4,
+						},
+					},
+					response: {
+						status: 200,
+						body: [
+							article,
+							{ ...article, id: "2" },
+							{ ...article, id: "3" },
+							{ ...article, id: "4" },
+						],
+					},
+				},
+			],
+		},
+	},
+};
+
+export default meta;
+type Story = StoryObj<typeof ArticleDetailsPage>;
 
 export const Normal: Story = {
 	decorators: [
