@@ -6,37 +6,13 @@ import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDeco
 import { Country } from "entities/Country";
 import { Currency } from "entities/Currency";
 import Avatar from "shared/assets/test/avatar.jpg";
-import { ValidateProfileError } from "features/editableProfileCard/model/types/editableProfileCardSchema";
+import { ValidateProfileError } from "features/editableProfileCard/model/consts/editableProfileCardConsts";
 import ProfilePage from "./ProfilePage";
 
 const meta: Meta<typeof ProfilePage> = {
 	title: "pages/ProfilePage",
 	component: ProfilePage,
 	tags: ["autodocs"],
-	// parameters: {
-	// 	fetchMock: {
-	// 		mocks: [
-	// 			{
-	// 				matcher: {
-	// 					name: "ProfilePage",
-	// 					url: `${__API__}/profile`,
-	// 					query: {
-	// 						_limit: 4,
-	// 					},
-	// 				},
-	// 				response: {
-	// 					status: 200,
-	// 					body: [
-	// 						article,
-	// 						{ ...article, id: "2" },
-	// 						{ ...article, id: "3" },
-	// 						{ ...article, id: "4" },
-	// 					],
-	// 				},
-	// 			},
-	// 		],
-	// 	},
-	// },
 };
 
 export default meta;

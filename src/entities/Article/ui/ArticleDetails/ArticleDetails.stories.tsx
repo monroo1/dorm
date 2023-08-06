@@ -4,7 +4,8 @@ import { Theme } from "app/providers/ThemeProvider";
 import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
 import AvatarIcon from "shared/assets/test/avatar.jpg";
 import { ArticleDetails } from "./ArticleDetails";
-import { Article, ArticleBlockType, ArticleType } from "../../model/types/article";
+import { Article } from "../../model/types/article";
+import { ArticleBlockType, ArticleType } from "../../model/consts/articleConsts";
 
 const meta: Meta<typeof ArticleDetails> = {
 	title: "entities/Article/ArticleDetails",

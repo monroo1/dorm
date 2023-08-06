@@ -1,6 +1,6 @@
 import { StateSchema } from "app/providers/StoreProvider";
 import { getUserRoles, isUserAdmin, isUserManager } from "./getUserRoles";
-import { UserRole } from "../../types/user";
+import { UserRole } from "../../consts/userConsts";
 
 describe("getUserRoles.test", () => {
 	test("should return roles", () => {

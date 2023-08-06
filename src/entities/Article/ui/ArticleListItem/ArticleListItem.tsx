@@ -9,9 +9,8 @@ import { Card } from "shared/ui/Card/Card";
 import { Avatar } from "shared/ui/Avatar/Avatar";
 import { Button } from "shared/ui/Button/Button";
 import { AppLink } from "shared/ui/AppLink/AppLink";
-import {
-	Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from "../../model/types/article";
+import { Article, ArticleTextBlock } from "../../model/types/article";
+import { ArticleBlockType, ArticleView } from "../../model/consts/articleConsts";
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleListItem.module.scss";
 

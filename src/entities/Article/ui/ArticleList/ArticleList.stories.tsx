@@ -4,8 +4,9 @@ import { Theme } from "app/providers/ThemeProvider";
 import AvatarIcon from "shared/assets/test/avatar.jpg";
 import { ArticleList } from "./ArticleList";
 import {
-	Article, ArticleBlockType, ArticleType, ArticleView,
+	Article,
 } from "../../model/types/article";
+import { ArticleBlockType, ArticleType, ArticleView } from "../../model/consts/articleConsts";
 
 const meta: Meta<typeof ArticleList> = {
 	title: "entities/Article/ArticleList",
