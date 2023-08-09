@@ -35,8 +35,9 @@
 
 	// z indexes
 	--z-modal: -1;
-	--z-modal-opened: 10;
-	--z-dropdown: 10000;
-	--z-listbox: 10000;
-	--z-sidebar: 100000;
+	--z-modal-opened: 1000;
+	--z-dropdown: 100;
+	--z-listbox: 100;
+	--z-sidebar: 10;
+	--z-overlay: -1;
 }
