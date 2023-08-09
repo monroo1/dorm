@@ -1,4 +1,4 @@
-import { StateSchema } from "app/providers/StoreProvider";
+import { StateSchema } from "@/app/providers/StoreProvider";
 import { getCanEditArticle } from "./canEditArticle";
 
 describe("canEditArticle.test", () => {

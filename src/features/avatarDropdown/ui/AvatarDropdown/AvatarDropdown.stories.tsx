@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
-import { StoreDecorator } from "shared/config/storybook/StoreDecorator/StoreDecorator";
-import { UserRole } from "entities/User";
-import avatarIcon from "shared/assets/test/avatar.jpg";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
+import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
+import { UserRole } from "@/entities/User";
+import avatarIcon from "@/shared/assets/test/avatar.jpg";
 import { AvatarDropdown } from "./AvatarDropdown";
 
 const meta: Meta<typeof AvatarDropdown> = {

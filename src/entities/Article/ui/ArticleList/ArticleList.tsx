@@ -1,10 +1,10 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { classNames } from "shared/lib/classNames/classNames";
-import { Text, TextSize } from "shared/ui/Text/Text";
-import { PAGE_ID } from "widgets/Page";
 import { VirtuosoGrid } from "react-virtuoso";
-import { HStack } from "shared/ui/Stack";
+import { classNames } from "@/shared/lib/classNames/classNames";
+import { Text, TextSize } from "@/shared/ui/Text/Text";
+import { PAGE_ID } from "@/widgets/Page";
+import { HStack } from "@/shared/ui/Stack";
 import { Article } from "../../model/types/article";
 import { ArticleView } from "../../model/consts/articleConsts";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";

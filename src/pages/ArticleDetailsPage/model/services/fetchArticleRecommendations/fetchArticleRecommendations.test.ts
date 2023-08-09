@@ -1,6 +1,6 @@
-import { TestAsyncThunk } from "shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
-import { Article, ArticleType } from "entities/Article";
-import { ArticleBlockType } from "entities/Article/model/consts/articleConsts";
+import { TestAsyncThunk } from "@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk";
+import { Article, ArticleType } from "@/entities/Article";
+import { ArticleBlockType } from "@/entities/Article/model/consts/articleConsts";
 import { fetchArticleRecommendations } from "./fetchArticleRecommendations";
 
 const article: Article = {

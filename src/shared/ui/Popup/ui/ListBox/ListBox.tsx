@@ -2,7 +2,7 @@ import {
 	Fragment, ReactNode, memo,
 } from "react";
 import { Listbox as HListBox } from "@headlessui/react";
-import { classNames } from "shared/lib/classNames/classNames";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { DropdownDirection } from "../../../../types/ui";
 import { Button } from "../../../Button/Button";
 import cls from "./ListBox.module.scss";

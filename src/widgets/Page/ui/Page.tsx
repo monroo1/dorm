@@ -3,12 +3,12 @@ import {
 } from "react";
 import { useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { StateSchema } from "app/providers/StoreProvider";
-import { useInfiniteScroll } from "shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
-import { useAppDispatch } from "shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { useInitialEffect } from "shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { useThrottle } from "shared/lib/hooks/useThrottle/useThrottle";
-import { classNames } from "shared/lib/classNames/classNames";
+import { StateSchema } from "@/app/providers/StoreProvider";
+import { useInfiniteScroll } from "@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll";
+import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
+import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
+import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
+import { classNames } from "@/shared/lib/classNames/classNames";
 import { scrollRestorationActions } from "../model/slices/scrollRestorationSlice";
 import { getScrollRestorationsByPath } from "../model/selectors/scrollRestorationSelectors";
 import cls from "./Page.module.scss";

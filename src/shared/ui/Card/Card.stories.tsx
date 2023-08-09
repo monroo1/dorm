@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "app/providers/ThemeProvider";
+import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
+import { Theme } from "@/app/providers/ThemeProvider";
 import { Card } from "./Card";
 import { Text } from "../Text/Text";
 
