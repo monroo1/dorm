@@ -1079,5 +1079,85 @@
       "description": "Произошло какое-то событие",
       "userId": "2"
     }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 3,
+      "feedback": "Хорошая статья 2",
+      "userId": "1",
+      "articleId": "12"
+    },
+    {
+      "userId": "1",
+      "articleId": "10",
+      "rate": 3,
+      "feedback": "asdasdasdasd",
+      "id": "3CkXk8j"
+    },
+    {
+      "userId": "1",
+      "articleId": "4",
+      "rate": 5,
+      "feedback": "xarosh",
+      "id": "KW1GsLB"
+    },
+    {
+      "userId": "1",
+      "articleId": "13",
+      "rate": 4,
+      "feedback": "ASDASDAD",
+      "id": "C9db8Nx"
+    },
+    {
+      "userId": "1",
+      "articleId": "2",
+      "rate": 3,
+      "id": "fw6z2Zp"
+    },
+    {
+      "userId": "1",
+      "articleId": "15",
+      "rate": 4,
+      "feedback": "фывфывфыв",
+      "id": "ZZRyJiD"
+    },
+    {
+      "userId": "1",
+      "articleId": "3",
+      "rate": 3,
+      "feedback": "asdads",
+      "id": "QMJjYJL"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 2,
+      "feedback": "Хорошая статья 2",
+      "userId": "1",
+      "profileId": "2"
+    },
+    {
+      "userId": "2",
+      "profileId": "1",
+      "rate": 4,
+      "feedback": "Топ",
+      "id": "GW1s8MR"
+    }
   ]
 }

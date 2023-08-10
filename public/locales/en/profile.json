@@ -16,5 +16,7 @@
 	"ошибка сервера": "Error sending request",
 	"ошибка юзер даты": "Wrong first or last name format",
 	"ошибка возраста": "Wrong age format",
-	"ошибка страны": "No country selected"
+	"ошибка страны": "No country selected",
+	"оцените этот профиль": "Rate this profile",
+	"оставьте свой отзыв": "Leave your feedback"
 }
