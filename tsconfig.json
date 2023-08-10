@@ -3,12 +3,12 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "ESNext",
-    "target": "es5",
+    "target": "esnext",
     "jsx": "react-jsx",
     "allowJs": true,
+    "strict": true,
     "moduleResolution": "node",
     "baseUrl": ".",
-    "strict": true,
     "paths": {
       "@/*": ["./src/*"],
       "react": [ "./node_modules/@types/react" ]
