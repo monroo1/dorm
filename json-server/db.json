@@ -50,6 +50,17 @@
       "city": "dA",
       "username": "Tolik",
       "avatar": "https://mintspace-media.fra1.digitaloceanspaces.com/wp-content/uploads/2021/11/26174812/pixil-frame-0-1-18.png"
+    },
+        {
+      "id": "3",
+      "first": "vanya",
+      "lastname": "vanya",
+      "age": 21,
+      "currency": "RUB",
+      "country": "Armenia",
+      "city": "dA",
+      "username": "users",
+      "avatar": "https://mintspace-media.fra1.digitaloceanspaces.com/wp-content/uploads/2021/11/26174812/pixil-frame-0-1-18.png"
     }
   ],
   "articles": [

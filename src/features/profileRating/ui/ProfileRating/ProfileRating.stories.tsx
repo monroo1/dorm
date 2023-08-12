@@ -2,23 +2,26 @@ import type { Meta, StoryObj } from "@storybook/react";
 
 import { Theme } from "@/app/providers/ThemeProvider";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import ArticleRating from "./ArticleRating";
+import ProfileRating from "./ProfileRating";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 
-const meta: Meta<typeof ArticleRating> = {
-	title: "features/ArticleRating",
-	component: ArticleRating,
+const meta: Meta<typeof ProfileRating> = {
+	title: "features/ProfileRating",
+	component: ProfileRating,
 	tags: ["autodocs"],
+	decorators: [
+		StoreDecorator({}),
+	],
 	parameters: {
 		fetchMock: {
 			mocks: [
 				{
 					matcher: {
-						name: "ArticleRating",
-						url: `${__API__}/article-ratings`,
+						name: "ProfileRating",
+						url: `${__API__}/profile-ratings`,
 						query: {
 							userId: "1",
-							articleId: "1",
+							profileId: "2",
 						},
 					},
 					response: {
@@ -29,15 +32,14 @@ const meta: Meta<typeof ArticleRating> = {
 			],
 		},
 	},
-
 };
 
 export default meta;
-type Story = StoryObj<typeof ArticleRating>;
+type Story = StoryObj<typeof ProfileRating>;
 
 export const Normal: Story = {
 	args: {
-		articleId: "1",
+		profileId: "2",
 	},
 	decorators: [
 		StoreDecorator({
@@ -52,7 +54,7 @@ export const Normal: Story = {
 
 export const FeedbackLeft: Story = {
 	args: {
-		articleId: "1",
+		profileId: "2",
 	},
 	decorators: [
 		StoreDecorator({
@@ -68,11 +70,11 @@ export const FeedbackLeft: Story = {
 			mocks: [
 				{
 					matcher: {
-						name: "ArticleRating",
-						url: `${__API__}/article-ratings`,
+						name: "ProfileRating",
+						url: `${__API__}/profile-ratings`,
 						query: {
 							userId: "1",
-							articleId: "1",
+							profileId: "2",
 						},
 					},
 					response: {
@@ -80,10 +82,10 @@ export const FeedbackLeft: Story = {
 						body: [
 							{
 								id: "1",
-								articleId: "1",
+								profileId: "2",
 								userId: "1",
 								rate: 4,
-								feedback: "Хорошая статья",
+								feedback: "Хороший профиль",
 							},
 						],
 					},
@@ -95,7 +97,7 @@ export const FeedbackLeft: Story = {
 
 export const Dark: Story = {
 	args: {
-		articleId: "1",
+		profileId: "2",
 	},
 	decorators: [
 		StoreDecorator({

@@ -5,7 +5,7 @@ import { Theme } from "@/app/providers/ThemeProvider";
 import { PageError } from "./PageError";
 
 const meta: Meta<typeof PageError> = {
-	title: "widget/PageError",
+	title: "widgets/PageError",
 	component: PageError,
 	tags: ["autodocs"],
 };

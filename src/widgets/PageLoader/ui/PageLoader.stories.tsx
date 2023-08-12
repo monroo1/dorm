@@ -5,7 +5,7 @@ import { Theme } from "@/app/providers/ThemeProvider";
 import { PageLoader } from "./PageLoader";
 
 const meta: Meta<typeof PageLoader> = {
-	title: "widget/PageLoader",
+	title: "widgets/PageLoader",
 	component: PageLoader,
 	tags: ["autodocs"],
 };

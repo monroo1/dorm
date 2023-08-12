@@ -18,7 +18,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
 		preferAbsolute: true,
 		modules: [paths.src, "node_modules"],
 		mainFiles: ["index"],
-		alias: {},
+		alias: {
+			"@": paths.src,
+		},
 	};
 
 	// @ts-ignore
