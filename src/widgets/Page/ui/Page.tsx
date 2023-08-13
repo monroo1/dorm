@@ -12,14 +12,13 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { scrollRestorationActions } from "../model/slices/scrollRestorationSlice";
 import { getScrollRestorationsByPath } from "../model/selectors/scrollRestorationSelectors";
 import cls from "./Page.module.scss";
+import { PAGE_ID } from "@/shared/const/page";
 
 interface PageProps {
     className?: string;
     children: ReactNode;
 	onScrollEnd?: () => void;
 }
-
-export const PAGE_ID = "PAGE_ID";
 
 export const Page = memo((props: PageProps) => {
 	const {

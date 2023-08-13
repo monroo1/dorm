@@ -3,13 +3,13 @@ import { useTranslation } from "react-i18next";
 import { VirtuosoGrid } from "react-virtuoso";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text, TextSize } from "@/shared/ui/Text/Text";
-import { PAGE_ID } from "@/widgets/Page";
 import { HStack } from "@/shared/ui/Stack";
 import { Article } from "../../model/types/article";
 import { ArticleView } from "../../model/consts/articleConsts";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import cls from "./ArticleList.module.scss";
+import { PAGE_ID } from "@/shared/const/page";
 
 interface ArticleListProps {
     className?: string;

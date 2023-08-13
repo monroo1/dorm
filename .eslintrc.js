@@ -67,6 +67,13 @@ module.exports = {
 		"no-undef": "off",
 		"react/no-array-index-key": "off",
 		"monroo-plugin/path-checker": ["error", { alias: "@" }],
+		"monroo-plugin/layer-imports": [
+			"error",
+			{
+				alias: "@",
+				ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+			},
+		],
 		"monroo-plugin/public-api-imports": [
 			"error",
 			{

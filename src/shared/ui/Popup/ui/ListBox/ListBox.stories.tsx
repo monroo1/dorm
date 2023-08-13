@@ -1,9 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
-import { Country } from "@/entities/Country";
 import { ListBox } from "./ListBox";
+import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof ListBox> = {
 	title: "shared/ListBox",
@@ -17,11 +15,11 @@ const meta: Meta<typeof ListBox> = {
 };
 
 const options = [
-	{ value: Country.Armenia, content: Country.Armenia },
-	{ value: Country.Belarus, content: Country.Belarus },
-	{ value: Country.Kazakhstan, content: Country.Kazakhstan },
-	{ value: Country.Russia, content: Country.Russia },
-	{ value: Country.Ukraine, content: Country.Ukraine },
+	{ value: "Armenia", content: "Armenia" },
+	{ value: "Belarus", content: "Belarus" },
+	{ value: "Kazakhstan", content: "Kazakhstan" },
+	{ value: "Russia", content: "Russia" },
+	{ value: "Ukraine", content: "Ukraine" },
 ];
 
 export default meta;

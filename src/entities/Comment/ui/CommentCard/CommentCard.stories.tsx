@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
-import { Theme } from "@/app/providers/ThemeProvider";
 import Avatar from "@/shared/assets/test/avatar.jpg";
 import { CommentCard } from "./CommentCard";
+import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof CommentCard> = {
 	title: "entities/Comment/CommentCard",
