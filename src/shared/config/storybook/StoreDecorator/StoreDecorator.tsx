@@ -1,11 +1,10 @@
-/* eslint-disable monroo-plugin/public-api-imports */
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
-import { articleDetailsReducer } from "@/entities/Article/model/slice/articleDetailsSlice";
-import { profileReducer } from "@/features/editableProfileCard/model/slice/profileSlice";
-import { loginReducer } from "@/features/AuthByUsername/model/slice/loginSlice";
-import { addCommentFormReducer } from "@/features/addCommentForm/model/slices/addCommentFormSlice";
-import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/model/slices";
-import { articlesPageReducer } from "@/pages/ArticlesPage/model/slices/articlesPageSlice";
+import { articleDetailsReducer } from "@/entities/Article/testing";
+import { profileReducer } from "@/features/editableProfileCard/testing";
+import { loginReducer } from "@/features/AuthByUsername/testing";
+import { addCommentFormReducer } from "@/features/addCommentForm/testing";
+import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing";
+import { articlesPageReducer } from "@/pages/ArticlesPage/testing";
 import { ReducersList } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 
 const defaultAsyncReducers: ReducersList = {

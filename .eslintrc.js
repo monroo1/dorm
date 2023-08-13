@@ -67,7 +67,13 @@ module.exports = {
 		"no-undef": "off",
 		"react/no-array-index-key": "off",
 		"monroo-plugin/path-checker": ["error", { alias: "@" }],
-		"monroo-plugin/public-api-imports": ["error", { alias: "@" }],
+		"monroo-plugin/public-api-imports": [
+			"error",
+			{
+				alias: "@",
+				testFilePatterns: ["**/*.test.*", "**/*.stories.*", "**/StoreDecorator.tsx"],
+			},
+		],
 	},
 	globals: {
 		__IS_DEV__: true,
