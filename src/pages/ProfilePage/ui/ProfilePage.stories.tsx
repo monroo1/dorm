@@ -6,6 +6,7 @@ import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDe
 import { Country } from "@/entities/Country";
 import { Currency } from "@/entities/Currency";
 import Avatar from "@/shared/assets/test/avatar.jpg";
+// eslint-disable-next-line monroo-plugin/public-api-imports
 import { ValidateProfileError } from "@/features/editableProfileCard/model/consts/editableProfileCardConsts";
 import ProfilePage from "./ProfilePage";
 

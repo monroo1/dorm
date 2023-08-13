@@ -1,3 +1,4 @@
+/* eslint-disable monroo-plugin/public-api-imports */
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
 import { articleDetailsReducer } from "@/entities/Article/model/slice/articleDetailsSlice";
 import { profileReducer } from "@/features/editableProfileCard/model/slice/profileSlice";

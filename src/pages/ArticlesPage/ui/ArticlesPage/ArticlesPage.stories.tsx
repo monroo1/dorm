@@ -4,10 +4,10 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import { Theme } from "@/app/providers/ThemeProvider";
 import { StoreDecorator } from "@/shared/config/storybook/StoreDecorator/StoreDecorator";
 import AvatarIcon from "@/shared/assets/test/avatar.jpg";
-import { Article, ArticleType, ArticleView } from "@/entities/Article";
-import { ArticleBlockType } from "@/entities/Article/model/consts/articleConsts";
+import {
+	Article, ArticleType, ArticleView, ArticleBlockType,
+} from "@/entities/Article";
 import ArticlesPage from "./ArticlesPage";
-// import {ArticleBlockType, ArticleType, ArticleView,} from
 
 const meta: Meta<typeof ArticlesPage> = {
 	title: "pages/ArticlesPage",

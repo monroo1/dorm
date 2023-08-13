@@ -10,4 +10,6 @@ export { ArticleViewSelector } from "./ui/ArticleViewSelector/ArticleViewSelecto
 export { ArticleSortSelector } from "./ui/ArticleSortSelector/ArticleSortSelector";
 export { ArticleTypeTabs } from "./ui/ArticleTypeTabs/ArticleTypeTabs";
 
-export { ArticleView, ArticleSortField, ArticleType } from "./model/consts/articleConsts";
+export {
+	ArticleView, ArticleSortField, ArticleType, ArticleBlockType,
+} from "./model/consts/articleConsts";
