@@ -28,7 +28,7 @@ type Story = StoryObj<typeof ListBox>;
 export const Normal: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 	},
 };
 
@@ -42,7 +42,7 @@ export const NoValue: Story = {
 export const OptionsTopLeft: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 		direction: "top left",
 	},
 };
@@ -50,7 +50,7 @@ export const OptionsTopLeft: Story = {
 export const OptionsTopRight: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 		direction: "top right",
 	},
 };
@@ -58,7 +58,7 @@ export const OptionsTopRight: Story = {
 export const OptionsBottomLeft: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 		direction: "bottom left",
 	},
 
@@ -67,7 +67,7 @@ export const OptionsBottomLeft: Story = {
 export const OptionsBottomRight: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 		direction: "bottom right",
 	},
 };
@@ -75,7 +75,7 @@ export const OptionsBottomRight: Story = {
 export const Label: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 		label: "Укажите страну",
 	},
 };
@@ -83,7 +83,7 @@ export const Label: Story = {
 export const LabelWithDisabled: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 		label: "Укажите страну",
 		readonly: true,
 	},
@@ -92,7 +92,7 @@ export const LabelWithDisabled: Story = {
 export const Dark: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 	},
 	decorators: [
 		ThemeDecorator(Theme.DARK),
@@ -102,7 +102,7 @@ export const Dark: Story = {
 export const Orange: Story = {
 	args: {
 		items: options,
-		value: Country.Armenia,
+		value: "Armenia",
 	},
 	decorators: [
 		ThemeDecorator(Theme.ORANGE),
