@@ -10,7 +10,7 @@ import {
 	DynamicModuleLoader,
 	ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
-import { Text, TextTheme } from "@/shared/ui/Text/Text";
+import { Text, TextTheme } from "@/shared/ui/Text";
 import { VStack } from "@/shared/ui/Stack";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { getProfileForm } from "../../model/selectors/getProfileForm/getProfileForm";

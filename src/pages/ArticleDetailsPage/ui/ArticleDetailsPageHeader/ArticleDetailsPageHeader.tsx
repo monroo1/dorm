@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 import { getArticleDetailsData } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { RoutePath } from "@/shared/const/router";
-import { Button } from "@/shared/ui/Button/Button";
+import { Button } from "@/shared/ui/Button";
 import { HStack } from "@/shared/ui/Stack";
 import { getCanEditArticle } from "../../model/selectors/canEditArticle/canEditArticle";
 

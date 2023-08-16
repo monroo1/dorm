@@ -1,6 +1,6 @@
 import { memo } from "react";
 import { HStack } from "@/shared/ui/Stack";
-import { Skeleton } from "@/shared/ui/Skeleton/Skeleton";
+import { Skeleton } from "@/shared/ui/Skeleton";
 import cls from "../AddCommentForm/AddCommentForm.module.scss";
 
 export const AddCommentFormSkeleton = memo(() => (
