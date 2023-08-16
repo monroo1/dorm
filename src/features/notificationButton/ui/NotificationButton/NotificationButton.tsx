@@ -7,7 +7,6 @@ import { Popover } from "@/shared/ui/Popup";
 import { Button, ButtonTheme } from "@/shared/ui/Button";
 import { Icon } from "@/shared/ui/Icon";
 import NotificationIcon from "@/shared/assets/icons/notification-20-20.svg";
-import { AnimationProvider } from "@/shared/lib/components/AnimationProvider";
 import cls from "./NotificationButton.module.scss";
 
 interface NotificationButtonProps {

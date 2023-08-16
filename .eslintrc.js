@@ -20,7 +20,15 @@ module.exports = {
 		ecmaVersion: "latest",
 		sourceType: "module",
 	},
-	plugins: ["react", "@typescript-eslint", "i18next", "react-hooks", "monroo-plugin"],
+	plugins: [
+		"react",
+		"@typescript-eslint",
+		"i18next",
+		"react-hooks",
+		"monroo-plugin",
+		"unused-imports",
+		"import",
+	],
 	rules: {
 		"react/jsx-indent": [2, "tab"],
 		"react/jsx-indent-props": [2, "tab"],
@@ -81,6 +89,7 @@ module.exports = {
 				testFilePatterns: ["**/*.test.*", "**/*.stories.*", "**/StoreDecorator.tsx"],
 			},
 		],
+		"unused-imports/no-unused-imports": "error",
 	},
 	globals: {
 		__IS_DEV__: true,
