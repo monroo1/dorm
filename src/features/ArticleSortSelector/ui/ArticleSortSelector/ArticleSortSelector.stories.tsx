@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ArticleSortSelector } from "./ArticleSortSelector";
-import { ArticleSortField } from "../../model/consts/articleConsts";
 import { Theme } from "@/shared/const/theme";
+import { ArticleSortField } from "@/entities/Article";
 
 const meta: Meta<typeof ArticleSortSelector> = {
-	title: "entities/Article/ArticleSortSelector",
+	title: "features/ArticleSortSelector",
 	component: ArticleSortSelector,
 	tags: ["autodocs"],
 };

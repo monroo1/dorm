@@ -3,8 +3,10 @@ import MainIcon from "@/shared/assets/icons/main-20-20.svg";
 import AboutIcon from "@/shared/assets/icons/about-20-20.svg";
 import ProfileIcon from "@/shared/assets/icons/profile-20-20.svg";
 import ArticleIcon from "@/shared/assets/icons/article-20-20.svg";
-import { RoutePath } from "@/shared/const/router";
 import { getSidebarItems } from "./getSidebarItems";
+import {
+	getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile,
+} from "@/shared/const/router";
 
 const data = {
 	id: "1",
@@ -21,23 +23,23 @@ describe("getSidebarItem.test", () => {
 		};
 		expect(getSidebarItems(state as StateSchema)).toEqual([
 			{
-				path: RoutePath.main,
+				path: getRouteMain(),
 				Icon: MainIcon,
 				text: "главная",
 			},
 			{
-				path: RoutePath.about,
+				path: getRouteAbout(),
 				Icon: AboutIcon,
 				text: "о нас",
 			},
 			{
-				path: `${RoutePath.profile}1`,
+				path: getRouteProfile("1"),
 				Icon: ProfileIcon,
 				text: "профиль",
 				authOnly: true,
 			},
 			{
-				path: RoutePath.articles,
+				path: getRouteArticles(),
 				Icon: ArticleIcon,
 				text: "статьи",
 				authOnly: true,
@@ -50,12 +52,12 @@ describe("getSidebarItem.test", () => {
 		};
 		expect(getSidebarItems(state as StateSchema)).toEqual([
 			{
-				path: RoutePath.main,
+				path: getRouteMain(),
 				Icon: MainIcon,
 				text: "главная",
 			},
 			{
-				path: RoutePath.about,
+				path: getRouteAbout(),
 				Icon: AboutIcon,
 				text: "о нас",
 			},

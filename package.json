@@ -25,7 +25,8 @@
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
     "storybook:build": "storybook build -c ./config/storybook",
     "prepare": "husky install",
-    "generate:slice": "node ./scripts/createSlice/index.js"
+    "generate:slice": "node ./scripts/createSlice/index.js",
+    "postinstall": "node ./scripts/clearCache.js"
   },
   "keywords": [],
   "author": "",
@@ -63,7 +64,6 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@vitejs/plugin-react": "^2.1.0",
     "babel-loader": "^8.2.3",
-    "babel-plugin-i18next-extract": "^0.8.3",
     "circular-dependency-plugin": "^5.2.2",
     "concurrently": "^8.2.0",
     "copy-webpack-plugin": "^10.2.4",
@@ -99,6 +99,7 @@
     "sass-loader": "^12.6.0",
     "storybook": "^7.0.24",
     "storybook-addon-fetch-mock": "^1.0.1",
+    "storybook-addon-themes": "^6.1.0",
     "style-loader": "^3.3.1",
     "stylelint": "^15.9.0",
     "stylelint-config-clean-order": "^5.0.1",
