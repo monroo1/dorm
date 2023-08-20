@@ -15,7 +15,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
 	const { className, articleId } = props;
 	const { t } = useTranslation("article");
 	const userData = useSelector(getUserAuthData);
-	const { data, isLoading, error } = useGetArticleRating({
+	const { data, isLoading } = useGetArticleRating({
 		articleId,
 		userId: userData?.id ?? "",
 	});
