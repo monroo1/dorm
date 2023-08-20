@@ -11,10 +11,11 @@ import { useThrottle } from "@/shared/lib/hooks/useThrottle/useThrottle";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { scrollRestorationActions } from "../model/slices/scrollRestorationSlice";
 import { getScrollRestorationsByPath } from "../model/selectors/scrollRestorationSelectors";
-import cls from "./Page.module.scss";
 import { PAGE_ID } from "@/shared/const/page";
+import { TestProps } from "@/shared/types/tests";
+import cls from "./Page.module.scss";
 
-interface PageProps {
+interface PageProps extends TestProps {
     className?: string;
     children: ReactNode;
 	onScrollEnd?: () => void;
@@ -57,6 +58,7 @@ export const Page = memo((props: PageProps) => {
 			className={classNames(cls.Page, {}, [className])}
 			onScroll={onScroll}
 			id={PAGE_ID}
+			data-testid={props["data-testid"] ?? "Page"}
 		>
 			{children}
 			{onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
