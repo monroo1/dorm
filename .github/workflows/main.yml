@@ -27,7 +27,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm cache verify
       - name: install modules
         run: npm i --force
       - name: build production project
@@ -69,7 +68,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm cache verify
       - name: install modules
         run: npm i --force
       - name: linting typescript
