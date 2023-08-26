@@ -1,18 +1,16 @@
-import { selectByTestId } from "cypress/helpers/selectByTestId";
-
 describe("Роутинг", () => {
 	describe("Пользователь не авторизован", () => {
 		it("Переход на главную страницу", () => {
 			cy.visit("/");
-			cy.get(selectByTestId("MainPage")).should("exist");
+			cy.getByTestId("MainPage").should("exist");
 		});
 		it("Переход открывает страницу профиля", () => {
 			cy.visit("/profile/1");
-			cy.get(selectByTestId("MainPage")).should("exist");
+			cy.getByTestId("MainPage").should("exist");
 		});
 		it("Переход на несуществующую страницу", () => {
 			cy.visit("/asdasdas");
-			cy.get(selectByTestId("NotFoundPage")).should("exist");
+			cy.getByTestId("NotFoundPage").should("exist");
 		});
 	});
 	describe("Пользователь авторизован под админом", () => {
@@ -21,15 +19,15 @@ describe("Роутинг", () => {
 		});
 		it("Переход открывает страницу профиля", () => {
 			cy.visit("/profile/1");
-			cy.get(selectByTestId("ProfilePage")).should("exist");
+			cy.getByTestId("ProfilePage").should("exist");
 		});
 		it("Переход открывает страницу статей", () => {
 			cy.visit("/articles");
-			cy.get(selectByTestId("ArticlesPage")).should("exist");
+			cy.getByTestId("ArticlesPage").should("exist");
 		});
 		it("Переход открывает панель администратора", () => {
 			cy.visit("/admin");
-			cy.get(selectByTestId("AdminPanelPage")).should("exist");
+			cy.getByTestId("AdminPanelPage").should("exist");
 		});
 	});
 	describe("Пользователь авторизован под юзером", () => {
@@ -38,7 +36,7 @@ describe("Роутинг", () => {
 		});
 		it("Переход открывает форбиден пэйдж", () => {
 			cy.visit("/admin");
-			cy.get(selectByTestId("ForbiddenPage")).should("exist");
+			cy.getByTestId("ForbiddenPage").should("exist");
 		});
 	});
 });

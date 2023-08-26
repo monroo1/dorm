@@ -114,12 +114,17 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 					/>
 
 				</HStack>
-				<VStack gap="4" max>
+				<VStack
+					gap="4"
+					max
+					data-testid="ArticleDetails.Info"
+				>
 					<Text
 						className={cls.title}
 						title={article?.title}
 						text={article?.subtitle}
 						size={TextSize.L}
+						data-testid="ArticleDetails.Title"
 					/>
 					<HStack gap="8" className={cls.articleInfo}>
 						<Icon Svg={EyeIcon} />

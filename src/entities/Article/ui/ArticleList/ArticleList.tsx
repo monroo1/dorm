@@ -55,7 +55,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
 	}
 
 	return (
-		<>
+		<div
+			data-testid="ArticleList"
+		>
 			{virtualized
 				? (
 					<VirtuosoGrid
@@ -86,6 +88,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
 					{isLoading && getSkeletons(view)}
 				</div>
 			)}
-		</>
+		</div>
 	);
 });
