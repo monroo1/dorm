@@ -11,6 +11,11 @@ describe("Пользователь заходит на страницу стат
 	afterEach(() => {
 		cy.removeArticle(currentArticleId);
 	});
+	// TODO
+	// describe("Работа с API", () => {
+	// });
+	// describe("Работа на стабах", () => {
+	// });
 	it("И видит содержиое статьи", () => {
 		cy.getByTestId("ArticleDetails.Info").should("exist");
 		cy.getByTestId("ArticleDetails.Title.Header").should("have.text", "TESTING ARTICLE");
@@ -25,6 +30,13 @@ describe("Пользователь заходит на страницу стат
 		cy.getByTestId("CommentCard.Content").should("have.length", 1);
 	});
 	it("И ставит оценку", () => {
+		cy.getByTestId("ArticleDetails.Info");
+		cy.getByTestId("RatingCard").scrollIntoView();
+		cy.setRate(4, "feedback");
+		cy.get("[data-selected=true]").should("have.length", 4);
+	});
+	it("И ставит оценку (пример с стабом на фикстурах)", () => {
+		cy.intercept("GET", "**/articles/*", { fixture: "article-details.json" });
 		cy.getByTestId("ArticleDetails.Info");
 		cy.getByTestId("RatingCard").scrollIntoView();
 		cy.setRate(4, "feedback");

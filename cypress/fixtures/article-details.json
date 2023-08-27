@@ -1,0 +1,22 @@
+{
+  "title": "TESTING ARTICLE",
+  "subtitle": "Что нового в JS за 2023 год?",
+  "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
+  "views": 972,
+  "createdAt": "14.07.2023",
+  "userId": "1",
+  "type": [
+    "IT"
+  ],
+  "blocks": [],
+  "id": "uhqrERv",
+  "user": {
+    "id": "1",
+    "username": "Andrey",
+    "password": "123",
+    "roles": [
+      "ADMIN"
+    ],
+    "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
+  }
+}
