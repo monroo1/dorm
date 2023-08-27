@@ -3,13 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Page } from "@/widgets/Page";
 
 const MainPage = memo(() => {
-	const { t } = useTranslation("main");
+    const { t } = useTranslation("main");
 
-	return (
-		<Page data-testid="MainPage">
-			{t("главная страница")}
-		</Page>
-	);
+    return <Page data-testid="MainPage">{t("главная страница")}</Page>;
 });
 
 export default MainPage;

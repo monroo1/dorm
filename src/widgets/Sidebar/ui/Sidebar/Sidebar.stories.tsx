@@ -6,44 +6,39 @@ import { Sidebar } from "./Sidebar";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Sidebar> = {
-	title: "widgets/Sidebar",
-	component: Sidebar,
-	tags: ["autodocs"],
+    title: "widgets/Sidebar",
+    component: Sidebar,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof Sidebar>;
 
 export const NoAuth: Story = {
-	decorators: [
-		StoreDecorator({}),
-	],
+    decorators: [StoreDecorator({})],
 };
 
 export const Auth: Story = {
-	decorators: [
-		StoreDecorator({
-			user: {
-				authData: {},
-			},
-		}),
-	],
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {},
+            },
+        }),
+    ],
 };
 
 export const NoAuthDark: Story = {
-	decorators: [
-		StoreDecorator({}),
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [StoreDecorator({}), ThemeDecorator(Theme.DARK)],
 };
 
 export const AuthDark: Story = {
-	decorators: [
-		StoreDecorator({
-			user: {
-				authData: {},
-			},
-		}),
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {},
+            },
+        }),
+        ThemeDecorator(Theme.DARK),
+    ],
 };

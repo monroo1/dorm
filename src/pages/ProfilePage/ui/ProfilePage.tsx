@@ -9,25 +9,28 @@ import { ProfileRating } from "@/features/profileRating";
 import { getUserAuthData } from "@/entities/User";
 
 interface ProfilePageProps {
-	className?: string;
+    className?: string;
 }
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
-	const { id } = useParams<{ id: string }>();
-	const userData = useSelector(getUserAuthData);
+    const { id } = useParams<{ id: string }>();
+    const userData = useSelector(getUserAuthData);
 
-	if (!id) {
-		return null;
-	}
+    if (!id) {
+        return null;
+    }
 
-	return (
-		<Page data-testid="ProfilePage" className={classNames("", {}, [className])}>
-			<VStack gap="16" max>
-				<EditableProfileCard id={id} />
-				{userData?.id !== id && <ProfileRating profileId={id} />}
-			</VStack>
-		</Page>
-	);
+    return (
+        <Page
+            data-testid="ProfilePage"
+            className={classNames("", {}, [className])}
+        >
+            <VStack gap="16" max>
+                <EditableProfileCard id={id} />
+                {userData?.id !== id && <ProfileRating profileId={id} />}
+            </VStack>
+        </Page>
+    );
 });
 
 export default ProfilePage;

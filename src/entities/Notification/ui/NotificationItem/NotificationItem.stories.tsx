@@ -4,46 +4,42 @@ import { NotificationItem } from "./NotificationItem";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof NotificationItem> = {
-	title: "entities/Notification/NotificationItem",
-	component: NotificationItem,
-	tags: ["autodocs"],
+    title: "entities/Notification/NotificationItem",
+    component: NotificationItem,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof NotificationItem>;
 
 export const Normal: Story = {
-	args: {
-		item: {
-			id: "1",
-			title: "Уведомление 1",
-			description: "description Уведомление 1",
-		},
-	},
+    args: {
+        item: {
+            id: "1",
+            title: "Уведомление 1",
+            description: "description Уведомление 1",
+        },
+    },
 };
 
 export const Dark: Story = {
-	args: {
-		item: {
-			id: "1",
-			title: "Уведомление 1",
-			description: "description Уведомление 1",
-		},
-	},
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    args: {
+        item: {
+            id: "1",
+            title: "Уведомление 1",
+            description: "description Уведомление 1",
+        },
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const Orange: Story = {
-	args: {
-		item: {
-			id: "1",
-			title: "Уведомление 1",
-			description: "description Уведомление 1",
-		},
-	},
-	decorators: [
-		ThemeDecorator(Theme.ORANGE),
-	],
+    args: {
+        item: {
+            id: "1",
+            title: "Уведомление 1",
+            description: "description Уведомление 1",
+        },
+    },
+    decorators: [ThemeDecorator(Theme.ORANGE)],
 };

@@ -9,36 +9,31 @@ interface ArticleRecommendationsListProps {
     className?: string;
 }
 
-export const ArticleRecommendationsList = memo((props: ArticleRecommendationsListProps) => {
-	const { className } = props;
-	const { t } = useTranslation("article");
-	const { isLoading, data: articles = [], error } = useArticleRecommendationsList(4);
+export const ArticleRecommendationsList = memo(
+    (props: ArticleRecommendationsListProps) => {
+        const { className } = props;
+        const { t } = useTranslation("article");
+        const {
+            isLoading,
+            data: articles = [],
+            error,
+        } = useArticleRecommendationsList(4);
 
-	if (error && !isLoading) {
-		return (
-			<div>
-				{t("ошибка при получении статей")}
-			</div>
-		);
-	}
+        if (error && !isLoading) {
+            return <div>{t("ошибка при получении статей")}</div>;
+        }
 
-	return (
-		<VStack
-			gap="8"
-			max
-			data-testid="ArticleRecommendationsList"
-		>
-			<Text
-				size={TextSize.L}
-				title={t("рекомендуем")}
-			/>
-			<ArticleList
-				articles={articles}
-				isLoading={isLoading}
-				className={className}
-				target="_blank"
-				virtualized={false}
-			/>
-		</VStack>
-	);
-});
+        return (
+            <VStack gap="8" max data-testid="ArticleRecommendationsList">
+                <Text size={TextSize.L} title={t("рекомендуем")} />
+                <ArticleList
+                    articles={articles}
+                    isLoading={isLoading}
+                    className={className}
+                    target="_blank"
+                    virtualized={false}
+                />
+            </VStack>
+        );
+    },
+);

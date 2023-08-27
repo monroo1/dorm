@@ -4,36 +4,36 @@ import { Currency } from "@/entities/Currency";
 import { fetchProfileData } from "./fetchProfileData";
 
 const data = {
-	id: "1",
-	username: "admin",
-	age: 22,
-	country: Country.Armenia,
-	city: "Moscow",
-	currency: Currency.USD,
-	first: "Andrey",
-	lastname: "Monroo",
-	avatar: "avatar",
+    id: "1",
+    username: "admin",
+    age: 22,
+    country: Country.Armenia,
+    city: "Moscow",
+    currency: Currency.USD,
+    first: "Andrey",
+    lastname: "Monroo",
+    avatar: "avatar",
 };
 
 describe("fetchProfileData.test", () => {
-	test("success fetch", async () => {
-		const thunk = new TestAsyncThunk(fetchProfileData);
-		thunk.api.get.mockReturnValue(Promise.resolve({ data }));
+    test("success fetch", async () => {
+        const thunk = new TestAsyncThunk(fetchProfileData);
+        thunk.api.get.mockReturnValue(Promise.resolve({ data }));
 
-		const result = await thunk.callThunk("1");
+        const result = await thunk.callThunk("1");
 
-		expect(thunk.api.get).toHaveBeenCalled();
-		expect(result.meta.requestStatus).toBe("fulfilled");
-		expect(result.payload).toEqual(data);
-	});
+        expect(thunk.api.get).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe("fulfilled");
+        expect(result.payload).toEqual(data);
+    });
 
-	test("error fetch", async () => {
-		const thunk = new TestAsyncThunk(fetchProfileData);
-		thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
+    test("error fetch", async () => {
+        const thunk = new TestAsyncThunk(fetchProfileData);
+        thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }));
 
-		const result = await thunk.callThunk("1");
+        const result = await thunk.callThunk("1");
 
-		expect(thunk.api.get).toHaveBeenCalled();
-		expect(result.meta.requestStatus).toBe("rejected");
-	});
+        expect(thunk.api.get).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe("rejected");
+    });
 });

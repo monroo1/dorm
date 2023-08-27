@@ -1,9 +1,9 @@
 name: linting, testing, building
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 permissions:
   contents: write
   pages: write
@@ -15,12 +15,12 @@ jobs:
   build-and-ui-testing:
     runs-on: windows-latest
     concurrency: ci-${{ github.ref }}
-    environment: 
+    environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     strategy:
-        matrix:
-            node-version: [18.x]
+      matrix:
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
@@ -56,12 +56,12 @@ jobs:
         id: deployment
         if: always()
         uses: actions/deploy-pages@v1
-        
+
   checks:
     runs-on: windows-latest
     strategy:
       matrix:
-        node-version: [ 18.x ]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}

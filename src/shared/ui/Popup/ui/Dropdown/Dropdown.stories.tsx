@@ -6,119 +6,117 @@ import { Button } from "../../../Button/Button";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Dropdown> = {
-	title: "shared/Dropdown",
-	component: Dropdown,
-	tags: ["autodocs"],
+    title: "shared/Dropdown",
+    component: Dropdown,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
 export const Normal: Story = {
-	args: {
-		trigger: <Button>Open</Button>,
-		items: [
-			{
-				content: "first",
-			},
-			{
-				content: "second",
-			},
-			{
-				content: "third",
-			},
-		],
-	},
+    args: {
+        trigger: <Button>Open</Button>,
+        items: [
+            {
+                content: "first",
+            },
+            {
+                content: "second",
+            },
+            {
+                content: "third",
+            },
+        ],
+    },
 };
 
 export const BottomLeft: Story = {
-	args: {
-		direction: "bottom left",
-		trigger: <Button>Open</Button>,
-		items: [
-			{
-				content: "first",
-			},
-			{
-				content: "second",
-			},
-			{
-				content: "third",
-			},
-		],
-	},
+    args: {
+        direction: "bottom left",
+        trigger: <Button>Open</Button>,
+        items: [
+            {
+                content: "first",
+            },
+            {
+                content: "second",
+            },
+            {
+                content: "third",
+            },
+        ],
+    },
 };
 
 export const BottomRight: Story = {
-	args: {
-		direction: "bottom right",
-		trigger: <Button>Open</Button>,
-		items: [
-			{
-				content: "first",
-			},
-			{
-				content: "second",
-			},
-			{
-				content: "third",
-			},
-		],
-	},
+    args: {
+        direction: "bottom right",
+        trigger: <Button>Open</Button>,
+        items: [
+            {
+                content: "first",
+            },
+            {
+                content: "second",
+            },
+            {
+                content: "third",
+            },
+        ],
+    },
 };
 
 export const TopLeft: Story = {
-	args: {
-		direction: "top left",
-		trigger: <Button>Open</Button>,
-		items: [
-			{
-				content: "first",
-			},
-			{
-				content: "second",
-			},
-			{
-				content: "third",
-			},
-		],
-	},
+    args: {
+        direction: "top left",
+        trigger: <Button>Open</Button>,
+        items: [
+            {
+                content: "first",
+            },
+            {
+                content: "second",
+            },
+            {
+                content: "third",
+            },
+        ],
+    },
 };
 
 export const TopRight: Story = {
-	args: {
-		direction: "top right",
-		trigger: <Button>Open</Button>,
-		items: [
-			{
-				content: "first",
-			},
-			{
-				content: "second",
-			},
-			{
-				content: "third",
-			},
-		],
-	},
+    args: {
+        direction: "top right",
+        trigger: <Button>Open</Button>,
+        items: [
+            {
+                content: "first",
+            },
+            {
+                content: "second",
+            },
+            {
+                content: "third",
+            },
+        ],
+    },
 };
 
 export const Dark: Story = {
-	args: {
-		trigger: <Button>Open</Button>,
-		items: [
-			{
-				content: "first",
-			},
-			{
-				content: "second",
-			},
-			{
-				content: "third",
-			},
-		],
-	},
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    args: {
+        trigger: <Button>Open</Button>,
+        items: [
+            {
+                content: "first",
+            },
+            {
+                content: "second",
+            },
+            {
+                content: "third",
+            },
+        ],
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

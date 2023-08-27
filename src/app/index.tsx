@@ -8,25 +8,26 @@ import { classNames } from "@/shared/lib/classNames/classNames";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
 
 function App() {
-	const { theme } = useTheme();
-	const dispatch = useDispatch();
-	const inited = useSelector(getUserInited);
+    const { theme } = useTheme();
 
-	useEffect(() => {
-		dispatch(userActions.initAuthData());
-	}, [dispatch]);
+    const dispatch = useDispatch();
+    const inited = useSelector(getUserInited);
 
-	return (
-		<div className={classNames("app", {}, [theme])}>
-			<Suspense fallback="">
-				<Navbar />
-				<div className="content-page">
-					<Sidebar />
-					{inited && <AppRouter />}
-				</div>
-			</Suspense>
-		</div>
-	);
+    useEffect(() => {
+        dispatch(userActions.initAuthData());
+    }, [dispatch]);
+
+    return (
+        <div className={classNames("app", {}, [theme])}>
+            <Suspense fallback="">
+                <Navbar />
+                <div className="content-page">
+                    <Sidebar />
+                    {inited && <AppRouter />}
+                </div>
+            </Suspense>
+        </div>
+    );
 }
 
 export default App;

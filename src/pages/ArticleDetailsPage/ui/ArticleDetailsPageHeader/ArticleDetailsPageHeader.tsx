@@ -10,38 +10,40 @@ import { getCanEditArticle } from "../../model/selectors/canEditArticle/canEditA
 import { getRouteArticleEdit, getRouteArticles } from "@/shared/const/router";
 
 interface ArticleDetailsPageHeaderProps {
-	className?: string;
+    className?: string;
 }
 
-export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
-	const {
-		className,
-	} = props;
-	const { t } = useTranslation("article");
-	const navigate = useNavigate();
-	const canEdit = useSelector(getCanEditArticle);
-	const article = useSelector(getArticleDetailsData);
+export const ArticleDetailsPageHeader = memo(
+    (props: ArticleDetailsPageHeaderProps) => {
+        const { className } = props;
+        const { t } = useTranslation("article");
+        const navigate = useNavigate();
+        const canEdit = useSelector(getCanEditArticle);
+        const article = useSelector(getArticleDetailsData);
 
-	const onBackToList = useCallback(() => {
-		navigate(getRouteArticles());
-	}, [navigate]);
+        const onBackToList = useCallback(() => {
+            navigate(getRouteArticles());
+        }, [navigate]);
 
-	const onEditArticle = useCallback(() => {
-		if (article) {
-			navigate(getRouteArticleEdit(article.id));
-		}
-	}, [navigate, article]);
+        const onEditArticle = useCallback(() => {
+            if (article) {
+                navigate(getRouteArticleEdit(article.id));
+            }
+        }, [navigate, article]);
 
-	return (
-		<HStack max justify="between" className={classNames("", {}, [className])}>
-			<Button onClick={onBackToList}>
-				{t("назад к списку")}
-			</Button>
-			{canEdit && (
-				<Button onClick={onEditArticle}>
-					{t("редактировать")}
-				</Button>
-			)}
-		</HStack>
-	);
-});
+        return (
+            <HStack
+                max
+                justify="between"
+                className={classNames("", {}, [className])}
+            >
+                <Button onClick={onBackToList}>{t("назад к списку")}</Button>
+                {canEdit && (
+                    <Button onClick={onEditArticle}>
+                        {t("редактировать")}
+                    </Button>
+                )}
+            </HStack>
+        );
+    },
+);

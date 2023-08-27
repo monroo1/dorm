@@ -4,45 +4,42 @@ import { TabItem, Tabs } from "@/shared/ui/Tabs";
 import { ArticleType } from "@/entities/Article";
 
 interface ArticleTypeTabsProps {
-	value: ArticleType;
-	onChangeType: (type: ArticleType) => void;
+    value: ArticleType;
+    onChangeType: (type: ArticleType) => void;
 }
 
 export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
-	const {
-		value,
-		onChangeType,
-	} = props;
-	const { t } = useTranslation("article");
+    const { value, onChangeType } = props;
+    const { t } = useTranslation("article");
 
-	const typeTabs = useMemo<TabItem<ArticleType>[]>(() => [
-		{
-			value: ArticleType.ALL,
-			content: t("все"),
-		},
-		{
-			value: ArticleType.IT,
-			content: t("айти"),
-		},
-		{
-			value: ArticleType.ECONOMICS,
-			content: t("экономика"),
-		},
-		{
-			value: ArticleType.SCIENCE,
-			content: t("наука"),
-		},
-	], [t]);
+    const typeTabs = useMemo<TabItem<ArticleType>[]>(
+        () => [
+            {
+                value: ArticleType.ALL,
+                content: t("все"),
+            },
+            {
+                value: ArticleType.IT,
+                content: t("айти"),
+            },
+            {
+                value: ArticleType.ECONOMICS,
+                content: t("экономика"),
+            },
+            {
+                value: ArticleType.SCIENCE,
+                content: t("наука"),
+            },
+        ],
+        [t],
+    );
 
-	const onTabClick = useCallback((tabItem: TabItem<ArticleType>) => {
-		onChangeType(tabItem.value);
-	}, [onChangeType]);
+    const onTabClick = useCallback(
+        (tabItem: TabItem<ArticleType>) => {
+            onChangeType(tabItem.value);
+        },
+        [onChangeType],
+    );
 
-	return (
-		<Tabs
-			tabs={typeTabs}
-			value={value}
-			onTabClick={onTabClick}
-		/>
-	);
+    return <Tabs tabs={typeTabs} value={value} onTabClick={onTabClick} />;
 });

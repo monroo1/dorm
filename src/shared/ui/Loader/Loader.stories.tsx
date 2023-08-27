@@ -4,19 +4,16 @@ import { Loader } from "./Loader";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Loader> = {
-	title: "shared/Loader",
-	component: Loader,
-	tags: ["autodocs"],
+    title: "shared/Loader",
+    component: Loader,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof Loader>;
 
-export const Normal: Story = {
-};
+export const Normal: Story = {};
 
 export const Dark: Story = {
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

@@ -6,59 +6,57 @@ import { Popover } from "./Popover";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Popover> = {
-	title: "shared/Popover",
-	component: Popover,
-	tags: ["autodocs"],
+    title: "shared/Popover",
+    component: Popover,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof Popover>;
 
 export const Normal: Story = {
-	args: {
-		trigger: <Button>Open</Button>,
-		children: "asdasdasdasdasdasdsd",
-	},
+    args: {
+        trigger: <Button>Open</Button>,
+        children: "asdasdasdasdasdasdsd",
+    },
 };
 
 export const BottomLeft: Story = {
-	args: {
-		direction: "bottom left",
-		trigger: <Button>Open</Button>,
-		children: "asdasdasdasdasdasdsd",
-	},
+    args: {
+        direction: "bottom left",
+        trigger: <Button>Open</Button>,
+        children: "asdasdasdasdasdasdsd",
+    },
 };
 
 export const BottomRight: Story = {
-	args: {
-		direction: "bottom right",
-		trigger: <Button>Open</Button>,
-		children: "asdasdasdasdasdasdsd",
-	},
+    args: {
+        direction: "bottom right",
+        trigger: <Button>Open</Button>,
+        children: "asdasdasdasdasdasdsd",
+    },
 };
 
 export const TopLeft: Story = {
-	args: {
-		direction: "top left",
-		trigger: <Button>Open</Button>,
-		children: "asdasdasdasdasdasdsd",
-	},
+    args: {
+        direction: "top left",
+        trigger: <Button>Open</Button>,
+        children: "asdasdasdasdasdasdsd",
+    },
 };
 
 export const TopRight: Story = {
-	args: {
-		direction: "top right",
-		trigger: <Button>Open</Button>,
-		children: "asdasdasdasdasdasdsd",
-	},
+    args: {
+        direction: "top right",
+        trigger: <Button>Open</Button>,
+        children: "asdasdasdasdasdasdsd",
+    },
 };
 
 export const Dark: Story = {
-	args: {
-		trigger: <Button>Open</Button>,
-		children: "asdasdasdasdasdasdsd",
-	},
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    args: {
+        trigger: <Button>Open</Button>,
+        children: "asdasdasdasdasdasdsd",
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

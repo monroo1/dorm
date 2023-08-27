@@ -5,49 +5,48 @@ import AddCommentForm from "./AddCommentForm";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof AddCommentForm> = {
-	title: "features/AddCommentForm",
-	component: AddCommentForm,
-	tags: ["autodocs"],
+    title: "features/AddCommentForm",
+    component: AddCommentForm,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof AddCommentForm>;
 
 export const Normal: Story = {
-	args: {
-	},
-	decorators: [StoreDecorator({
-		addCommentForm: {
-			text: "asv",
-			error: undefined,
-		},
-	})],
+    args: {},
+    decorators: [
+        StoreDecorator({
+            addCommentForm: {
+                text: "asv",
+                error: undefined,
+            },
+        }),
+    ],
 };
 
 export const Dark: Story = {
-	args: {
-	},
-	decorators: [
-		StoreDecorator({
-			addCommentForm: {
-				text: "asv",
-				error: undefined,
-			},
-		}),
-		ThemeDecorator(Theme.DARK),
-	],
+    args: {},
+    decorators: [
+        StoreDecorator({
+            addCommentForm: {
+                text: "asv",
+                error: undefined,
+            },
+        }),
+        ThemeDecorator(Theme.DARK),
+    ],
 };
 
 export const Orange: Story = {
-	args: {
-	},
-	decorators: [
-		StoreDecorator({
-			addCommentForm: {
-				text: "asv",
-				error: undefined,
-			},
-		}),
-		ThemeDecorator(Theme.ORANGE),
-	],
+    args: {},
+    decorators: [
+        StoreDecorator({
+            addCommentForm: {
+                text: "asv",
+                error: undefined,
+            },
+        }),
+        ThemeDecorator(Theme.ORANGE),
+    ],
 };

@@ -5,23 +5,18 @@ import { NotFoundPage } from "./NotFoundPage";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof NotFoundPage> = {
-	title: "pages/NotFoundPage",
-	component: NotFoundPage,
-	tags: ["autodocs"],
+    title: "pages/NotFoundPage",
+    component: NotFoundPage,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof NotFoundPage>;
 
 export const Normal: Story = {
-	decorators: [
-		StoreDecorator({}),
-	],
+    decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
-	decorators: [
-		StoreDecorator({}),
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [StoreDecorator({}), ThemeDecorator(Theme.DARK)],
 };

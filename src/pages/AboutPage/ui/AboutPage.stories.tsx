@@ -5,23 +5,18 @@ import AboutPage from "./AboutPage";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof AboutPage> = {
-	title: "pages/AboutPage",
-	component: AboutPage,
-	tags: ["autodocs"],
+    title: "pages/AboutPage",
+    component: AboutPage,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof AboutPage>;
 
 export const Normal: Story = {
-	decorators: [
-		StoreDecorator({}),
-	],
+    decorators: [StoreDecorator({})],
 };
 
 export const Dark: Story = {
-	decorators: [
-		StoreDecorator({}),
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [StoreDecorator({}), ThemeDecorator(Theme.DARK)],
 };

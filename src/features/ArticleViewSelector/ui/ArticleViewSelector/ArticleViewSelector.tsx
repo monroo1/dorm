@@ -14,41 +14,41 @@ interface ArticleViewSelectorProps {
 }
 
 const viewTypes = [
-	{
-		view: ArticleView.SMALL,
-		icon: TiledIcon,
-	},
-	{
-		view: ArticleView.BIG,
-		icon: ListIcon,
-	},
+    {
+        view: ArticleView.SMALL,
+        icon: TiledIcon,
+    },
+    {
+        view: ArticleView.BIG,
+        icon: ListIcon,
+    },
 ];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
-	const { className, view, onViewClick } = props;
+    const { className, view, onViewClick } = props;
 
-	const onClick = (newView: ArticleView) => () => {
-		onViewClick?.(newView);
-	};
+    const onClick = (newView: ArticleView) => () => {
+        onViewClick?.(newView);
+    };
 
-	return (
-		<div className={classNames("", {}, [className])}>
-			{viewTypes.map((viewType) => (
-				<Button
-					theme={ButtonTheme.CLEAR}
-					onClick={onClick(viewType.view)}
-					key={viewType.view}
-				>
-					<Icon
-						Svg={viewType.icon}
-						className={classNames(
-							cls.icon,
-							{ [cls.notSelected]: viewType.view !== view },
-							[],
-						)}
-					/>
-				</Button>
-			))}
-		</div>
-	);
+    return (
+        <div className={classNames("", {}, [className])}>
+            {viewTypes.map((viewType) => (
+                <Button
+                    theme={ButtonTheme.CLEAR}
+                    onClick={onClick(viewType.view)}
+                    key={viewType.view}
+                >
+                    <Icon
+                        Svg={viewType.icon}
+                        className={classNames(
+                            cls.icon,
+                            { [cls.notSelected]: viewType.view !== view },
+                            [],
+                        )}
+                    />
+                </Button>
+            ))}
+        </div>
+    );
 });

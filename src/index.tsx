@@ -9,17 +9,17 @@ import "@/app/styles/index.scss";
 
 const container = document.getElementById("root");
 if (!container) {
-	throw new Error("Не найден контейнер приложения!");
+    throw new Error("Не найден контейнер приложения!");
 }
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 root.render(
-	<BrowserRouter>
-		<StoreProvider>
-			<ErrorBoundary>
-				<ThemeProvider>
-					<App />
-				</ThemeProvider>
-			</ErrorBoundary>
-		</StoreProvider>
-	</BrowserRouter>,
+    <BrowserRouter>
+        <StoreProvider>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <App />
+                </ThemeProvider>
+            </ErrorBoundary>
+        </StoreProvider>
+    </BrowserRouter>,
 );

@@ -9,116 +9,117 @@ import ProfilePage from "./ProfilePage";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof ProfilePage> = {
-	title: "pages/ProfilePage",
-	component: ProfilePage,
-	tags: ["autodocs"],
+    title: "pages/ProfilePage",
+    component: ProfilePage,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof ProfilePage>;
 
 const data = {
-	id: "1",
-	username: "admin",
-	age: 22,
-	country: Country.Armenia,
-	city: "Moscow",
-	currency: Currency.USD,
-	first: "Andrey",
-	lastname: "Monroo",
-	avatar: Avatar,
+    id: "1",
+    username: "admin",
+    age: 22,
+    country: Country.Armenia,
+    city: "Moscow",
+    currency: Currency.USD,
+    first: "Andrey",
+    lastname: "Monroo",
+    avatar: Avatar,
 };
 
 export const Primary: Story = {
-	decorators: [
-		StoreDecorator({
-			profile: {
-				readonly: true,
-				form: data,
-			},
-		}),
-	],
+    decorators: [
+        StoreDecorator({
+            profile: {
+                readonly: true,
+                form: data,
+            },
+        }),
+    ],
 };
 
 export const Editing: Story = {
-	decorators: [
-		StoreDecorator({
-			profile: {
-				readonly: false,
-				form: data,
-				data,
-			},
-			user: {
-				authData: {
-					id: "1",
-				},
-			},
-		}),
-	],
+    decorators: [
+        StoreDecorator({
+            profile: {
+                readonly: false,
+                form: data,
+                data,
+            },
+            user: {
+                authData: {
+                    id: "1",
+                },
+            },
+        }),
+    ],
 };
 
 export const Error: Story = {
-	decorators: [
-		StoreDecorator({
-			profile: {
-				readonly: false,
-				form: data,
-				validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
-				data,
-			},
-			user: {
-				authData: {
-					id: "1",
-				},
-			},
-		}),
-	],
+    decorators: [
+        StoreDecorator({
+            profile: {
+                readonly: false,
+                form: data,
+                validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
+                data,
+            },
+            user: {
+                authData: {
+                    id: "1",
+                },
+            },
+        }),
+    ],
 };
 
 export const PrimaryDark: Story = {
-	decorators: [
-		StoreDecorator({
-			profile: {
-				readonly: true,
-				form: data,
-			},
-		}),
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [
+        StoreDecorator({
+            profile: {
+                readonly: true,
+                form: data,
+            },
+        }),
+        ThemeDecorator(Theme.DARK),
+    ],
 };
 
 export const EditingDark: Story = {
-	decorators: [
-		StoreDecorator({
-			profile: {
-				readonly: false,
-				form: data,
-				data,
-			},
-			user: {
-				authData: {
-					id: "1",
-				},
-			},
-		}),
-		ThemeDecorator(Theme.DARK)],
+    decorators: [
+        StoreDecorator({
+            profile: {
+                readonly: false,
+                form: data,
+                data,
+            },
+            user: {
+                authData: {
+                    id: "1",
+                },
+            },
+        }),
+        ThemeDecorator(Theme.DARK),
+    ],
 };
 
 export const ErrorDark: Story = {
-	decorators: [
-		StoreDecorator({
-			profile: {
-				readonly: false,
-				form: data,
-				validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
-				data,
-			},
-			user: {
-				authData: {
-					id: "1",
-				},
-			},
-		}),
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [
+        StoreDecorator({
+            profile: {
+                readonly: false,
+                form: data,
+                validateErrors: [ValidateProfileError.INCORRECT_USER_DATA],
+                data,
+            },
+            user: {
+                authData: {
+                    id: "1",
+                },
+            },
+        }),
+        ThemeDecorator(Theme.DARK),
+    ],
 };

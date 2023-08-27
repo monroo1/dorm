@@ -14,57 +14,57 @@ import { HStack } from "@/shared/ui/Stack";
 import cls from "./Navbar.module.scss";
 
 interface NavbarProps {
-	className?: string;
+    className?: string;
 }
 
 export const Navbar = memo(({ className }: NavbarProps) => {
-	const { t } = useTranslation();
-	const [isAuthModal, setIsAuthModal] = useState(false);
-	const authData = useSelector(getUserAuthData);
+    const { t } = useTranslation();
+    const [isAuthModal, setIsAuthModal] = useState(false);
+    const authData = useSelector(getUserAuthData);
 
-	const onCloseModal = useCallback(() => {
-		setIsAuthModal(false);
-	}, []);
+    const onCloseModal = useCallback(() => {
+        setIsAuthModal(false);
+    }, []);
 
-	const onShowModal = useCallback(() => {
-		setIsAuthModal(true);
-	}, []);
+    const onShowModal = useCallback(() => {
+        setIsAuthModal(true);
+    }, []);
 
-	if (authData) {
-		return (
-			<header className={classNames(cls.Navbar, {}, [className])}>
-				<Text
-					className={cls.appName}
-					title={t("monroo app")}
-					theme={TextTheme.INVERTED}
-				/>
-				<AppLink
-					to={getRouteArticleCreate()}
-					theme={AppLinkTheme.SECONDARY}
-					className={cls.createLink}
-				>
-					{t("создать статью")}
-				</AppLink>
-				<HStack gap="16" className={cls.actions}>
-					<NotificationButton />
-					<AvatarDropdown />
-				</HStack>
+    if (authData) {
+        return (
+            <header className={classNames(cls.Navbar, {}, [className])}>
+                <Text
+                    className={cls.appName}
+                    title={t("monroo app")}
+                    theme={TextTheme.INVERTED}
+                />
+                <AppLink
+                    to={getRouteArticleCreate()}
+                    theme={AppLinkTheme.SECONDARY}
+                    className={cls.createLink}
+                >
+                    {t("создать статью")}
+                </AppLink>
+                <HStack gap="16" className={cls.actions}>
+                    <NotificationButton />
+                    <AvatarDropdown />
+                </HStack>
+            </header>
+        );
+    }
 
-			</header>
-		);
-	}
-
-	return (
-		<header className={classNames(cls.Navbar, {}, [className])}>
-			<Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
-				{t("войти")}
-			</Button>
-			{isAuthModal && (
-				<LoginModal
-					isOpen={isAuthModal}
-					onClose={onCloseModal}
-				/>
-			)}
-		</header>
-	);
+    return (
+        <header className={classNames(cls.Navbar, {}, [className])}>
+            <Button
+                theme={ButtonTheme.CLEAR_INVERTED}
+                className={cls.links}
+                onClick={onShowModal}
+            >
+                {t("войти")}
+            </Button>
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
+        </header>
+    );
 });

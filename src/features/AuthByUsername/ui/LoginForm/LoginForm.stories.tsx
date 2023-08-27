@@ -5,100 +5,100 @@ import LoginForm from "./LoginForm";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof LoginForm> = {
-	title: "features/LoginForm",
-	component: LoginForm,
-	tags: ["autodocs"],
+    title: "features/LoginForm",
+    component: LoginForm,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof LoginForm>;
 
 export const Primary: Story = {
-	decorators: [
-		StoreDecorator({ loginForm: { username: "andrey", password: "1234" } }),
-	],
+    decorators: [
+        StoreDecorator({ loginForm: { username: "andrey", password: "1234" } }),
+    ],
 };
 
 export const Dark: Story = {
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-		StoreDecorator({ loginForm: { username: "andrey", password: "1234" } }),
-	],
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({ loginForm: { username: "andrey", password: "1234" } }),
+    ],
 };
 
 export const Error: Story = {
-	decorators: [
-		StoreDecorator({
-			loginForm: {
-				username: "andrey",
-				password: "1234",
-				error: "Вы ввели неверный логин или пароль",
-			},
-		}),
-	],
+    decorators: [
+        StoreDecorator({
+            loginForm: {
+                username: "andrey",
+                password: "1234",
+                error: "Вы ввели неверный логин или пароль",
+            },
+        }),
+    ],
 };
 
 export const ErrorDark: Story = {
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-		StoreDecorator({
-			loginForm: {
-				username: "andrey",
-				password: "1234",
-				error: "Вы ввели неверный логин или пароль",
-			},
-		}),
-	],
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({
+            loginForm: {
+                username: "andrey",
+                password: "1234",
+                error: "Вы ввели неверный логин или пароль",
+            },
+        }),
+    ],
 };
 
 export const Loading: Story = {
-	decorators: [
-		StoreDecorator({
-			loginForm: {
-				username: "andrey",
-				password: "1234",
-				isLoading: true,
-			},
-		}),
-	],
+    decorators: [
+        StoreDecorator({
+            loginForm: {
+                username: "andrey",
+                password: "1234",
+                isLoading: true,
+            },
+        }),
+    ],
 };
 
 export const LoadingDark: Story = {
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-		StoreDecorator({
-			loginForm: {
-				username: "andrey",
-				password: "1234",
-				isLoading: true,
-			},
-		}),
-	],
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({
+            loginForm: {
+                username: "andrey",
+                password: "1234",
+                isLoading: true,
+            },
+        }),
+    ],
 };
 
 export const LoadingError: Story = {
-	decorators: [
-		StoreDecorator({
-			loginForm: {
-				username: "andrey",
-				password: "1234",
-				isLoading: true,
-				error: "Вы ввели неверный логин или пароль",
-			},
-		}),
-	],
+    decorators: [
+        StoreDecorator({
+            loginForm: {
+                username: "andrey",
+                password: "1234",
+                isLoading: true,
+                error: "Вы ввели неверный логин или пароль",
+            },
+        }),
+    ],
 };
 
 export const LoadingErrorDark: Story = {
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-		StoreDecorator({
-			loginForm: {
-				username: "andrey",
-				password: "1234",
-				isLoading: true,
-				error: "Вы ввели неверный логин или пароль",
-			},
-		}),
-	],
+    decorators: [
+        ThemeDecorator(Theme.DARK),
+        StoreDecorator({
+            loginForm: {
+                username: "andrey",
+                password: "1234",
+                isLoading: true,
+                error: "Вы ввели неверный логин или пароль",
+            },
+        }),
+    ],
 };

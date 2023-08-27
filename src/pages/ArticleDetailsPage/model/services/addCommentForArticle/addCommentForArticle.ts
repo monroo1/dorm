@@ -9,36 +9,31 @@ export const addCommentForArticle = createAsyncThunk<
     Comment,
     string,
     ThunkConfig<string>
->(
-	"articleDetails/addCommentForArticle",
-	async (text, thunkAPI) => {
-		const {
-			extra, dispatch, rejectWithValue, getState,
-		} = thunkAPI;
+>("articleDetails/addCommentForArticle", async (text, thunkAPI) => {
+    const { extra, dispatch, rejectWithValue, getState } = thunkAPI;
 
-		const userData = getUserAuthData(getState());
-		const article = getArticleDetailsData(getState());
+    const userData = getUserAuthData(getState());
+    const article = getArticleDetailsData(getState());
 
-		if (!userData || !article || !text) {
-			return rejectWithValue("ошибка при создании комментария статьи");
-		}
+    if (!userData || !article || !text) {
+        return rejectWithValue("ошибка при создании комментария статьи");
+    }
 
-		try {
-			const response = await extra.api.post<Comment>("/comments", {
-				articleId: article.id,
-				userId: userData.id,
-				text,
-			});
+    try {
+        const response = await extra.api.post<Comment>("/comments", {
+            articleId: article.id,
+            userId: userData.id,
+            text,
+        });
 
-			if (!response.data) {
-				throw new Error();
-			}
+        if (!response.data) {
+            throw new Error();
+        }
 
-			dispatch(fetchCommentsByArticleId(article.id));
+        dispatch(fetchCommentsByArticleId(article.id));
 
-			return response.data;
-		} catch (e) {
-			return rejectWithValue("ошибка при создании комментария статьи");
-		}
-	},
-);
+        return response.data;
+    } catch (e) {
+        return rejectWithValue("ошибка при создании комментария статьи");
+    }
+});

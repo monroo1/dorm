@@ -5,8 +5,8 @@ import { ArticleRecommendationsList } from "@/features/articleRecommendationsLis
 import { ArticleDetails } from "@/entities/Article";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import {
-	DynamicModuleLoader,
-	ReducersList,
+    DynamicModuleLoader,
+    ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { VStack } from "@/shared/ui/Stack";
 import { articleDetailsPageReducer } from "../../model/slices";
@@ -16,34 +16,38 @@ import cls from "./ArticleDetailsPage.module.scss";
 import { ArticleRating } from "@/features/articleRating";
 
 interface ArticleDetailsPageProps {
-	className?: string;
+    className?: string;
 }
 
 const reducers: ReducersList = {
-	articleDetailsPage: articleDetailsPageReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
-	const { className } = props;
-	const { id } = useParams<{ id: string }>();
+    const { className } = props;
+    const { id } = useParams<{ id: string }>();
 
-	if (!id) {
-		return null;
-	}
+    if (!id) {
+        return null;
+    }
 
-	return (
-		<DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-			<Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-				<VStack gap="16" max>
-					<ArticleDetailsPageHeader />
-					<ArticleDetails id={id} />
-					<ArticleRating articleId={id} />
-					<ArticleRecommendationsList className={cls.recommendations} />
-					<ArticleDetailsComments id={id} />
-				</VStack>
-			</Page>
-		</DynamicModuleLoader>
-	);
+    return (
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
+                <VStack gap="16" max>
+                    <ArticleDetailsPageHeader />
+                    <ArticleDetails id={id} />
+                    <ArticleRating articleId={id} />
+                    <ArticleRecommendationsList
+                        className={cls.recommendations}
+                    />
+                    <ArticleDetailsComments id={id} />
+                </VStack>
+            </Page>
+        </DynamicModuleLoader>
+    );
 };
 
 export default memo(ArticleDetailsPage);

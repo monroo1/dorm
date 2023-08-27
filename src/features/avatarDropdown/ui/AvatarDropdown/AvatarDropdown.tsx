@@ -2,7 +2,10 @@ import { memo, useCallback } from "react";
 import { useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 import {
-	getUserAuthData, isUserAdmin, isUserManager, userActions,
+    getUserAuthData,
+    isUserAdmin,
+    isUserManager,
+    userActions,
 } from "@/entities/User";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
@@ -15,42 +18,48 @@ interface AvatarDropdownProps {
 }
 
 export const AvatarDropdown = memo((props: AvatarDropdownProps) => {
-	const { className } = props;
-	const { t } = useTranslation();
-	const dispatch = useAppDispatch();
-	const isAdmin = useSelector(isUserAdmin);
-	const isManager = useSelector(isUserManager);
-	const authData = useSelector(getUserAuthData);
+    const { className } = props;
+    const { t } = useTranslation();
+    const dispatch = useAppDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
+    const authData = useSelector(getUserAuthData);
 
-	const onLogout = useCallback(() => {
-		dispatch(userActions.logout());
-	}, [dispatch]);
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
 
-	const isAdminPanelAvailable = isAdmin || isManager;
+    const isAdminPanelAvailable = isAdmin || isManager;
 
-	if (!authData) {
-		return null;
-	}
+    if (!authData) {
+        return null;
+    }
 
-	return (
-		<Dropdown
-			className={classNames("", {}, [className])}
-			direction="bottom left"
-			items={[
-				...(isAdminPanelAvailable ? [{
-					content: t("админка"),
-					href: getRouteAdmin(),
-				}] : []),
-				{
-					content: t("профиль"),
-					href: getRouteProfile(authData.id),
-				},
-				{
-					content: t("выйти"),
-					onClick: onLogout,
-				},
-			]}
-			trigger={<Avatar size={30} fallbackInverted src={authData.avatar} />}
-		/>
-	);
+    return (
+        <Dropdown
+            className={classNames("", {}, [className])}
+            direction="bottom left"
+            items={[
+                ...(isAdminPanelAvailable
+                    ? [
+                          {
+                              content: t("админка"),
+                              href: getRouteAdmin(),
+                          },
+                      ]
+                    : []),
+                {
+                    content: t("профиль"),
+                    href: getRouteProfile(authData.id),
+                },
+                {
+                    content: t("выйти"),
+                    onClick: onLogout,
+                },
+            ]}
+            trigger={
+                <Avatar size={30} fallbackInverted src={authData.avatar} />
+            }
+        />
+    );
 });

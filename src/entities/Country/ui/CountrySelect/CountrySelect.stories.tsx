@@ -4,19 +4,16 @@ import { CountrySelect } from "./CountrySelect";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof CountrySelect> = {
-	title: "entities/CountrySelect",
-	component: CountrySelect,
-	tags: ["autodocs"],
+    title: "entities/CountrySelect",
+    component: CountrySelect,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof CountrySelect>;
 
-export const Primary: Story = {
-};
+export const Primary: Story = {};
 
 export const Dark: Story = {
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    decorators: [ThemeDecorator(Theme.DARK)],
 };

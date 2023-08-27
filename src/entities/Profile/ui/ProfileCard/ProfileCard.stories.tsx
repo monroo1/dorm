@@ -7,73 +7,67 @@ import { ProfileCard } from "./ProfileCard";
 import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof ProfileCard> = {
-	title: "entities/ProfileCard",
-	component: ProfileCard,
-	tags: ["autodocs"],
+    title: "entities/ProfileCard",
+    component: ProfileCard,
+    tags: ["autodocs"],
 };
 
 export default meta;
 type Story = StoryObj<typeof ProfileCard>;
 
 export const Primary: Story = {
-	args: {
-		data: {
-			username: "admin",
-			age: 22,
-			country: Country.Armenia,
-			city: "Moscow",
-			currency: Currency.USD,
-			first: "Andrey",
-			lastname: "Monroo",
-			avatar: Avatar,
-		},
-	},
+    args: {
+        data: {
+            username: "admin",
+            age: 22,
+            country: Country.Armenia,
+            city: "Moscow",
+            currency: Currency.USD,
+            first: "Andrey",
+            lastname: "Monroo",
+            avatar: Avatar,
+        },
+    },
 };
 
 export const WithError: Story = {
-	args: {
-		error: "true",
-	},
+    args: {
+        error: "true",
+    },
 };
 
 export const Loading: Story = {
-	args: {
-		isLoading: true,
-	},
+    args: {
+        isLoading: true,
+    },
 };
 
 export const PrimaryDark: Story = {
-	args: {
-		data: {
-			username: "admin",
-			age: 22,
-			country: Country.Armenia,
-			city: "Moscow",
-			currency: Currency.USD,
-			first: "Andrey",
-			lastname: "Monroo",
-			avatar: Avatar,
-		},
-	},
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    args: {
+        data: {
+            username: "admin",
+            age: 22,
+            country: Country.Armenia,
+            city: "Moscow",
+            currency: Currency.USD,
+            first: "Andrey",
+            lastname: "Monroo",
+            avatar: Avatar,
+        },
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const WithErrorDark: Story = {
-	args: {
-		error: "true",
-	},
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    args: {
+        error: "true",
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
 
 export const LoadingDark: Story = {
-	args: {
-		isLoading: true,
-	},
-	decorators: [
-		ThemeDecorator(Theme.DARK),
-	],
+    args: {
+        isLoading: true,
+    },
+    decorators: [ThemeDecorator(Theme.DARK)],
 };
