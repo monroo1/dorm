@@ -5,6 +5,10 @@
             "username": "Andrey",
             "password": "123",
             "roles": ["ADMIN"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": false
+            },
             "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
         },
         {
@@ -12,6 +16,10 @@
             "username": "Tolik",
             "password": "123",
             "roles": ["USER"],
+            "features": {
+                "isArticleRatingEnabled": true,
+                "isCounterEnabled": true
+            },
             "avatar": "https://mintspace-media.fra1.digitaloceanspaces.com/wp-content/uploads/2021/11/26174812/pixil-frame-0-1-18.png"
         },
         {
@@ -19,6 +27,10 @@
             "username": "user",
             "password": "123",
             "roles": ["MANAGER"],
+            "features": {
+                "isArticleRatingEnabled": false,
+                "isCounterEnabled": true
+            },
             "avatar": ""
         }
     ],
@@ -1187,6 +1199,12 @@
             "rate": 3,
             "feedback": "asdads",
             "id": "QMJjYJL"
+        },
+        {
+            "userId": "2",
+            "articleId": "12",
+            "rate": 5,
+            "id": "xhwt9Ac"
         }
     ],
     "profile-ratings": [
