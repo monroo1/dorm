@@ -9,6 +9,12 @@
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": false
             },
+            "jsonSettings": {
+                "theme": "app_orange_theme",
+                "isFirstVisit": true,
+                "settingsPageHsBeenOpen": false,
+                "isArticlePageWasOpened": true
+            },
             "avatar": "https://cdn.prod.www.spiegel.de/images/d2caafb1-70da-47e2-ba48-efd66565cde1_w996_r0.9975262832405689_fpx44.98_fpy48.86.jpg"
         },
         {
@@ -20,6 +26,11 @@
                 "isArticleRatingEnabled": true,
                 "isCounterEnabled": true
             },
+            "jsonSettings": {
+                "theme": "app_dark_theme",
+                "isFirstVisit": true,
+                "settingsPageHsBeenOpen": false
+            },
             "avatar": "https://mintspace-media.fra1.digitaloceanspaces.com/wp-content/uploads/2021/11/26174812/pixil-frame-0-1-18.png"
         },
         {
@@ -30,6 +41,11 @@
             "features": {
                 "isArticleRatingEnabled": false,
                 "isCounterEnabled": true
+            },
+            "jsonSettings": {
+                "theme": "app_orange_theme",
+                "isFirstVisit": false,
+                "settingsPageHsBeenOpen": true
             },
             "avatar": ""
         }

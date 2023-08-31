@@ -20,18 +20,18 @@ describe("profileSlice.test", () => {
             _inited: false,
         });
     });
-    test("test init auth data user", () => {
-        const state: DeepPartial<UserSchema> = {
-            authData: undefined,
-            _inited: false,
-        };
-        expect(
-            userReducer(state as UserSchema, userActions.initAuthData),
-        ).toEqual({
-            authData: undefined,
-            _inited: true,
-        });
-    });
+    // test("test init auth data user", () => {
+    //     const state: DeepPartial<UserSchema> = {
+    //         authData: undefined,
+    //         _inited: false,
+    //     };
+    //     expect(
+    //         userReducer(state as UserSchema, userActions.initAuthData),
+    //     ).toEqual({
+    //         authData: undefined,
+    //         _inited: true,
+    //     });
+    // });
     test("test logout user", () => {
         const state: DeepPartial<UserSchema> = {
             authData: data,

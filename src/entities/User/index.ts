@@ -10,3 +10,6 @@ export {
     isUserAdmin,
     isUserManager,
 } from "./model/selectors/getUserRoles/getUserRoles";
+export { useJsonSettings } from "./model/selectors/getJsonSettings/getJsonSettings";
+export { saveJsonSettings } from "./model/service/saveJsonSerrings";
+export { initAuthData } from "./model/service/initAuthData";
