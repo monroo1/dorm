@@ -18,5 +18,11 @@
     "ошибка возраста": "Wrong age format",
     "ошибка страны": "No country selected",
     "оцените этот профиль": "Rate this profile",
-    "оставьте свой отзыв": "Leave your feedback"
+    "оставьте свой отзыв": "Leave your feedback",
+    "Имя": "Name:",
+    "Фамилия": "Lastname:",
+    "Возраст": "Age:",
+    "Город": "City:",
+    "Имя пользователя": "Username:",
+    "Ссылка на аватар": "Link to avatar:"
 }

@@ -7,14 +7,14 @@ import {
     ReducersList,
 } from "@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
 import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { Text, TextAlign, TextSize } from "@/shared/ui/Text";
-import { Skeleton } from "@/shared/ui/Skeleton";
-import { Avatar } from "@/shared/ui/Avatar";
+import { Text, TextAlign, TextSize } from "@/shared/ui/deprecated/Text";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
 import CalendarIcon from "@/shared/assets/icons/calendar-20-20.svg";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
-import { Icon } from "@/shared/ui/Icon";
+import { Icon } from "@/shared/ui/deprecated/Icon";
 import { useInitialEffect } from "@/shared/lib/hooks/useInitialEffect/useInitialEffect";
-import { HStack, VStack } from "@/shared/ui/Stack";
+import { HStack, VStack } from "@/shared/ui/redesigned/Stack";
 import { ArticleCodeBlockComponent } from "../ArticleCodeBlockComponent/ArticleCodeBlockComponent";
 import {
     getArticleDetailsData,
@@ -111,7 +111,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <HStack justify="center" max className={cls.avatarWrapper}>
                     <Avatar
                         size={200}
-                        src={article?.img}
+                        src={`${article?.img}asdasdasd`}
                         className={cls.avatar}
                     />
                 </HStack>

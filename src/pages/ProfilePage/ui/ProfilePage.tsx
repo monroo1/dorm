@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Page } from "@/widgets/Page";
 import { EditableProfileCard } from "@/features/editableProfileCard";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { VStack } from "@/shared/ui/Stack";
+import { VStack } from "@/shared/ui/redesigned/Stack";
 import { ProfileRating } from "@/features/profileRating";
 import { getUserAuthData } from "@/entities/User";
 

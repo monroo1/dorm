@@ -21,6 +21,8 @@
     "выйти": "Exit",
     "укажите страну": "Choose country",
     "укажите валюту": "Choose currency",
+    "Cтрана": "Country:",
+    "Валюта": "Currency:",
     "комментарии отсутствуют": "No comments",
     "введите текст комментария": "Enter comment text",
     "отправить": "Send",

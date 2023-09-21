@@ -2,12 +2,12 @@ import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import EyeIcon from "@/shared/assets/icons/eye-20-20.svg";
-import { Text } from "@/shared/ui/Text";
-import { Icon } from "@/shared/ui/Icon";
-import { Card } from "@/shared/ui/Card";
-import { Avatar } from "@/shared/ui/Avatar";
-import { Button } from "@/shared/ui/Button";
-import { AppLink } from "@/shared/ui/AppLink";
+import { Text } from "@/shared/ui/deprecated/Text";
+import { Icon } from "@/shared/ui/deprecated/Icon";
+import { Card } from "@/shared/ui/deprecated/Card";
+import { Avatar } from "@/shared/ui/deprecated/Avatar";
+import { Button } from "@/shared/ui/deprecated/Button";
+import { AppLink } from "@/shared/ui/deprecated/AppLink";
 import { Article, ArticleTextBlock } from "../../model/types/article";
 import {
     ArticleBlockType,
@@ -16,8 +16,8 @@ import {
 import { ArticleTextBlockComponent } from "../ArticleTextBlockComponent/ArticleTextBlockComponent";
 import cls from "./ArticleListItem.module.scss";
 import { getRouteArticleDetails } from "@/shared/const/router";
-import { AppImage } from "@/shared/ui/AppImage";
-import { Skeleton } from "@/shared/ui/Skeleton";
+import { AppImage } from "@/shared/ui/redesigned/AppImage";
+import { Skeleton } from "@/shared/ui/deprecated/Skeleton";
 
 interface ArticleListItemProps {
     className?: string;
