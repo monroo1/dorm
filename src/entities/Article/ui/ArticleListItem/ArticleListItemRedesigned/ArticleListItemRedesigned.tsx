@@ -92,7 +92,7 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
             to={getRouteArticleDetails(article.id)}
             className={classNames("", {}, [className, cls[view]])}
         >
-            <Card className={cls.card}>
+            <Card className={cls.card} border="partial">
                 <AppImage
                     fallback={<Skeleton width="100%" height={200} />}
                     src={article.img}

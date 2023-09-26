@@ -6,6 +6,7 @@ import cls from "./Flex.module.scss";
 type FlexJustify = "start" | "center" | "end" | "between";
 type FlexAlign = "start" | "center" | "end";
 export type FlexDirection = "row" | "column";
+export type FlexWrap = "nowrap" | "wrap";
 type FlexGap = "4" | "8" | "16" | "24" | "32";
 
 const justifyClasses: Record<FlexJustify, string> = {
@@ -42,8 +43,10 @@ export interface FlexProps {
     justify?: FlexJustify;
     align?: FlexAlign;
     direction: FlexDirection;
+    wrap?: FlexWrap;
     gap?: FlexGap;
     max?: boolean;
+    fullHeight?: boolean;
 }
 
 export const Flex = memo((props: FlexProps) => {
@@ -53,6 +56,8 @@ export const Flex = memo((props: FlexProps) => {
         justify = "start",
         align = "center",
         direction = "row",
+        wrap = "nowrap",
+        fullHeight,
         gap,
         max,
         ...otherProps
@@ -63,11 +68,13 @@ export const Flex = memo((props: FlexProps) => {
         justifyClasses[justify],
         alignClasses[align],
         directionClasses[direction],
+        cls[wrap],
         gap && gapClasses[gap],
     ];
 
     const mods: Mods = {
         [cls.max]: max,
+        [cls.fullHeight]: fullHeight,
     };
 
     return (

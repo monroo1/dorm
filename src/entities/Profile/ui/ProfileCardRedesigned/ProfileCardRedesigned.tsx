@@ -10,7 +10,7 @@ import { Skeleton } from "@/shared/ui/redesigned/Skeleton";
 import { Text } from "@/shared/ui/redesigned/Text";
 
 export const ProfileCardRedesignedSkeleton = () => (
-    <Card padding="24" max>
+    <Card padding="24" max border="partial">
         <VStack gap="32">
             <HStack max justify="center">
                 <Skeleton border="100%" width={128} height={128} />
@@ -65,7 +65,7 @@ export const ProfileCardRedesigned = (props: ProfileCardProps) => {
     const { t } = useTranslation("profile");
 
     return (
-        <Card padding="24" max className={className}>
+        <Card padding="24" max className={className} border="partial">
             <VStack gap="32">
                 {data?.avatar && (
                     <HStack justify="center" max>

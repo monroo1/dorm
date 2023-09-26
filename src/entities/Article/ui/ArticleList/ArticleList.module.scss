@@ -1,15 +1,21 @@
 .BIG {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+    .card {
+        margin-bottom: 30px;
+    }
 }
 
 .SMALL {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-}
+    gap: 30px;
 
-.skeleton {
-    padding-top: 30px;
+    .card {
+        display: inline-flex;
+        height: 300px;
+    }
+
+    .row {
+        display: flex;
+        gap: 30px;
+    }
 }

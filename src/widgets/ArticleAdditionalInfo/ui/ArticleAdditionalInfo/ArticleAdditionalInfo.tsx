@@ -20,7 +20,7 @@ export const ArticleAdditionalInfo = memo(
         const { t } = useTranslation("article");
 
         return (
-            <VStack gap="32" className={className}>
+            <VStack gap="24" className={className}>
                 <HStack gap="8">
                     <Avatar src={author.avatar} size={32} />
                     <Text text={author.username} bold />

@@ -7,6 +7,8 @@ import {
     ProfileCardRedesignedSkeleton,
     ProfileCardRedesignedError,
 } from "../ProfileCardRedesigned/ProfileCardRedesigned";
+import { ToggleFeatures } from "@/shared/lib/features";
+import { ProfileCardDeprecated } from "../ProfileCardDeprecated/ProfileCardDeprecated";
 
 export interface ProfileCardProps {
     className?: string;
@@ -35,5 +37,11 @@ export const ProfileCard = (props: ProfileCardProps) => {
         return <ProfileCardRedesignedError />;
     }
 
-    return <ProfileCardRedesigned {...props} />;
+    return (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={<ProfileCardRedesigned {...props} />}
+            off={<ProfileCardDeprecated {...props} />}
+        />
+    );
 };

@@ -1,6 +1,5 @@
 import { HTMLAttributeAnchorTarget, memo } from "react";
 import { useTranslation } from "react-i18next";
-import { VirtuosoGrid } from "react-virtuoso";
 import { classNames } from "@/shared/lib/classNames/classNames";
 import { Text, TextSize } from "@/shared/ui/deprecated/Text";
 import { HStack } from "@/shared/ui/redesigned/Stack";
@@ -9,8 +8,7 @@ import { ArticleView } from "../../model/consts/articleConsts";
 import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import cls from "./ArticleList.module.scss";
-import { PAGE_ID } from "@/shared/const/page";
-import { toggleFeatures } from "@/shared/lib/features";
+import { ToggleFeatures } from "@/shared/lib/features";
 
 interface ArticleListProps {
     className?: string;
@@ -18,7 +16,6 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
-    virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -30,81 +27,67 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
         articles,
-        isLoading,
         view = ArticleView.SMALL,
+        isLoading,
         target,
-        virtualized = true,
     } = props;
-    const { t } = useTranslation("article");
-
-    const articleListCls = toggleFeatures({
-        name: "isAppRedesigned",
-        on: () => cls.ArticleListRedesigned,
-        off: () => cls.ArticleList,
-    });
-
-    const renderArticle = (index: number, article: Article) => (
-        <ArticleListItem
-            article={article}
-            view={view}
-            key={index}
-            target={target}
-        />
-    );
+    const { t } = useTranslation();
 
     if (!isLoading && !articles.length) {
         return (
             <div
-                className={classNames(articleListCls, {}, [
+                className={classNames(cls.ArticleList, {}, [
                     className,
                     cls[view],
                 ])}
             >
-                <Text size={TextSize.L} title={t("статьи не найдены")} />
+                <Text size={TextSize.L} title={t("Статьи не найдены")} />
             </div>
         );
     }
 
     return (
-        <div data-testid="ArticleList">
-            {virtualized ? (
-                <VirtuosoGrid
-                    useWindowScroll
-                    customScrollParent={
-                        document.getElementById(PAGE_ID) as HTMLElement
-                    }
-                    data={articles}
-                    listClassName={classNames(articleListCls, {}, [
-                        className,
-                        cls[view],
-                    ])}
-                    itemContent={renderArticle}
-                />
-            ) : (
+        <ToggleFeatures
+            feature="isAppRedesigned"
+            on={
                 <HStack
-                    max
-                    className={classNames(articleListCls, {}, [
-                        className,
-                        cls[view],
-                    ])}
+                    wrap="wrap"
+                    gap="16"
+                    className={classNames(cls.ArticleListRedesigned, {}, [])}
+                    data-testid="ArticleList"
                 >
-                    {articles.map((article, index) =>
-                        renderArticle(index, article),
-                    )}
+                    {articles.map((item) => (
+                        <ArticleListItem
+                            article={item}
+                            view={view}
+                            target={target}
+                            key={item.id}
+                            className={cls.card}
+                        />
+                    ))}
+                    {isLoading && getSkeletons(view)}
                 </HStack>
-            )}
-
-            {isLoading && (
+            }
+            off={
                 <div
-                    className={classNames(articleListCls, {}, [
+                    className={classNames(cls.ArticleList, {}, [
                         className,
                         cls[view],
-                        cls.skeleton,
                     ])}
+                    data-testid="ArticleList"
                 >
+                    {articles.map((item) => (
+                        <ArticleListItem
+                            article={item}
+                            view={view}
+                            target={target}
+                            key={item.id}
+                            className={cls.card}
+                        />
+                    ))}
                     {isLoading && getSkeletons(view)}
                 </div>
-            )}
-        </div>
+            }
+        />
     );
 });

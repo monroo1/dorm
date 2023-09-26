@@ -3,7 +3,7 @@ import MainIcon from "@/shared/assets/icons/main-20-20.svg";
 import AboutIcon from "@/shared/assets/icons/about-20-20.svg";
 import ProfileIcon from "@/shared/assets/icons/profile-20-20.svg";
 import ArticleIcon from "@/shared/assets/icons/article-20-20.svg";
-import { getSidebarItems } from "./getSidebarItems";
+import { useSidebarItems } from "./getSidebarItems";
 import {
     getRouteAbout,
     getRouteArticles,
@@ -24,7 +24,7 @@ describe("getSidebarItem.test", () => {
                 authData: data,
             },
         };
-        expect(getSidebarItems(state as StateSchema)).toEqual([
+        expect(useSidebarItems()).toEqual([
             {
                 path: getRouteMain(),
                 Icon: MainIcon,
@@ -53,7 +53,7 @@ describe("getSidebarItem.test", () => {
         const state: DeepPartial<StateSchema> = {
             user: {},
         };
-        expect(getSidebarItems(state as StateSchema)).toEqual([
+        expect(useSidebarItems()).toEqual([
             {
                 path: getRouteMain(),
                 Icon: MainIcon,

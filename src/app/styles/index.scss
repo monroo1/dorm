@@ -25,15 +25,30 @@
 }
 
 *::-webkit-scrollbar {
+	width: 6px;
+	height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+	background: var(--light-bg-redesigned);
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: var(--icon-redesigned);
+	border: 2px solid var(--accent-redesigned);
+	border-radius: 10px ;
+}
+
+.app *::-webkit-scrollbar {
 	width: 12px;
 	height: 8px;
 }
 
-*::-webkit-scrollbar-track {
+.app *::-webkit-scrollbar-track {
 	background: var(--card-bg);
 }
 
-*::-webkit-scrollbar-thumb {
+.app *::-webkit-scrollbar-thumb {
 	background-color: var(--inverted-primary-color);
 	border: 2px solid var(--primary-color);
 	border-radius: 20px ;

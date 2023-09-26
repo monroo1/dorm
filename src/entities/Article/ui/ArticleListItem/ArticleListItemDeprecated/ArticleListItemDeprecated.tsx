@@ -92,7 +92,7 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
                 cls[view],
             ])}
         >
-            <Card className={cls.card}>
+            <Card className={classNames(cls.card, {}, [cls.cardBorder])}>
                 <div className={cls.imageWrapper}>
                     <AppImage
                         fallback={<Skeleton width="200" height="200" />}

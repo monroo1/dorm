@@ -13,8 +13,7 @@ export const updateFeatureFlag = createAsyncThunk<
     void,
     UpdateFeatureFlagsOptions,
     ThunkConfig<string>
-    // eslint-disable-next-line consistent-return
->("user/saveJsonSettings", async ({ userId, newFeatures }, thunkApi) => {
+>("features/updateFeatureFlag", async ({ userId, newFeatures }, thunkApi) => {
     const { rejectWithValue, dispatch } = thunkApi;
 
     try {
@@ -27,7 +26,10 @@ export const updateFeatureFlag = createAsyncThunk<
                 },
             }),
         );
+
         window.location.reload();
+
+        return undefined;
     } catch (e) {
         console.log(e);
         return rejectWithValue("");
