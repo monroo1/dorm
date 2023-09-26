@@ -2,7 +2,7 @@ import { memo, useCallback, useState } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 import { NotificationList } from "@/entities/Notification";
 import { classNames } from "@/shared/lib/classNames/classNames";
-import { Drawer } from "@/shared/ui/deprecated/Drawer";
+import { Drawer } from "@/shared/ui/redesigned/Drawer";
 import { Popover as PopoverDeprecated } from "@/shared/ui/deprecated/Popup";
 import {
     Button as ButtonDeprecated,

@@ -9,6 +9,18 @@
     border: 1px solid var(--primary-color);
 }
 
+.CodeRedesigned {
+    position: relative;
+
+    overflow: auto;
+
+    padding: 20px;
+
+    background: var(--light-bg-redesigned);
+    border: 1px solid var(--accent-redesigned);
+    border-radius: 16px;
+}
+
 .copyBtn {
     position: absolute;
     top: 20px;
@@ -19,3 +31,4 @@
     fill: transparent;
     stroke: var(--primary-color);
 }
+

@@ -20,8 +20,10 @@ import {
     getRouteForbidden,
     getRouteMain,
     getRouteProfile,
+    getRouteSettings,
 } from "@/shared/const/router";
 import { AppRoutesProps } from "@/shared/types/router";
+import { SettingPage } from "@/pages/SettingPage";
 
 export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
     [AppRoutes.MAIN]: {
@@ -62,6 +64,11 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         element: <AdminPanelPage />,
         authOnly: true,
         roles: [UserRole.MANAGER, UserRole.ADMIN],
+    },
+    [AppRoutes.SETTINGS]: {
+        path: getRouteSettings(),
+        element: <SettingPage />,
+        authOnly: true,
     },
     [AppRoutes.FORBIDDEN]: {
         path: getRouteForbidden(),

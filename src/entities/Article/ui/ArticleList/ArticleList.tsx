@@ -10,6 +10,7 @@ import { ArticleListItem } from "../ArticleListItem/ArticleListItem";
 import { ArticleListItemSkeleton } from "../ArticleListItem/ArticleListItemSkeleton";
 import cls from "./ArticleList.module.scss";
 import { PAGE_ID } from "@/shared/const/page";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface ArticleListProps {
     className?: string;
@@ -36,6 +37,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
     } = props;
     const { t } = useTranslation("article");
 
+    const articleListCls = toggleFeatures({
+        name: "isAppRedesigned",
+        on: () => cls.ArticleListRedesigned,
+        off: () => cls.ArticleList,
+    });
+
     const renderArticle = (index: number, article: Article) => (
         <ArticleListItem
             article={article}
@@ -48,7 +55,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     if (!isLoading && !articles.length) {
         return (
             <div
-                className={classNames(cls.ArticleList, {}, [
+                className={classNames(articleListCls, {}, [
                     className,
                     cls[view],
                 ])}
@@ -67,7 +74,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                         document.getElementById(PAGE_ID) as HTMLElement
                     }
                     data={articles}
-                    listClassName={classNames(cls.ArticleList, {}, [
+                    listClassName={classNames(articleListCls, {}, [
                         className,
                         cls[view],
                     ])}
@@ -76,7 +83,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             ) : (
                 <HStack
                     max
-                    className={classNames(cls.ArticleList, {}, [
+                    className={classNames(articleListCls, {}, [
                         className,
                         cls[view],
                     ])}
@@ -89,7 +96,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
             {isLoading && (
                 <div
-                    className={classNames(cls.ArticleList, {}, [
+                    className={classNames(articleListCls, {}, [
                         className,
                         cls[view],
                         cls.skeleton,

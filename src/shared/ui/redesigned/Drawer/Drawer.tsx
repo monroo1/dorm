@@ -4,10 +4,11 @@ import {
     AnimationProvider,
     useAnimationLibs,
 } from "@/shared/lib/components/AnimationProvider";
-import { Portal } from "../../redesigned/Portal/Portal";
-import { Overlay } from "../../redesigned/Overlay/Overlay";
+import { Portal } from "../Portal/Portal";
+import { Overlay } from "../Overlay/Overlay";
 import cls from "./Drawer.module.scss";
 import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
+import { toggleFeatures } from "@/shared/lib/features";
 
 interface DrawerProps {
     className?: string;
@@ -77,12 +78,17 @@ const DrawerContent = memo((props: DrawerProps) => {
     const display = y.to((py) => (py < height ? "block" : "none"));
 
     return (
-        <Portal>
+        <Portal element={document.getElementById("app") ?? document.body}>
             <div
                 className={classNames(cls.Drawer, {}, [
                     className,
                     theme,
                     "app_drawer",
+                    toggleFeatures({
+                        name: "isAppRedesigned",
+                        on: () => cls.drawerNew,
+                        off: () => cls.drawerOld,
+                    }),
                 ])}
             >
                 <Overlay onClick={close} />
