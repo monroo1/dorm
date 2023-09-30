@@ -1,3 +1,4 @@
+import { ComponentType } from "react";
 import { StateSchema, StoreProvider } from "@/app/providers/StoreProvider";
 import { articleDetailsPageReducer } from "@/pages/ArticleDetailsPage/testing";
 import { articlesPageReducer } from "@/pages/ArticlesPage/testing";
@@ -18,7 +19,7 @@ const defaultAsyncReducers: ReducersList = {
 
 export const StoreDecorator =
     (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) =>
-    (Story: any) => (
+    (Story: ComponentType) => (
         <StoreProvider
             initialState={state}
             asyncReducers={{

@@ -3,6 +3,7 @@ import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDe
 import Avatar from "@/shared/assets/test/avatar.jpg";
 import { CommentCard } from "./CommentCard";
 import { Theme } from "@/shared/const/theme";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof CommentCard> = {
     title: "entities/Comment/CommentCard",
@@ -13,18 +14,25 @@ const meta: Meta<typeof CommentCard> = {
 export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
-export const Normal: Story = {
-    args: {
-        comment: {
+const normalArgs = {
+    comment: {
+        id: "1",
+        text: "comment",
+        user: {
             id: "1",
-            text: "comment",
-            user: {
-                id: "1",
-                username: "user",
-                avatar: Avatar,
-            },
+            username: "user",
+            avatar: Avatar,
         },
     },
+};
+
+export const Normal: Story = {
+    args: normalArgs,
+};
+
+export const NormalRedesigned: Story = {
+    args: normalArgs,
+    decorators: [NewDesignDecorator],
 };
 
 export const Loading: Story = {
