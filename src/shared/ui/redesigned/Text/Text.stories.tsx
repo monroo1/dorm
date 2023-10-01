@@ -15,14 +15,14 @@ type Story = StoryObj<typeof Text>;
 
 export const Primary: Story = {
     args: {
-        title: "Title lorem ipsum",
+        title: "Title lorem ipsum new",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     },
 };
 
 export const OnlyTitle: Story = {
     args: {
-        title: "Title lorem ipsum",
+        title: "Title lorem ipsum new",
     },
 };
 

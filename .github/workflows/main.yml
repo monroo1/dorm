@@ -28,13 +28,16 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - name: install modules
-              run: npm i --force
+              run: npm ci
             - name: build production project
               run: npm run build:prod
               if: always()
             - name: unit testing
               if: always()
               run: npm run test:unit
+            - name: ui testing
+              if: always()
+              run: npm run chromatic:ci
             - name: Setup Pages
               uses: actions/configure-pages@v2
               if: always()
@@ -60,7 +63,7 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - name: install modules
-              run: npm i --force
+              run: npm ci
             - name: linting typescript
               run: npm run lint:ts
               if: always()

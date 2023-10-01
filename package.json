@@ -18,18 +18,14 @@
         "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
         "test:unit": "jest --config ./config/jest/jest.config.ts",
         "test:e2e": "cypress open",
-        "test:ui": "npx loki test",
-        "test:ui:ok": "npx loki approve",
-        "test:ui:ci": "concurrently --kill-others --raw --success first \"npm run storybook\" \"npm run test:ui\" \"deelay\"",
-        "test:ui:json": "node scripts/generate-visual-json-report.js",
-        "test:ui:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-        "test:ui:report": "npm run test:ui:json && npm run test:ui:html",
         "storybook": "storybook dev -p 6006 -c ./config/storybook",
         "build-storybook": "storybook build -c ./config/storybook",
         "prepare": "husky install",
         "generate:slice": "node ./scripts/createSlice/index.js",
         "postinstall": "node ./scripts/clearCache.js",
-        "remove-feature": "ts-node ./scripts/remove-feature.ts"
+        "remove-feature": "ts-node ./scripts/remove-feature.ts",
+        "chromatic": "npx chromatic --project-token=chpt_80f03f2468030ac",
+        "chromatic:ci": "npx chromatic --project-token=chpt_80f03f2468030ac --exist-zero-on-changes"
     },
     "lint-staged": {
         "**/*.{ts,tsx}": [
@@ -146,5 +142,6 @@
         "react-i18next": "^11.18.3",
         "react-redux": "^8.0.5",
         "react-router-dom": "^6.2.1"
-    }
+    },
+    "_id": "project_course@1.0.0"
 }
