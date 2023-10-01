@@ -24,8 +24,7 @@
         "generate:slice": "node ./scripts/createSlice/index.js",
         "postinstall": "node ./scripts/clearCache.js",
         "remove-feature": "ts-node ./scripts/remove-feature.ts",
-        "chromatic": "npx chromatic --project-token=chpt_80f03f2468030ac",
-        "chromatic:ci": "npx chromatic --project-token=chpt_80f03f2468030ac --exist-zero-on-changes"
+        "chromatic": "npx chromatic --project-token=chpt_80f03f2468030ac"
     },
     "lint-staged": {
         "**/*.{ts,tsx}": [

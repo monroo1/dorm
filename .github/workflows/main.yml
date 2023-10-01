@@ -13,7 +13,7 @@ concurrency:
     cancel-in-progress: true
 jobs:
     build-and-ui-testing:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         concurrency: ci-${{ github.ref }}
         environment:
             name: github-pages
@@ -35,9 +35,6 @@ jobs:
             - name: unit testing
               if: always()
               run: npm run test:unit
-            - name: ui testing
-              if: always()
-              run: npm run chromatic:ci
             - name: Setup Pages
               uses: actions/configure-pages@v2
               if: always()
@@ -52,7 +49,7 @@ jobs:
               uses: actions/deploy-pages@v1
 
     checks:
-        runs-on: windows-latest
+        runs-on: ubuntu-latest
         strategy:
             matrix:
                 node-version: [18.x]
@@ -69,3 +66,17 @@ jobs:
               if: always()
             - name: linting css
               run: npm run lint:scss
+
+    chromatic-deployment:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+            - name: Install dependencies
+              run: npm i
+            - name: Publish to Chromatic
+              uses: chromaui/action@v1
+              with:
+                  projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
