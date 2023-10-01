@@ -21,3 +21,36 @@ export const Primary: Story = {
         ],
     },
 };
+
+export const Disabled: Story = {
+    args: {
+        readonly: true,
+        label: "Укажите значение",
+        options: [
+            { value: "first", content: "first" },
+            { value: "second", content: "second" },
+            { value: "third", content: "third" },
+        ],
+    },
+};
+
+export const DisabledNoLabel: Story = {
+    args: {
+        readonly: true,
+        options: [
+            { value: "first", content: "first" },
+            { value: "second", content: "second" },
+            { value: "third", content: "third" },
+        ],
+    },
+};
+
+export const NoLabel: Story = {
+    args: {
+        options: [
+            { value: "first", content: "first" },
+            { value: "second", content: "second" },
+            { value: "third", content: "third" },
+        ],
+    },
+};

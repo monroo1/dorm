@@ -1,9 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Dropdown } from "./Dropdown";
 import { Button } from "../../../Button/Button";
-import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Dropdown> = {
     title: "shared/Dropdown",
@@ -101,22 +99,4 @@ export const TopRight: Story = {
             },
         ],
     },
-};
-
-export const Dark: Story = {
-    args: {
-        trigger: <Button>Open</Button>,
-        items: [
-            {
-                content: "first",
-            },
-            {
-                content: "second",
-            },
-            {
-                content: "third",
-            },
-        ],
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
 };

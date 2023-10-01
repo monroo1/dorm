@@ -1,10 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Input } from "./Input";
-import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Input> = {
-    title: "shared/Input",
+    title: "shared/Input/deprecated",
     component: Input,
     tags: ["autodocs"],
 };
@@ -17,12 +15,4 @@ export const Primary: Story = {
         placeholder: "Type text",
         value: "1234",
     },
-};
-
-export const Dark: Story = {
-    args: {
-        placeholder: "Type text",
-        value: "1234",
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
 };

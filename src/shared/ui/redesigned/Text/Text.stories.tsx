@@ -1,11 +1,13 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { Text, TextSize, TextTheme } from "./Text";
+import { Text } from "./Text";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof Text> = {
-    title: "shared/Text/deprecated",
+    title: "shared/Text/redesigned",
     component: Text,
     tags: ["autodocs"],
+    decorators: [NewDesignDecorator],
 };
 
 export default meta;
@@ -30,42 +32,73 @@ export const OnlyText: Story = {
     },
 };
 
-export const Inverted: Story = {
+export const VariantPrimary: Story = {
     args: {
         title: "Title lorem ipsum",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-        theme: TextTheme.INVERTED,
+        variant: "primary",
     },
 };
 
-export const Error: Story = {
+export const VariantAccent: Story = {
     args: {
         title: "Title lorem ipsum",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-        theme: TextTheme.ERROR,
+        variant: "accent",
     },
 };
 
-export const SizeL: Story = {
+export const VariantError: Story = {
     args: {
         title: "Title lorem ipsum",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-        size: TextSize.L,
+        variant: "error",
     },
 };
 
-export const SizeM: Story = {
+export const AlignLeft: Story = {
     args: {
+        align: "left",
         title: "Title lorem ipsum",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-        size: TextSize.M,
+    },
+};
+export const AlignCenter: Story = {
+    args: {
+        align: "center",
+        title: "Title lorem ipsum",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    },
+};
+
+export const AlignRight: Story = {
+    args: {
+        align: "right",
+        title: "Title lorem ipsum",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     },
 };
 
 export const SizeS: Story = {
     args: {
+        size: "s",
         title: "Title lorem ipsum",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
-        size: TextSize.S,
+    },
+};
+
+export const SizeM: Story = {
+    args: {
+        size: "m",
+        title: "Title lorem ipsum",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    },
+};
+
+export const SizeL: Story = {
+    args: {
+        size: "l",
+        title: "Title lorem ipsum",
+        text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     },
 };

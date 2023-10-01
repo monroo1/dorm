@@ -1,9 +1,7 @@
 /* eslint-disable i18next/no-literal-string */
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Button } from "../../../Button/Button";
 import { Popover } from "./Popover";
-import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Popover> = {
     title: "shared/Popover",
@@ -51,12 +49,4 @@ export const TopRight: Story = {
         trigger: <Button>Open</Button>,
         children: "asdasdasdasdasdasdsd",
     },
-};
-
-export const Dark: Story = {
-    args: {
-        trigger: <Button>Open</Button>,
-        children: "asdasdasdasdasdasdsd",
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
 };

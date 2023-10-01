@@ -1,11 +1,9 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { Tabs } from "./Tabs";
-import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof Tabs> = {
-    title: "shared/Tabs",
+    title: "shared/Tabs/deprecated",
     component: Tabs,
     tags: ["autodocs"],
 };
@@ -13,43 +11,41 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 type Story = StoryObj<typeof Tabs>;
 
-export const Normal: Story = {
+export const Primary: Story = {
     args: {
         tabs: [
             {
                 value: "tab 1",
-                content: "tab 1 c",
+                content: "First",
             },
             {
                 value: "tab 2",
-                content: "tab 2 c",
+                content: "Second",
             },
             {
                 value: "tab 3",
-                content: "tab 3 c",
+                content: "Third",
             },
         ],
-        value: "tab 2",
     },
 };
 
-export const Dark: Story = {
+export const WithValue: Story = {
     args: {
         tabs: [
             {
                 value: "tab 1",
-                content: "tab 1 c",
+                content: "First",
             },
             {
                 value: "tab 2",
-                content: "tab 2 c",
+                content: "Second",
             },
             {
                 value: "tab 3",
-                content: "tab 3 c",
+                content: "Third",
             },
         ],
         value: "tab 2",
     },
-    decorators: [ThemeDecorator(Theme.DARK)],
 };

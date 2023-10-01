@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { StarRating } from "./StarRating";
-import { Theme } from "@/shared/const/theme";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof StarRating> = {
     title: "shared/StarRating",
@@ -12,12 +11,21 @@ const meta: Meta<typeof StarRating> = {
 export default meta;
 type Story = StoryObj<typeof StarRating>;
 
-export const Normal: Story = {};
-
-export const Dark: Story = {
-    decorators: [ThemeDecorator(Theme.DARK)],
+export const Primary: Story = {
+    decorators: [NewDesignDecorator],
 };
 
-export const Orange: Story = {
-    decorators: [ThemeDecorator(Theme.ORANGE)],
+export const SelectedStars: Story = {
+    decorators: [NewDesignDecorator],
+    args: {
+        selectedStars: 3,
+    },
+};
+
+export const PrimaryDeprecated: Story = {};
+
+export const SelectedStarsDeprecated: Story = {
+    args: {
+        selectedStars: 3,
+    },
 };

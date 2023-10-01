@@ -1,15 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { ThemeDecorator } from "@/shared/config/storybook/ThemeDecorator/ThemeDecorator";
 import { ListBox } from "./ListBox";
-import { Theme } from "@/shared/const/theme";
 
 const meta: Meta<typeof ListBox> = {
     title: "shared/ListBox",
     component: ListBox,
     tags: ["autodocs"],
-    decorators: [
-        (Story) => <div style={{ padding: `${250}px` }}>{Story()}</div>,
-    ],
 };
 
 const options = [
@@ -84,20 +79,4 @@ export const LabelWithDisabled: Story = {
         label: "Укажите страну",
         readonly: true,
     },
-};
-
-export const Dark: Story = {
-    args: {
-        items: options,
-        value: "Armenia",
-    },
-    decorators: [ThemeDecorator(Theme.DARK)],
-};
-
-export const Orange: Story = {
-    args: {
-        items: options,
-        value: "Armenia",
-    },
-    decorators: [ThemeDecorator(Theme.ORANGE)],
 };
