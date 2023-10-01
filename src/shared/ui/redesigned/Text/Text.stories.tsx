@@ -42,7 +42,7 @@ export const VariantPrimary: Story = {
 
 export const VariantAccent: Story = {
     args: {
-        title: "Title lorem ipsum",
+        title: "Title lorem ipsum new",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
         variant: "accent",
     },
