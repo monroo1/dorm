@@ -34,7 +34,7 @@ export const OnlyText: Story = {
 
 export const VariantPrimary: Story = {
     args: {
-        title: "Title lorem ipsum",
+        title: "Title lorem ipsum new",
         text: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
         variant: "primary",
     },
