@@ -1,4 +1,9 @@
-import { ButtonHTMLAttributes, ReactNode, memo } from "react";
+import {
+    ButtonHTMLAttributes,
+    ForwardedRef,
+    ReactNode,
+    forwardRef,
+} from "react";
 import { Mods, classNames } from "@/shared/lib/classNames/classNames";
 
 import cls from "./Button.module.scss";
@@ -23,41 +28,47 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     theme?: ButtonTheme;
     square?: boolean;
     size?: ButtonSize;
-    disabled?: boolean;
+    disable?: boolean;
     children?: ReactNode;
     fullWidth?: boolean;
 }
 /**
  * @deprecated
  */
-export const Button = memo((props: ButtonProps) => {
-    const {
-        children,
-        className,
-        theme = ButtonTheme.OUTLINE,
-        square,
-        disabled,
-        fullWidth = false,
-        size = ButtonSize.M,
-        ...otherProps
-    } = props;
+export const Button = forwardRef(
+    (props: ButtonProps, ref: ForwardedRef<HTMLButtonElement>) => {
+        const {
+            children,
+            className,
+            theme = ButtonTheme.OUTLINE,
+            square,
+            disable,
+            fullWidth = false,
+            size = ButtonSize.M,
+            ...otherProps
+        } = props;
 
-    const mods: Mods = {
-        [cls[theme]]: true,
-        [cls.square]: square,
-        [cls[size]]: true,
-        [cls.disabled]: disabled,
-        [cls.fullWidth]: fullWidth,
-    };
+        const mods: Mods = {
+            [cls[theme]]: true,
+            [cls.square]: square,
+            [cls[size]]: true,
+            [cls.disabled]: disable,
+            [cls.fullWidth]: fullWidth,
+        };
 
-    return (
-        <button
-            type="button"
-            className={classNames(cls.Button, mods, [className, cls[theme]])}
-            disabled={disabled}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
-});
+        return (
+            <button
+                ref={ref}
+                type="button"
+                className={classNames(cls.Button, mods, [
+                    className,
+                    cls[theme],
+                ])}
+                disabled={disable}
+                {...otherProps}
+            >
+                {children}
+            </button>
+        );
+    },
+);

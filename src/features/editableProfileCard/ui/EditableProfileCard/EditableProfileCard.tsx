@@ -128,9 +128,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                     validateErrors.map((err) => (
                         <ToggleFeatures
                             feature="isAppRedesigned"
+                            key={err}
                             on={
                                 <Text
-                                    key={err}
                                     variant="error"
                                     text={validateErrorTranslates[err]}
                                     data-testid="EditableProfileCard.Error"
@@ -138,7 +138,6 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                             }
                             off={
                                 <TextDeprecated
-                                    key={err}
                                     theme={TextTheme.ERROR}
                                     text={validateErrorTranslates[err]}
                                     data-testid="EditableProfileCard.Error"

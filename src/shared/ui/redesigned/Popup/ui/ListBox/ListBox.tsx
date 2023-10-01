@@ -48,15 +48,7 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
 
     return (
         <HStack gap="4">
-            {label && (
-                <span
-                    className={classNames("", {
-                        // [cls.readonlyLabel]: readonly,
-                    })}
-                >
-                    {label}
-                </span>
-            )}
+            {label && <span>{label}</span>}
             <HListBox
                 disabled={readonly}
                 value={value}
@@ -67,14 +59,13 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
                     popupCls.popup,
                 ])}
             >
-                <HListBox.Button className={popupCls.trigger}>
-                    <Button
-                        variant="filled"
-                        disabled={readonly}
-                        addonRight={<Icon Svg={ArrowIcon} />}
-                    >
-                        {selectedItem?.content ?? defaultValue}
-                    </Button>
+                <HListBox.Button
+                    as={Button}
+                    variant="filled"
+                    disable={readonly}
+                    addonRight={<Icon Svg={ArrowIcon} />}
+                >
+                    {selectedItem?.content ?? defaultValue}
                 </HListBox.Button>
                 <HListBox.Options
                     className={classNames(cls.options, {}, optionalClasses)}

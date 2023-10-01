@@ -62,8 +62,12 @@ export const ListBox = memo((props: ListBoxProps) => {
                     popupCls.popup,
                 ])}
             >
-                <HListBox.Button className={popupCls.trigger}>
-                    <Button disabled={readonly}>{value ?? defaultValue}</Button>
+                <HListBox.Button
+                    as={Button}
+                    disable={readonly}
+                    className={popupCls.trigger}
+                >
+                    {value ?? defaultValue}
                 </HListBox.Button>
                 <HListBox.Options
                     className={classNames(cls.options, {}, optionalClasses)}

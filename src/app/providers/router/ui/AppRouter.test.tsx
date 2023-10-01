@@ -1,4 +1,5 @@
 import { screen } from "@testing-library/react";
+import { ReactElement } from "react";
 import { componentRender } from "@/shared/lib/tests/componentRender/componentRender";
 import AppRouter from "./AppRouter";
 import {
@@ -8,7 +9,13 @@ import {
 } from "@/shared/const/router";
 import { UserRole } from "@/entities/User";
 
-describe("app/providers/router/AppRouter", () => {
+jest.mock("react", () => {
+    const React = jest.requireActual("react");
+    React.Suspense = ({ children }: { children: ReactElement }) => children;
+    return React;
+});
+
+describe("app/router/AppRouter", () => {
     test("Страница должна отрендериться", async () => {
         componentRender(<AppRouter />, {
             route: getRouteAbout(),

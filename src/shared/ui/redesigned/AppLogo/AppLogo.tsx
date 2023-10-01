@@ -12,8 +12,6 @@ interface AppLogoProps {
 export const AppLogo = memo((props: AppLogoProps) => {
     const { className, size = 50 } = props;
 
-    console.log(size);
-
     return (
         <HStack
             max
