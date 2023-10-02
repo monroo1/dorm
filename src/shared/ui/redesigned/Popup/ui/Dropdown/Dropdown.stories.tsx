@@ -2,17 +2,19 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Dropdown } from "./Dropdown";
 import { Button } from "../../../Button/Button";
+import { NewDesignDecorator } from "@/shared/config/storybook/NewDesignDecorator/NewDesignDecorator";
 
 const meta: Meta<typeof Dropdown> = {
-    title: "shared/Dropdown/deprecated",
+    title: "shared/Dropdown/redesigned",
     component: Dropdown,
     tags: ["autodocs"],
+    decorators: [NewDesignDecorator],
 };
 
 export default meta;
 type Story = StoryObj<typeof Dropdown>;
 
-export const Normal: Story = {
+export const Default: Story = {
     args: {
         trigger: <Button>Open</Button>,
         items: [
@@ -90,6 +92,24 @@ export const TopRight: Story = {
         items: [
             {
                 content: "first",
+            },
+            {
+                content: "second",
+            },
+            {
+                content: "third",
+            },
+        ],
+    },
+};
+
+export const DisabledItem: Story = {
+    args: {
+        trigger: <Button>Open</Button>,
+        items: [
+            {
+                content: "first",
+                disabled: true,
             },
             {
                 content: "second",
