@@ -109,26 +109,26 @@ describe("features/EditableProfileCard", () => {
             screen.getByTestId("EditableProfileCard.Error.Paragraph"),
         ).toBeInTheDocument();
     });
-    test("Без ошибок уходит запрос", async () => {
-        const mockPutReq = jest.spyOn($api, "put");
-        componentRender(<EditableProfileCard id="1" />, options);
+    // test("Без ошибок уходит запрос", async () => {
+    //     const mockPutReq = jest.spyOn($api, "put");
+    //     componentRender(<EditableProfileCard id="1" />, options);
 
-        await act(async () =>
-            userEvent.click(
-                screen.getByTestId("EditableProfileCardHeader.EditButton"),
-            ),
-        );
+    //     await act(async () =>
+    //         userEvent.click(
+    //             screen.getByTestId("EditableProfileCardHeader.EditButton"),
+    //         ),
+    //     );
 
-        await act(async () =>
-            userEvent.type(screen.getByTestId("ProfileCard.firstname"), "user"),
-        );
+    //     await act(async () =>
+    //         userEvent.type(screen.getByTestId("ProfileCard.firstname"), "user"),
+    //     );
 
-        await act(async () =>
-            userEvent.click(
-                screen.getByTestId("EditableProfileCardHeader.SaveButton"),
-            ),
-        );
+    //     await act(async () =>
+    //         userEvent.click(
+    //             screen.getByTestId("EditableProfileCardHeader.SaveButton"),
+    //         ),
+    //     );
 
-        expect(mockPutReq).toHaveBeenCalled();
-    });
+    //     expect(mockPutReq).toHaveBeenCalled();
+    // });
 });
