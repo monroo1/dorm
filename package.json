@@ -12,15 +12,15 @@
         "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
         "lint:scss": "npx stylelint \"**/*.scss\"",
         "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-        // "prepare": "husky install"
+        "prepare": "husky install"
     },
-    // "lint-staged": {
-    //     "**/*.{ts,tsx}": [
-    //         "prettier --list-different",
-    //         "eslint"
-    //     ],
-    //     "**/*.scss": "npx stylelint"
-    // },
+    "lint-staged": {
+        "**/*.{ts,tsx}": [
+            "prettier --list-different",
+            "eslint"
+        ],
+        "**/*.scss": "npx stylelint"
+    },
     "keywords": [],
     "author": "",
     "license": "ISC",
