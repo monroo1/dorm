@@ -1,80 +1,38 @@
-import { Suspense, memo, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { getUserInited, initAuthData } from "@/entities/User";
-import { AppRouter } from "./providers/router";
-import { Navbar } from "@/widgets/Navbar";
-import { Sidebar } from "@/widgets/Sidebar";
-import { classNames } from "@/shared/lib/classNames/classNames";
-import { useTheme } from "@/shared/lib/hooks/useTheme/useTheme";
-import { useAppDispatch } from "@/shared/lib/hooks/useAppDispatch/useAppDispatch";
-import { ToggleFeatures } from "@/shared/lib/features";
-import { MainLayout } from "@/shared/layouts/MainLayout";
-import { AppLoaderLayout } from "@/shared/layouts/AppLoaderLayout";
-import { PageLoader } from "@/widgets/PageLoader";
-import { useAppToolbar } from "./lib/useAppToolbar";
-import { withTheme } from "./providers/ThemeProvider/ui/withTheme";
 
-const App = memo(() => {
-    const { theme } = useTheme();
+import "./styles/index.scss";
+import { Link, RouterProvider } from "atomic-router-react";
+import { Pages } from "@/pages";
+import { router } from "@/shared/config/routing";
 
-    const dispatch = useAppDispatch();
-    const inited = useSelector(getUserInited);
-    const toolbar = useAppToolbar();
+interface IndexProps {
+    className?: string;
+}
 
-    useEffect(() => {
-        if (!inited) {
-            dispatch(initAuthData());
-        }
-    }, [dispatch, inited]);
+export const App = (props: IndexProps) => {
+    const { className } = props;
 
-    if (!inited) {
-        return (
-            <ToggleFeatures
-                feature="isAppRedesigned"
-                on={
-                    <div
-                        id="app"
-                        className={classNames("app_redesigned", {}, [theme])}
-                    >
-                        <AppLoaderLayout />
-                    </div>
-                }
-                off={<PageLoader />}
-            />
-        );
-    }
+    //
+
+    // RoutesView;
+    // const { data: asdasd, pending } = useUnit(getDormRequest);
+
+    // useEffect(() => {
+    //     getDormRequest.start();
+    // }, []);
+
+    // console.log(asdasd, "sdasdas");
+    // console.log(pending, "pending");
 
     return (
-        <ToggleFeatures
-            feature="isAppRedesigned"
-            on={
-                <div
-                    id="app"
-                    className={classNames("app_redesigned", {}, [theme])}
-                >
-                    <Suspense fallback="">
-                        <MainLayout
-                            content={<AppRouter />}
-                            sidebar={<Sidebar />}
-                            header={<Navbar />}
-                            toolbar={toolbar}
-                        />
-                    </Suspense>
-                </div>
-            }
-            off={
-                <div id="app" className={classNames("app", {}, [theme])}>
-                    <Suspense fallback="">
-                        <Navbar />
-                        <div className="content-page">
-                            <Sidebar />
-                            <AppRouter />
-                        </div>
-                    </Suspense>
-                </div>
-            }
-        />
+        <RouterProvider router={router}>
+                <header>header</header>
+                <Link to="/">main</Link>
+                <Link to="/signin">signin</Link>
+                <Link to="/signup">signup</Link>
+                <main>
+                    <Pages />
+                </main>
+                <footer>footer</footer>
+            </RouterProvider>
     );
-});
-
-export default withTheme(App);
+};

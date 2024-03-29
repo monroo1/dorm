@@ -1,0 +1,32 @@
+.Input {
+    padding: 17px 16px;
+
+    background: #F4F5F4;
+    border: none;
+    outline: 1px solid #F4F5F4;
+
+    transition: all 0.3s ease-in-out;
+
+    &.secondary {
+        padding: 8px 16px;
+        background-color: white;
+        border: 1px solid #DBE2EA;
+        border-radius: 10px;
+
+        &:focus {
+            border-color: #8f8f8f;
+        }  
+    }
+
+    &.primary {
+        &:focus {
+            outline-color:  #8f8f8f;
+        }   
+    }
+
+    
+}
+
+.maxWidth {
+    width: 100%;
+}

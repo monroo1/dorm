@@ -1,5 +1,4 @@
 import { BuildOptions } from "../types/config";
-import babelRemovePropsPlugin from "../../babel/babelRemovePropsPlugin";
 
 interface BuildBabelLoaderProps extends BuildOptions {
 	isTsx?: boolean;
@@ -25,12 +24,6 @@ export function buildBabelLoader(options: BuildBabelLoaderProps) {
 						},
 					],
 					"@babel/plugin-transform-runtime",
-					isTsx && isProd && [
-						babelRemovePropsPlugin,
-						{
-							props: ["data-testid"],
-						},
-					],
 					isDev && require.resolve("react-refresh/babel"),
 				].filter(Boolean),
 			},

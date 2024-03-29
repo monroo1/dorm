@@ -2,17 +2,9 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
-        jest: true,
     },
     root: true,
-    extends: [
-        "plugin:react/recommended",
-        "airbnb",
-        "airbnb/hooks",
-        "plugin:i18next/recommended",
-        "plugin:storybook/recommended",
-        "prettier",
-    ],
+    extends: ["plugin:react/recommended", "airbnb", "airbnb/hooks", "prettier"],
     parser: "@typescript-eslint/parser",
     parserOptions: {
         ecmaFeatures: {
@@ -24,9 +16,8 @@ module.exports = {
     plugins: [
         "react",
         "@typescript-eslint",
-        "i18next",
         "react-hooks",
-        "monroo-plugin",
+        // "monroo-plugin",
         "unused-imports",
         "import",
     ],
@@ -48,13 +39,6 @@ module.exports = {
         "no-shadow": "off",
         "import/no-extraneous-dependencies": "off",
         "no-underscore-dangle": "off",
-        "i18next/no-literal-string": [
-            "error",
-            {
-                markupOnly: true,
-                ignoreAttribute: ["data-testid", "to"],
-            },
-        ],
         "jsx-a11y/no-static-element-interactions": "off",
         "jsx-a11y/click-events-have-key-events": "off",
         "react-hooks/rules-of-hooks": "error",
@@ -62,25 +46,25 @@ module.exports = {
         "no-param-reassign": "off",
         "no-undef": "off",
         "react/no-array-index-key": "off",
-        "monroo-plugin/path-checker": ["error", { alias: "@" }],
-        "monroo-plugin/layer-imports": [
-            "error",
-            {
-                alias: "@",
-                ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
-            },
-        ],
-        "monroo-plugin/public-api-imports": [
-            "error",
-            {
-                alias: "@",
-                testFilePatterns: [
-                    "**/*.test.*",
-                    "**/*.stories.*",
-                    "**/StoreDecorator.tsx",
-                ],
-            },
-        ],
+        // "monroo-plugin/path-checker": ["error", { alias: "@" }],
+        // "monroo-plugin/layer-imports": [
+        //     "error",
+        //     {
+        //         alias: "@",
+        //         ignoreImportPatterns: ["**/StoreProvider", "**/testing"],
+        //     },
+        // ],
+        // "monroo-plugin/public-api-imports": [
+        //     "error",
+        //     {
+        //         alias: "@",
+        //         testFilePatterns: [
+        //             "**/*.test.*",
+        //             "**/*.stories.*",
+        //             "**/StoreDecorator.tsx",
+        //         ],
+        //     },
+        // ],
         "unused-imports/no-unused-imports": "error",
         "react/jsx-max-props-per-line": ["error", { maximum: 4 }],
         "react/no-unstable-nested-components": "warn",
@@ -90,13 +74,4 @@ module.exports = {
         __API__: true,
         __PROJECT__: true,
     },
-    overrides: [
-        {
-            files: ["**/src/**/*.{test,stories}.{ts, tsx}"],
-            rules: {
-                "i18next/no-literal-string": "off",
-                "max-len": "off",
-            },
-        },
-    ],
 };
