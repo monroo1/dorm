@@ -14,6 +14,8 @@ interface InputProps<T extends FieldValues>
     className?: string;
     variant?: "primary" | "secondary";
     maxSize?: boolean;
+    isError?: boolean;
+    errorMessage?: string;
     options?: RegisterOptions<T, Path<T>> | undefined;
     property: Path<T>;
     register: UseFormRegister<T>;
@@ -26,22 +28,33 @@ export const Input = <T extends FieldValues>(props: InputProps<T>) => {
         variant = "primary",
         maxSize,
         options,
+        isError = false,
+        errorMessage = "",
         property,
         register,
         ...otherProps
     } = props;
 
     return (
-        <input
+        <div
             className={clsx(
-                css.Input,
-                className,
-                css[variant],
+                css.container,
                 maxSize && css.maxSize,
+                isError && css.isError,
             )}
-            {...register(property, options)}
-            type={type}
-            {...otherProps}
-        />
+        >
+            <span className={css.errorMessage}>{errorMessage}</span>
+            <input
+                className={clsx(
+                    css.Input,
+                    className,
+                    css[variant],
+                    isError && css.error,
+                )}
+                {...register(property, options)}
+                type={type}
+                {...otherProps}
+            />
+        </div>
     );
 };

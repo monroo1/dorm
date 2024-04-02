@@ -1,4 +1,5 @@
 .Input {
+    width: 100%;
     padding: 17px 16px;
 
     background: #F4F5F4;
@@ -19,14 +20,38 @@
     }
 
     &.primary {
+        font-family: var(--second-family);
+        font-size: 18px;
+
         &:focus {
             outline-color:  #8f8f8f;
         }   
-    }
 
-    
+        &.error {
+            outline-color:  var(--color-error-text);
+        }
+    }
 }
 
-.maxWidth {
-    width: 100%;
+.errorMessage {
+        display: none;
+    }
+
+
+.container {
+    position: relative;
+
+    &.isError .errorMessage {
+        position: absolute;
+        top: -14px;
+        right: 0;
+
+        display: inline;
+
+        font-size: 12px;
+    }
+
+    &.maxSize {
+        width: 100%;
+    }
 }

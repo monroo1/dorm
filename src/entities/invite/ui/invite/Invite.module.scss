@@ -1,0 +1,36 @@
+.Invite {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: center;
+
+    padding: 20px 16px;
+
+    border: 1px solid #E7E7ED;
+    border-radius: 12px;
+}
+
+.inactive {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 0;
+
+    font-weight: 700;
+    color: var(--color-error-text);
+
+    border: 1px solid var(--color-error);   
+}
+
+.activated {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 0;
+
+    font-weight: 700;
+    color: var(--color-success-text);
+
+    border: 1px solid var(--color-success);
+}

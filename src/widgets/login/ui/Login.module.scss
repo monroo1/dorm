@@ -1,0 +1,21 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    align-items: center;
+
+    width:356px;
+    margin: 0 117px;
+    padding: 24px 0;
+}
+
+.already {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    & a {
+        text-decoration: none;
+    }
+}

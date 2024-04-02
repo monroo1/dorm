@@ -1,0 +1,11 @@
+.Invites {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    align-items: center;
+
+    & h2 {
+        font-size: 22px;
+        font-weight: 700;
+    }
+}

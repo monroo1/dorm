@@ -1,11 +1,5 @@
-import { LoginForm } from "@/features/loginForm";
-
-// import css from "./Signin.module.scss";
+import { Login } from "@/widgets/login";
 
 export function Signin() {
-    return (
-        <div>
-            <LoginForm />
-        </div>
-    );
+    return <Login />;
 }

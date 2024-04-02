@@ -7,41 +7,75 @@ import { useUnit } from "effector-react";
 import { Input } from "@/shared/ui/input";
 import { Button } from "@/shared/ui/button";
 import { ILoginProps } from "@/shared/types/User";
-import { $viewer, loginFx } from "@/entities/viewer";
+import { loginFx } from "@/entities/viewer";
 
-interface RegisterProps {
+import css from "./LoginForm.module.scss";
+
+interface LoginProps {
     className?: string;
 }
 
-export const LoginForm = memo((props: RegisterProps) => {
-    const { className } = props;
-    const handleRegister = useUnit(loginFx);
-    const viewer = useUnit($viewer);
+export const LoginForm = memo(({ className }: LoginProps) => {
+    const [handleLogin, pending] = useUnit([loginFx, loginFx.pending]);
     const {
         register,
         handleSubmit,
-        watch,
         formState: { errors },
+        setError,
     } = useForm<ILoginProps>();
 
-    const onSubmit: SubmitHandler<ILoginProps> = async (data) => handleRegister(data);
+    const onSubmit: SubmitHandler<ILoginProps> = async (data) => {
+        try {
+            await handleLogin(data);
+        } catch (e) {
+            setError("identifier", { type: "invalid" });
+            setError("password", { type: "invalid" });
+        }
+    };
 
     return (
-        <div className={clsx(className)}>
-            login
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Input
-                    register={register}
-                    property="identifier"
-                    placeholder="email"
-                />
-                <Input
-                    register={register}
-                    property="password"
-                    placeholder="password"
-                />
-                <Button>Login</Button>
-            </form>
-        </div>
+        <form
+            onSubmit={handleSubmit(onSubmit)}
+            className={clsx(css.form, className)}
+        >
+            <Input
+                register={register}
+                property="identifier"
+                placeholder="Почта"
+                options={{
+                    pattern:
+                        /([a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z0-9_-]+)/,
+                    required: true,
+                }}
+                disabled={pending}
+                isError={!!errors.identifier}
+                errorMessage={
+                    errors.identifier?.type === "invalid"
+                        ? "Пользователя с такой почтой/паролем не существует"
+                        : "Неправильно введенная почта"
+                }
+            />
+            <Input
+                register={register}
+                property="password"
+                placeholder="****************"
+                type="password"
+                disabled={pending}
+                options={{
+                    minLength: 6,
+                    required: true,
+                }}
+                isError={!!errors.password}
+                errorMessage={
+                    errors.password?.type === "invalid"
+                        ? ""
+                        : "Неправильно введенный пароль, длина > 6 символов"
+                }
+            />
+            <span>Забыли пароль?</span>
+            <Button maxWidth disabled={pending}>
+                Войти
+            </Button>
+        </form>
     );
 });

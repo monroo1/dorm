@@ -17,7 +17,7 @@ export const registerFx = createEffect<IRegisterProps, IAuthResponse>(
         // eslint-disable-next-line no-return-await
         return await axios
             .post<IAuthResponse>(
-                `http://localhost:1337/api/auth/local`,
+                `http://localhost:1337/api/auth/local/register`,
                 dataFinally,
                 {
                     headers: { "Content-Type": "application/json" },

@@ -13,6 +13,7 @@ export const routes = {
         signIn: createRoute(),
         signUp: createRoute(),
     },
+    profile: createRoute(),
 };
 
 export const controls = createRouterControls();
@@ -31,6 +32,10 @@ export const router = createHistoryRouter({
             path: "/signup",
             route: routes.auth.signUp,
         },
+        {
+            path: "/profile",
+            route: routes.profile,
+        },
     ],
     controls,
 });
@@ -40,5 +45,3 @@ sample({
     fn: () => createBrowserHistory(),
     target: router.setHistory,
 });
-
-// router.setHistory(createBrowserHistory());

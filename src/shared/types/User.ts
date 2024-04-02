@@ -1,17 +1,6 @@
-export interface IUser {
-    // id: number;
-    // username: string;
-    // email: string;
-    // provider: string;
-    // confirmed: boolean;
-    // blocked: boolean;
-    // createdAt: string;
-    // updatedAt: string;
-    // numberRoom?: number;
-    // institute: string;
-    // dorm: string;
-    // fio: string;
+import { IInvite } from "./Invite";
 
+export interface IUser {
     id: number;
     username: string;
     email: string;
@@ -23,6 +12,9 @@ export interface IUser {
     numberRoom: number;
     institute: string;
     fio: string;
+    dorm: { id: number; dorm: string };
+    previewImage: null | { id: number; url: string; name: string };
+    invites: IInvite[];
 }
 
 export interface IAuthResponse {
@@ -33,7 +25,7 @@ export interface IAuthResponse {
 export interface IRegisterProps {
     email: string;
     fio: string;
-    dorm: string;
+    dorm: number;
     numberRoom: string;
     institute: string;
     username: string;

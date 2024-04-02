@@ -1,6 +1,9 @@
 export interface IDorm {
     id: number;
-    dorm: string;
+    attributes: {
+        dorm: string;
+    };
 }
-
-// export interface IDormResponse
+export interface IGetDormsResponse {
+    data: IDorm[];
+}

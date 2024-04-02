@@ -1,5 +1,13 @@
-.Register form {
+
+.form {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 20px;
+
+    width: 396px;
+    padding: 20px;
+
+    & button {
+        margin-top: 47px;
+    }   
 }

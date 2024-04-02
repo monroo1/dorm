@@ -1,0 +1,15 @@
+.InvitesList {
+    max-width: 602px;
+}
+
+.title {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    padding: 24px;
+    font-weight: 700;
+
+    & > p:last-child {
+        text-align: center;
+    }
+}
+

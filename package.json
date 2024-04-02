@@ -15,10 +15,7 @@
         "prepare": "husky install"
     },
     "lint-staged": {
-        "**/*.{ts,tsx}": [
-            "prettier --list-different",
-            "eslint"
-        ],
+        "**/*.{ts,tsx}": "eslint",
         "**/*.scss": "npx stylelint"
     },
     "keywords": [],
@@ -84,6 +81,7 @@
         "ts-morph": "^19.0.0",
         "ts-node": "^10.5.0",
         "typescript": "^4.5.5",
+        "url-loader": "^4.1.1",
         "webpack": "^5.69.1",
         "webpack-bundle-analyzer": "^4.5.0",
         "webpack-cli": "^4.9.2",
@@ -91,6 +89,7 @@
         "whatwg-fetch": "^3.6.19"
     },
     "dependencies": {
+        "@headlessui/react": "^1.7.18",
         "atomic-router": "^0.10.1",
         "atomic-router-react": "^0.10.0",
         "axios": "^1.6.8",

@@ -1110,6 +1110,14 @@
   resolved "https://registry.npmjs.org/@eslint/js/-/js-8.57.0.tgz"
   integrity sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==
 
+"@headlessui/react@^1.7.18":
+  version "1.7.18"
+  resolved "https://registry.yarnpkg.com/@headlessui/react/-/react-1.7.18.tgz#30af4634d2215b2ca1aa29d07f33d02bea82d9d7"
+  integrity sha512-4i5DOrzwN4qSgNsL4Si61VMkUcWbcSKueUV7sFhpHzQcSShdlHENE5+QBntMSRvHt8NyoFO2AGG8si9lq+w4zQ==
+  dependencies:
+    "@tanstack/react-virtual" "^3.0.0-beta.60"
+    client-only "^0.0.1"
+
 "@humanwhocodes/config-array@^0.11.14":
   version "0.11.14"
   resolved "https://registry.npmjs.org/@humanwhocodes/config-array/-/config-array-0.11.14.tgz"
@@ -1345,6 +1353,18 @@
     "@svgr/core" "^6.5.1"
     "@svgr/plugin-jsx" "^6.5.1"
     "@svgr/plugin-svgo" "^6.5.1"
+
+"@tanstack/react-virtual@^3.0.0-beta.60":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-virtual/-/react-virtual-3.2.0.tgz#fb70f9c6baee753a5a0f7618ac886205d5a02af9"
+  integrity sha512-OEdMByf2hEfDa6XDbGlZN8qO6bTjlNKqjM3im9JG+u3mCL8jALy0T/67oDI001raUUPh1Bdmfn4ZvPOV5knpcg==
+  dependencies:
+    "@tanstack/virtual-core" "3.2.0"
+
+"@tanstack/virtual-core@3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@tanstack/virtual-core/-/virtual-core-3.2.0.tgz#874d36135e4badce2719e7bdc556ce240cbaff14"
+  integrity sha512-P5XgYoAw/vfW65byBbJQCw+cagdXDT/qH6wmABiLt4v4YBT2q2vqCOhihe+D1Nt325F/S/0Tkv6C5z0Lv+VBQQ==
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
@@ -2505,6 +2525,11 @@ cli-truncate@^3.1.0:
   dependencies:
     slice-ansi "^5.0.0"
     string-width "^5.0.0"
+
+client-only@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
+  integrity sha512-IV3Ou0jSMzZrd3pZ48nLkT9DA7Ag1pnPzaiQhpW7c3RbcqqzvzzVu+L8gfqMp/8IM2MQtSiqaCxrrcfu8I8rMA==
 
 cliui@^8.0.1:
   version "8.0.1"
@@ -7288,6 +7313,15 @@ uri-js@^4.2.2:
   integrity sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==
   dependencies:
     punycode "^2.1.0"
+
+url-loader@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/url-loader/-/url-loader-4.1.1.tgz#28505e905cae158cf07c92ca622d7f237e70a4e2"
+  integrity sha512-3BTV812+AVHHOJQO8O5MkWgZ5aosP7GnROJwvzLS9hWDj00lZ6Z0wNak423Lp9PBZN05N+Jk/N5Si8jRAlGyWA==
+  dependencies:
+    loader-utils "^2.0.0"
+    mime-types "^2.1.27"
+    schema-utils "^3.0.0"
 
 use-sync-external-store@^1.0.0:
   version "1.2.0"
