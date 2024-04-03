@@ -1,4 +1,4 @@
-export { getInviteFx } from "./model/api/getInvites";
+export { getInvitesFx } from "./model/api/getInvites";
 export { sendInviteFx } from "./model/api/sendInvite";
 
 export * from "./model";

@@ -1,11 +1,4 @@
-import {
-    attach,
-    createEvent,
-    createStore,
-    Effect,
-    Event,
-    sample,
-} from "effector";
+import { createEvent, createStore, Effect, Event, sample } from "effector";
 import {
     chainRoute,
     RouteInstance,
@@ -16,9 +9,11 @@ import { IUser } from "@/shared/types/User";
 import { registerFx } from "./api/register";
 import { LOCAL_TOKEN } from "@/shared/consts/localstorage";
 import { loginFx } from "./api/login";
-// import { getSessionFx } from "./api/session";
+import { getSessionFx } from "./api/session";
 
-import * as api from "./api/session";
+interface ChainParams<Params extends RouteParams> {
+    otherwise?: Event<void> | Effect<void, any, any>;
+}
 
 export enum AuthStatus {
     Initial = 0,
@@ -27,40 +22,33 @@ export enum AuthStatus {
     Authenticated,
 }
 
-export const sessionRequestFx = attach({ effect: api.getSessionFx });
+export const logout = createEvent();
 
 export const $viewer = createStore<IUser | null>(null);
 const $authenticationStatus = createStore(AuthStatus.Initial);
 
-$authenticationStatus.on(sessionRequestFx, (status) => {
+$authenticationStatus.on(getSessionFx, (status) => {
     if (status === AuthStatus.Initial) return AuthStatus.Pending;
     return status;
 });
 
-$viewer.on(sessionRequestFx.doneData, (_, user) => user);
+$viewer.on(getSessionFx.doneData, (_, user) => user);
 
-$authenticationStatus.on(
-    sessionRequestFx.doneData,
-    () => AuthStatus.Authenticated,
-);
+$authenticationStatus.on(getSessionFx.doneData, () => AuthStatus.Authenticated);
 
-$authenticationStatus.on(sessionRequestFx.fail, () => AuthStatus.Anonymous);
+$authenticationStatus.on(getSessionFx.fail, () => AuthStatus.Anonymous);
 
 sample({
     clock: [registerFx.doneData, loginFx.doneData],
     fn: (data) => localStorage.setItem(LOCAL_TOKEN, data.jwt),
-    target: sessionRequestFx,
+    target: getSessionFx,
 });
 
-// username length  >= 3
+$viewer.on(logout, () => {
+    localStorage.removeItem(LOCAL_TOKEN);
+    return null;
+});
 
-// password length >= 6
-
-// number room - numbeаr
-
-interface ChainParams<Params extends RouteParams> {
-    otherwise?: Event<void> | Effect<void, any, any>;
-}
 export function chainAuthorized<Params extends RouteParams>(
     route: RouteInstance<Params>,
     { otherwise }: ChainParams<Params> = {},
@@ -84,11 +72,11 @@ export function chainAuthorized<Params extends RouteParams>(
         clock: sessionCheckStarted,
         source: $authenticationStatus,
         filter: (status) => status === AuthStatus.Initial,
-        target: sessionRequestFx,
+        target: getSessionFx,
     });
 
     sample({
-        clock: [alreadyAnonymous, sessionRequestFx.fail],
+        clock: [alreadyAnonymous, getSessionFx.fail],
         source: { params: route.$params, query: route.$query },
         filter: route.$isOpened,
         target: sessionReceivedAnonymous,
@@ -104,7 +92,7 @@ export function chainAuthorized<Params extends RouteParams>(
     return chainRoute({
         route,
         beforeOpen: sessionCheckStarted,
-        openOn: [alreadyAuthenticated, sessionRequestFx.done],
+        openOn: [alreadyAuthenticated, getSessionFx.done],
         cancelOn: sessionReceivedAnonymous,
     });
 }
@@ -133,11 +121,11 @@ export function chainAnonymous<Params extends RouteParams>(
         clock: sessionCheckStarted,
         source: $authenticationStatus,
         filter: (status) => status === AuthStatus.Initial,
-        target: sessionRequestFx,
+        target: getSessionFx,
     });
 
     sample({
-        clock: [alreadyAuthenticated, sessionRequestFx.done],
+        clock: [alreadyAuthenticated, getSessionFx.done],
         source: { params: route.$params, query: route.$query },
         filter: route.$isOpened,
         target: sessionReceivedAuthenticated,
@@ -153,7 +141,7 @@ export function chainAnonymous<Params extends RouteParams>(
     return chainRoute({
         route,
         beforeOpen: sessionCheckStarted,
-        openOn: [alreadyAnonymous, sessionRequestFx.fail],
+        openOn: [alreadyAnonymous, getSessionFx.fail],
         cancelOn: sessionReceivedAuthenticated,
     });
 }

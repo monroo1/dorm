@@ -1,5 +1,3 @@
-import { IInvite } from "./Invite";
-
 export interface IUser {
     id: number;
     username: string;
@@ -14,7 +12,6 @@ export interface IUser {
     fio: string;
     dorm: { id: number; dorm: string };
     previewImage: null | { id: number; url: string; name: string };
-    invites: IInvite[];
 }
 
 export interface IAuthResponse {

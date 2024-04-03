@@ -1,30 +1,19 @@
-import { sample } from "effector";
-import { $viewer } from "@/entities/viewer";
+import { createStore, sample } from "effector";
 import { sendInviteFx } from "./api/sendInvite";
-import { IUser } from "@/shared/types/User";
+import { IFindInvite } from "@/shared/types/Invite";
+import { getInvitesFx } from "./api/getInvites";
 
-export const $invites = $viewer.map((data) => data?.invites);
+export const $invites = createStore<[] | IFindInvite[]>([]);
 
 sample({
-    source: $viewer,
-    clock: sendInviteFx.doneData,
-    fn: (prev, { data }): IUser | null => {
-        if (!prev) {
-            return null;
-        }
+    clock: getInvitesFx.doneData,
+    fn: ({ data }) => data,
+    target: $invites,
+});
 
-        return {
-            ...prev,
-            invites: [
-                ...prev.invites,
-                {
-                    id: data.id,
-                    email: data.attributes.email,
-                    activated: data.attributes.activated,
-                    createdAt: data.attributes.createdAt,
-                },
-            ],
-        };
-    },
-    target: $viewer,
+sample({
+    source: $invites,
+    clock: sendInviteFx.doneData,
+    fn: (prev, { data }): IFindInvite[] => [...prev, data],
+    target: $invites,
 });

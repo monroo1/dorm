@@ -1,18 +1,19 @@
-export interface IInvite {
-    id: number;
-    email: string;
-    activated: boolean;
-    createdAt: string;
-}
+// export interface IInvite {
+//     id: number;
+//     email: string;
+//     activated: boolean;
+//     createdAt: string;
+// }
 
-interface IFindInvite {
+export interface IFindInvite {
     id: number;
     attributes: {
         email: string;
         activated: boolean;
+        createdAt: string;
     };
 }
 
-export interface IFindInviteResponse {
+export interface IFindInvitesResponse {
     data: [] | IFindInvite[];
 }
